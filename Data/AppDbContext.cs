@@ -26,11 +26,21 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<User>().HasIndex(u => u.Username).IsUnique();
 
         //Exercise - HNSW Index for vector similarity
+        modelBuilder.Entity<Exercise>().Property(e => e.Embedding).HasColumnType("vector(768)");
+
+        // HNSW Index for fast vector similarity search
         modelBuilder
             .Entity<Exercise>()
             .HasIndex(e => e.Embedding)
             .HasMethod("hnsw")
-            .HasOperators("vector_cosine_ops");
+            .HasOperators("vector_cosine_ops")
+            .HasName("idx_exercise_embedding_hnsw");
+
+        // Optional: Add a covering index for common queries
+        modelBuilder
+            .Entity<Exercise>()
+            .HasIndex(e => new { e.Equipment, e.DifficultyLevel })
+            .HasName("idx_exercise_equipment_difficulty");
 
         //WorkoutExercise relationships
         modelBuilder

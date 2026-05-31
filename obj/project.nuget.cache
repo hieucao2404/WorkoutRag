@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3GMRS7n/6JU=",
+  "dgSpecHash": "/XLHrllL9FY=",
   "success": true,
   "projectFilePath": "/mnt/data/WorkoutRag/WorkoutRag.csproj",
   "expectedPackageFiles": [
@@ -24,24 +24,8 @@
     "/home/hieucao240402/.nuget/packages/microsoft.extensions.ai/10.5.2/microsoft.extensions.ai.10.5.2.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/microsoft.extensions.ai.abstractions/10.5.2/microsoft.extensions.ai.abstractions.10.5.2.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/microsoft.extensions.ai.openai/10.5.0/microsoft.extensions.ai.openai.10.5.0.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.caching.abstractions/10.0.8/microsoft.extensions.caching.abstractions.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.caching.memory/10.0.8/microsoft.extensions.caching.memory.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.configuration/10.0.8/microsoft.extensions.configuration.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.8/microsoft.extensions.configuration.abstractions.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.configuration.fileextensions/10.0.8/microsoft.extensions.configuration.fileextensions.10.0.8.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/microsoft.extensions.configuration.json/10.0.8/microsoft.extensions.configuration.json.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.8/microsoft.extensions.dependencyinjection.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.8/microsoft.extensions.dependencyinjection.abstractions.10.0.8.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/microsoft.extensions.dependencymodel/10.0.8/microsoft.extensions.dependencymodel.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.diagnostics.abstractions/10.0.3/microsoft.extensions.diagnostics.abstractions.10.0.3.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.fileproviders.abstractions/10.0.8/microsoft.extensions.fileproviders.abstractions.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.fileproviders.physical/10.0.8/microsoft.extensions.fileproviders.physical.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.filesystemglobbing/10.0.8/microsoft.extensions.filesystemglobbing.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.hosting.abstractions/10.0.3/microsoft.extensions.hosting.abstractions.10.0.3.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.logging/10.0.8/microsoft.extensions.logging.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.8/microsoft.extensions.logging.abstractions.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.options/10.0.8/microsoft.extensions.options.10.0.8.nupkg.sha512",
-    "/home/hieucao240402/.nuget/packages/microsoft.extensions.primitives/10.0.8/microsoft.extensions.primitives.10.0.8.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/microsoft.extensions.vectordata.abstractions/10.1.0/microsoft.extensions.vectordata.abstractions.10.1.0.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/microsoft.net.compilers.toolset/4.14.0/microsoft.net.compilers.toolset.4.14.0.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/microsoft.semantickernel/1.76.0/microsoft.semantickernel.1.76.0.nupkg.sha512",
@@ -71,5 +55,18 @@
     "/home/hieucao240402/.nuget/packages/system.memory.data/10.0.3/system.memory.data.10.0.3.nupkg.sha512",
     "/home/hieucao240402/.nuget/packages/system.numerics.tensors/10.0.6/system.numerics.tensors.10.0.6.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.Extensions.Configuration.Json will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "/mnt/data/WorkoutRag/WorkoutRag.csproj",
+      "warningLevel": 1,
+      "filePath": "/mnt/data/WorkoutRag/WorkoutRag.csproj",
+      "libraryId": "Microsoft.Extensions.Configuration.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }
