@@ -12,6 +12,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
+// Add CORS
+builder.Services.AddCors(options => {
+    options.AddPolicy("AllowReactApp",
+    policy => policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+});
+
 // 2. Add Services
 builder.Services.AddHttpClient<WorkoutRetrievalService>();
 builder.Services.AddScoped<WorkoutRetrievalService>();
@@ -21,6 +27,9 @@ builder.Services.AddScoped<OllamaService>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+//Use CORS 
+app.UseCors("AllowReactApp");
 
 // 4. Migrate Database
 using (var scope = app.Services.CreateScope())
