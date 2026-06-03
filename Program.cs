@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WorkoutRag.Data;
+using WorkoutRag.Repositories;
 using WorkoutRag.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,10 +14,22 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 // Add CORS
-builder.Services.AddCors(options => {
-    options.AddPolicy("AllowReactApp",
-    policy => policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        "AllowReactApp",
+        policy =>
+            policy
+                .WithOrigins("http://localhost:5173")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials()
+    );
 });
+
+// 3. Add Repositories
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
 
 // 2. Add Services
 builder.Services.AddHttpClient<WorkoutRetrievalService>();
@@ -28,7 +41,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-//Use CORS 
+//Use CORS
 app.UseCors("AllowReactApp");
 
 // 4. Migrate Database

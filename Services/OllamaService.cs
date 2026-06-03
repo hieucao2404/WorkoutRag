@@ -58,6 +58,8 @@ Example format:
             model = "phi3:mini",
             prompt = prompt,
             stream = false,
+            format = "json",
+            options = new { temperature = 0.0 },
         };
 
         var response = await _httpClient.PostAsJsonAsync("/api/generate", request);
