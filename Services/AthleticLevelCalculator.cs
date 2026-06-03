@@ -101,7 +101,7 @@ public static class AthleticLevelCalculator
             >= 97 => "Elite",
             >= 85 => "Advanced",
             >= 70 => "Intermediate",
-            >= 50 => "Novice"
+            >= 50 => "Novice",
             >= 20 => "Beginner",
             _ => "Untrained",
         };
