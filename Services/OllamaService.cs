@@ -1,6 +1,9 @@
 using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
+using WorkoutRag.Models;
 
 namespace WorkoutRag.Services;
 
@@ -33,40 +36,81 @@ public class OllamaService
     // Generate workout plan using LLM
     public async Task<string> GenerateWorkoutPlanAsync(
         string userGoal,
-        List<WorkoutRag.Models.Exercise> exercises
+        List<WorkoutRag.Models.Exercise> exercises,
+        User user
     )
     {
         var exerciseList = string.Join("\n", exercises.Select(e => $"- {e.Name}: {e.Description}"));
 
+        var clinicalConstraints =
+            user.ComputedBiomechanicalNeeds != null && user.ComputedBiomechanicalNeeds.Any()
+                ? string.Join("\n", user.ComputedBiomechanicalNeeds)
+                : "No specific biomechanical constraints detected. Proceed with standard programming.";
+
         var prompt =
-            $@"You are an expert personal trainer. 
-The user's goal is: '{userGoal}'.
-You MUST build a workout using ONLY the following exercises:
-{exerciseList}
+            $@"You are an elite clinical strength and conditioning coach specializing in occupational longevity and athletic performance.
+            Design a highly optimized, safe workout session using ONLY the provided exercise inventory. 
 
-Provide a 3-set workout plan. Format your response strictly as clean JSON, with no markdown formatting or extra conversational text.
-Example format:
-{{
-    ""workoutName"": ""Explosive Jump Routine"",
-    ""exercises"": [
-        {{ ""name"": ""Box Jump"", ""sets"": 3, ""reps"": ""8-10"" }}
-    ]
-}}";
+            ATHLETE PROFILE:
+            - Age: {user.Age?.ToString() ?? "Unknown"} 
+            - Weight: {user.WeightKg?.ToString() ?? "Unknown"} kg
+            - Current Athletic Level: {user.AthleticLevel}
+            - Primary Session Goal: '{userGoal}'
+            - Available Equipment: '{request.Equipment}'
 
-        var request = new
+            CLINICAL CONSTRAINTS & BIOMECHANICAL NEEDS:
+            You MUST obey the following directives based on the user's occupational and physical assessment. Treat [RED FLAG] tags as absolute physical boundaries.
+            {clinicalConstraints}
+
+            AVAILABLE EXERCISES:
+            {exerciseList}
+
+            STRICT RULES:
+            1. Do not invent or hallucinate exercises. Use ONLY the exact names from the Available Exercises list.
+            2. If an exercise requires equipment the user does not have, DO NOT include it.
+            3. You must output pure JSON. No markdown formatting, no explanations before or after the JSON.
+
+            Your response MUST perfectly match this exact JSON schema. Do not add spaces to the keys. Do not invent new keys like 'duration'.
+            {{
+                ""workoutName"": ""String"",
+                ""exercises"": [
+                    {{ 
+                        ""name"": ""Exact Exercise Name"", 
+                        ""sets"": Number, 
+                        ""reps"": ""String (e.g., '8-12' or '60 seconds')""
+                    }}
+                ]
+            }}";
+
+        var requestPayload = new
         {
             model = "phi3:mini",
             prompt = prompt,
             stream = false,
             format = "json",
-            options = new { temperature = 0.0 },
+            options = new { temperature = 0.1 },
         };
 
-        var response = await _httpClient.PostAsJsonAsync("/api/generate", request);
-        response.EnsureSuccessStatusCode();
+        var content = new StringContent(
+            JsonSerializer.Serialize(requestPayload),
+            Encoding.UTF8,
+            "application/json"
+        );
 
-        var result = await response.Content.ReadFromJsonAsync<OllamaGenerateResponse>();
-        return result?.Response ?? "{}";
+        var response = await _httpClient.PostAsync("/api/generate", content);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(
+                $"Failed to connect to local Ollama instance. Status: {response.StatusCode}"
+            );
+        }
+
+        var jsonResponse = await response.Content.ReadAsStringAsync();
+        using var document = JsonDocument.Parse(jsonResponse);
+
+        // Ollama returns the generated text inside the "response" property
+        return document.RootElement.GetProperty("response").GetString() ?? "{}";
     }
 
     private class OllamaEmbeddingResponse

@@ -30,11 +30,13 @@ builder.Services.AddCors(options =>
 // 3. Add Repositories
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IExerciseRepository, ExerciseRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // 2. Add Services
 builder.Services.AddHttpClient<WorkoutRetrievalService>();
 builder.Services.AddScoped<WorkoutRetrievalService>();
 builder.Services.AddScoped<OllamaService>();
+builder.Services.AddHttpClient<OllamaService>();
 
 // 3. Add Controllers
 builder.Services.AddControllers();

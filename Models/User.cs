@@ -17,6 +17,8 @@ public class User
     // The AI's dynamically generated needs based on the profile
     public List<string> ComputedBiomechanicalNeeds { get; set; } = new();
 
+    public string AthleticLevel { get; set; } = "Beginner";
+
     //Navigation properties
     public ICollection<WorkoutHistory> WorkoutHistories { get; set; } = new List<WorkoutHistory>();
     public ICollection<UserSport> Sports { get; set; } = new List<UserSport>();

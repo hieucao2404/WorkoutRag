@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "WorkoutRag API Tests",
+    "description": "Collection for testing the 5-pillar onboarding, domain-driven lifestyle mapping, and Llama 3 workout generation.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Benchmark Test (Create User)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/onboarding/benchmark",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "onboarding",
+            "benchmark"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"TerminalAthlete\",\n  \"gender\": \"Male\",\n  \"age\": 30,\n  \"weightKg\": 82,\n  \"heightCm\": 180,\n  \"pushUpsMax\": 40,\n  \"pullUpsMax\": 12,\n  \"plankHoldSeconds\": 150,\n  \"squatReps\": 50,\n  \"broadJumpCm\": 220,\n  \"oneKmRunTimeSeconds\": 300,\n  \"canDeepSquat\": true,\n  \"canTouchToes\": true,\n  \"canPerformWallSlide\": true,\n  \"canReachHandsBehindBack\": false,\n  \"averageSleepHours\": 7,\n  \"stressLevel\": 6\n}"
+        }
+      }
+    },
+    {
+      "name": "2. Update Lifestyle Profile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/onboarding/lifestyle",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "onboarding",
+            "lifestyle"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"PASTE_USER_ID_FROM_BENCHMARK_RESPONSE_HERE\",\n  \"occupation\": 1,\n  \"movement\": {\n    \"sittingHoursPerDay\": 8,\n    \"standingHoursPerDay\": 1,\n    \"walkingHoursPerDay\": 1,\n    \"physicalLaborHoursPerDay\": 0\n  },\n  \"stressors\": {\n    \"repetitiveLifting\": false,\n    \"repetitiveBending\": false,\n    \"overheadWork\": false,\n    \"oneSidedLoadCarrying\": false,\n    \"prolongedSitting\": true,\n    \"prolongedStanding\": false,\n    \"frequentStairClimbing\": false\n  },\n  \"recovery\": {\n    \"averageSleepHours\": 5,\n    \"stressLevel\": 8,\n    \"feelsFatiguedAfterWork\": true,\n    \"hasChronicPain\": false\n  },\n  \"habits\": {\n    \"dailyStepCount\": 2500,\n    \"stretchesRegularly\": false,\n    \"takesMovementBreaks\": false,\n    \"waterIntakeLiters\": 1.0,\n    \"screenTimeHours\": 10\n  },\n  \"pain\": {\n    \"neckPain\": true,\n    \"shoulderPain\": false,\n    \"upperBackPain\": true,\n    \"lowerBackPain\": false,\n    \"kneePain\": false,\n    \"anklePain\": false\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "3. Generate Workout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/workout/generate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "workout",
+            "generate"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"PASTE_USER_ID_FROM_BENCHMARK_RESPONSE_HERE\",\n  \"prompt\": \"I want a quick 30-minute full body session. My legs are feeling pretty tired today.\",\n  \"equipment\": \"Bodyweight, Dumbbells, Resistance Bands\"\n}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ]
+}

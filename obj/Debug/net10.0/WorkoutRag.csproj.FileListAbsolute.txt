@@ -141,3 +141,4 @@
 /mnt/data/WorkoutRag/obj/Debug/net10.0/staticwebassets.development.json
 /mnt/data/WorkoutRag/obj/Debug/net10.0/staticwebassets.build.endpoints.json
 /mnt/data/WorkoutRag/obj/Debug/net10.0/swae.build.ex.cache
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Postman/WorkoutRag_Collection.json

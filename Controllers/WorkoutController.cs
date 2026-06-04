@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WorkoutRag.DTO;
+using WorkoutRag.Models;
+using WorkoutRag.Repositories;
 using WorkoutRag.Services;
 
 namespace WorkoutRag.Controllers;
@@ -10,11 +12,17 @@ public class WorkoutController : ControllerBase
 {
     private readonly WorkoutRetrievalService _retrievalService;
     private readonly OllamaService _ollamaService;
+    private readonly IUserRepository _userRepository;
 
-    public WorkoutController(WorkoutRetrievalService retrievalService, OllamaService ollamaService)
+    public WorkoutController(
+        WorkoutRetrievalService retrievalService,
+        OllamaService ollamaService,
+        IUserRepository userRepository
+    )
     {
         _retrievalService = retrievalService;
         _ollamaService = ollamaService;
+        _userRepository = userRepository;
     }
 
     [HttpPost("generate")]
@@ -30,6 +38,10 @@ public class WorkoutController : ControllerBase
 
         try
         {
+            //1. Fetch the user to get their Biomechanical needs
+            var user = await _userRepository.GetByIdAsync(request.UserId);
+            if (user == null)
+                return NotFound("User not found.");
             // 1. RETRIEVAL: Vector search for matching exercises
             var exercises = await _retrievalService.SearchExercisesAsync(
                 request.Prompt,
@@ -42,7 +54,8 @@ public class WorkoutController : ControllerBase
             // 2. GENERATION: Send results to LLM for workout plan
             var workoutJson = await _ollamaService.GenerateWorkoutPlanAsync(
                 request.Prompt,
-                exercises
+                exercises,
+                user
             );
 
             // 3. Return formatted JSON
