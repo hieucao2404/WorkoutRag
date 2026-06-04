@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutRag.DTO;
 using WorkoutRag.Models;
@@ -8,6 +9,7 @@ namespace WorkoutRag.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class WorkoutController : ControllerBase
 {
     private readonly WorkoutRetrievalService _retrievalService;
@@ -38,8 +40,16 @@ public class WorkoutController : ControllerBase
 
         try
         {
+            // 1. Extract the UserId directly from their secure JWT Token
+            var userIdClaim = User.FindFirst(
+                System.Security.Claims.ClaimTypes.NameIdentifier
+            )?.Value;
+            if (userIdClaim == null)
+                return Unauthorized("Invalid token.");
+
+            var userId = Guid.Parse(userIdClaim);
             //1. Fetch the user to get their Biomechanical needs
-            var user = await _userRepository.GetByIdAsync(request.UserId);
+            var user = await _userRepository.GetByIdAsync(userId);
             if (user == null)
                 return NotFound("User not found.");
             // 1. RETRIEVAL: Vector search for matching exercises
@@ -53,9 +63,10 @@ public class WorkoutController : ControllerBase
 
             // 2. GENERATION: Send results to LLM for workout plan
             var workoutJson = await _ollamaService.GenerateWorkoutPlanAsync(
-                request.Prompt,
-                exercises,
-                user
+                request.Prompt, // 1. The userGoal
+                request.Equipment, // 2. The new equipment string we just added
+                exercises, // 3. The vector search results
+                user // 4. The user object (which the error says is missing!)
             );
 
             // 3. Return formatted JSON

@@ -4,11 +4,16 @@ public class User
 {
     public Guid Id { get; set; }
     public string Username { get; set; } = default!;
+
+    //Authentication Field
+    public string Email {get;set;} = string.Empty;
+    public string PasswordHash {get;set;} = string.Empty;
+
     public int? Age { get; set; }
     public decimal? WeightKg { get; set; }
     public decimal? HeightCm { get; set; }
-    public string? DailyPosture { get; set; }
-    public List<string> KnownImbalances { get; set; } = new();
+    //public string? DailyPosture { get; set; }
+    //public List<string> KnownImbalances { get; set; } = new();
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     // 1-to-1 Relationship with the new Lifestyle Profile

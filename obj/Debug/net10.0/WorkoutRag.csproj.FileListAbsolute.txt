@@ -142,3 +142,12 @@
 /mnt/data/WorkoutRag/obj/Debug/net10.0/staticwebassets.build.endpoints.json
 /mnt/data/WorkoutRag/obj/Debug/net10.0/swae.build.ex.cache
 /mnt/data/WorkoutRag/bin/Debug/net10.0/Postman/WorkoutRag_Collection.json
+/mnt/data/WorkoutRag/bin/Debug/net10.0/BCrypt-Net-Next.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
+/mnt/data/WorkoutRag/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll

@@ -36,6 +36,7 @@ public class OllamaService
     // Generate workout plan using LLM
     public async Task<string> GenerateWorkoutPlanAsync(
         string userGoal,
+        string equipment,
         List<WorkoutRag.Models.Exercise> exercises,
         User user
     )
@@ -56,7 +57,7 @@ public class OllamaService
             - Weight: {user.WeightKg?.ToString() ?? "Unknown"} kg
             - Current Athletic Level: {user.AthleticLevel}
             - Primary Session Goal: '{userGoal}'
-            - Available Equipment: '{request.Equipment}'
+            - Available Equipment: '{equipment}'
 
             CLINICAL CONSTRAINTS & BIOMECHANICAL NEEDS:
             You MUST obey the following directives based on the user's occupational and physical assessment. Treat [RED FLAG] tags as absolute physical boundaries.

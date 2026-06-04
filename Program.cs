@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using WorkoutRag.Data;
 using WorkoutRag.Repositories;
 using WorkoutRag.Services;
@@ -38,6 +41,24 @@ builder.Services.AddScoped<WorkoutRetrievalService>();
 builder.Services.AddScoped<OllamaService>();
 builder.Services.AddHttpClient<OllamaService>();
 
+builder
+    .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+            ),
+        };
+    });
+
 // 3. Add Controllers
 builder.Services.AddControllers();
 
@@ -45,6 +66,9 @@ var app = builder.Build();
 
 //Use CORS
 app.UseCors("AllowReactApp");
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 // 4. Migrate Database
 using (var scope = app.Services.CreateScope())
