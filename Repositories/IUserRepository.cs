@@ -12,4 +12,5 @@ public interface IUserRepository : IRepository<User>
 
     // We need this specific method so EF Core knows to load the [Owned] Lifestyle profile
     Task<User?> GetByIdWithProfileAsync(Guid id);
+    Task<User?> GetByUsernameOrEmailAsync(string username, string email);
 }

@@ -40,6 +40,7 @@ builder.Services.AddHttpClient<WorkoutRetrievalService>();
 builder.Services.AddScoped<WorkoutRetrievalService>();
 builder.Services.AddScoped<OllamaService>();
 builder.Services.AddHttpClient<OllamaService>();
+builder.Services.AddScoped<UserService>();
 
 builder
     .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

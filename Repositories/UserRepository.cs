@@ -30,4 +30,11 @@ public class UserRepository : Repository<User>, IUserRepository
             .Users.Include(u => u.LifestyleProfile) // This pulls in the flat Owned Entities!
             .FirstOrDefaultAsync(u => u.Id == id);
     }
+
+    public async Task<User?> GetByUsernameOrEmailAsync(string username, string email)
+    {
+        return await _context.Users.FirstOrDefaultAsync(u =>
+            u.Username == username || u.Email == email
+        );
+    }
 }
