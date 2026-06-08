@@ -44,9 +44,16 @@ public class UserService
 
     public async Task<User?> CheckLoginAsync(LoginRequest request)
     {
-        var user = await _userRepository.GetByUsernameOrEmailAsync(request.Username, request.Email);
+        var user = await _userRepository.GetByUsernameOrEmailAsync(
+            request.Username,
+            request.Username
+        );
 
-        if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        if (
+            user == null
+            || string.IsNullOrEmpty(user.PasswordHash)
+            || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash)
+        )
         {
             return null; // Invalid credentials
         }
