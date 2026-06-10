@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
 using WorkoutRag.Models;
+using WorkoutRag.DTO;
 
 namespace WorkoutRag.Services;
 
@@ -11,6 +12,7 @@ public class OllamaService
 {
     private readonly HttpClient _httpClient;
     private readonly IConfiguration _configuration;
+  
 
     public OllamaService(HttpClient httpClient, IConfiguration configuration)
     {
@@ -42,6 +44,9 @@ public class OllamaService
     )
     {
         var exerciseList = string.Join("\n", exercises.Select(e => $"- {e.Name}: {e.Description}"));
+
+        // var userGoal = request.Prompt;
+        // var equipment = request.Equipment;
 
         var clinicalConstraints =
             user.ComputedBiomechanicalNeeds != null && user.ComputedBiomechanicalNeeds.Any()

@@ -122,4 +122,70 @@ public class UserService
 
         return user.ComputedBiomechanicalNeeds;
     }
+
+    public async Task<UserProfileResponse> GetUserProfileAsync(Guid userId)
+    {
+        var user = await _userRepository.GetByIdWithProfileAsync(userId);
+        if (user == null)
+            throw new Exception("User not found.");
+
+        UserLifestyleProfileResponse? lifestyleProfileResponse = null;
+
+        if (user.LifestyleProfile != null)
+        {
+            lifestyleProfileResponse = new UserLifestyleProfileResponse
+            {
+                Id = user.LifestyleProfile.Id,
+                UserId = user.LifestyleProfile.UserId,
+                Occupation = user.LifestyleProfile.Occupation,
+                Movement = user.LifestyleProfile.Movement,
+                Stressors = user.LifestyleProfile.Stressors,
+                Recovery = user.LifestyleProfile.Recovery,
+                Habits = user.LifestyleProfile.Habits,
+                Pain = user.LifestyleProfile.Pain,
+            };
+        }
+
+        return new UserProfileResponse
+        {
+            Id = user.Id,
+            Username = user.Username,
+            Email = user.Email,
+            Age = user.Age,
+            WeightKg = user.WeightKg,
+            HeightCm = user.HeightCm,
+            AthleticLevel = user.AthleticLevel,
+            LifestyleProfile = lifestyleProfileResponse,
+            ComputedBiomechanicalNeeds = user.ComputedBiomechanicalNeeds,
+            CreatedAt = user.CreatedAt,
+        };
+    }
+
+    public async Task<UserProfileResponse> UpdateUserProfileAsync(
+        Guid userId,
+        UpdateUserProfileRequest request
+    )
+    {
+        var user = await _userRepository.GetByIdAsync(userId);
+        if (user == null)
+            throw new Exception("User not found.");
+
+        // Update only provided fields
+        if (request.Age.HasValue)
+            user.Age = request.Age;
+
+        if (request.WeightKg.HasValue)
+            user.WeightKg = request.WeightKg;
+
+        if (request.HeightCm.HasValue)
+            user.HeightCm = request.HeightCm;
+
+        await _userRepository.UpdateAsync(user);
+        await _userRepository.SaveChangesAsync();
+
+        // Return updated profile
+        return await GetUserProfileAsync(userId);
+    }
+
+    
 }

@@ -1,0 +1,363 @@
+[
+  {
+    "Name": "Push-Up",
+    "Description": "A classic bodyweight movement targeting the chest, shoulders, and triceps. Excellent for beginners building upper body strength and core stability.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Push",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Chest", "Triceps", "Front Delts"]
+  },
+  {
+    "Name": "Box Jump",
+    "Description": "A plyometric exercise focused on lower-body explosiveness and fast-twitch muscle fibers. Highly recommended for sports requiring vertical leaps, such as basketball.",
+    "Equipment": "Box",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Squat",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Quads", "Glutes", "Calves"]
+  },
+  {
+    "Name": "Depth Jump",
+    "Description": "A high-intensity plyometric shock-training exercise starting from a box step-off. Promotes supreme eccentric deceleration capacity, reactive strength index (RSI), and rapid stretch-shortening cycle (SSC) activation. Vital for basketball players to maximize vertical leap height, improve landing mechanics, and boost explosive block-to-rim transitions.",
+    "Equipment": "Box",
+    "DifficultyLevel": "Advanced",
+    "MovementPattern": "Squat",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Quads", "Calves", "Glutes", "Plantar Flexors"]
+  },
+  {
+    "Name": "Lateral Bound (Heiden Jump)",
+    "Description": "A unilateral plyometric jump moving sideways. Focuses heavily on side-to-side force production, lateral ankle stability, and hip abduction strength. Directly transfers to a basketball player's cross-over dribble speed, defensive slide reactivity, and perimeter change-of-direction mechanics.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Lunge",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Gluteus Medius", "Adductors", "Quads", "Peroneals"]
+  },
+  {
+    "Name": "Single-Leg Romanian Deadlift",
+    "Description": "A unilateral hip-hinge pattern demanding active stabilization. Builds robust hamstring and glute isolation while forcing the foot and ankle complex to micro-adjust. Crucial for runners seeking to eliminate left-to-right gait imbalances, preserve pelvic level symmetry, and maximize running stride power.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Hinge",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Hamstrings", "Glutes", "Core", "Ankle Stabilizers"]
+  },
+  {
+    "Name": "Seated Soleus Raise",
+    "Description": "An isolation calf raise performed with bent knees to isolate the deep soleus muscle underneath the gastrocnemius. The soleus absorbs up to 8x bodyweight during long-distance running. Essential for runners to prevent Achilles tendinopathy, handle high weekly running volumes, and improve propulsion stiffness.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Soleus", "Achilles Tendon"]
+  },
+  {
+    "Name": "A-Skip",
+    "Description": "A rhythmic, dynamic track drill emphasizing posture, high-knee hip flexion, and active downward foot striking. Conditions a runner's central nervous system for rapid ground contact time, efficient sprint mechanics, knee drive tracking, and elite force application during the acceleration phase.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Core",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Hip Flexors", "Calves", "Core"]
+  },
+  {
+    "Name": "Trap Bar Deadlift",
+    "Description": "A hybrid hinge-squat compound lift that places the load inside the user's center of gravity, significantly lowering lumbar spine stress. Produces peak mechanical power outputs, making it the premier choice for basketball players building rate of force development (RFD) for court sprinting and rebounding.",
+    "Equipment": "Barbell",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Hinge",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Glutes", "Quads", "Hamstrings", "Erectors", "Grip"]
+  },
+  {
+    "Name": "Tibialis Raise",
+    "Description": "An isolation movement that strengthens the tibialis anterior on the front of the shin. Acts as the primary brake and shock absorber for runners and basketball players. Directly prevents shin splints (medial tibial stress syndrome) and mitigates force transferring up to the knee joint.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Tibialis Anterior"]
+  },
+  {
+    "Name": "Medicine Ball Rotational Toss",
+    "Description": "An explosive athletic core drill focusing on transferring force from the feet, through the hips, and out through the upper body rotationally. Crucial for basketball players to develop passing velocity, physical driving strength, and high-speed directional trunk control.",
+    "Equipment": "Medicine Ball",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Core",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Internal Obliques", "External Obliques", "Core", "Shoulders"]
+  },
+  {
+    "Name": "Nordic Hamstring Curl",
+    "Description": "A highly intense eccentric lower body pull variant where the ankles are locked down and the torso falls toward the floor under control. Clinically proven to lengthen hamstring muscle fascicles, drastically decreasing hamstring tear or strain risks during max-effort sprinting and high-volume running.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Advanced",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Hamstrings"]
+  },
+  {
+    "Name": "Barbell Back Squat",
+    "Description": "The fundamental bilateral lower-body movement pattern. Heavily loads the absolute strength capacities of the quadriceps and glutes, forcing deep core stabilization, heavy systemic stress, and compound lower body mass accumulation.",
+    "Equipment": "Barbell",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Squat",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Quadriceps", "Glutes", "Lower Back", "Hamstrings"]
+  },
+  {
+    "Name": "Pull-Up",
+    "Description": "A gold-standard vertical pulling movement performed on an overhead static bar. Develops extreme upper body pull capacity, widening the back architecture, increasing grip endurance, and thickening the biceps.",
+    "Equipment": "Pull-up Bar",
+    "DifficultyLevel": "Advanced",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Lats", "Biceps", "Rhomboids", "Rear Delts"]
+  },
+  {
+    "Name": "Dumbbell Single-Arm Row",
+    "Description": "A horizontal unilateral upper body pulling movement. Isolates the latissimus dorsi and middle back structures without loading the lower back excessively. Corrects left-to-right arm and back strength imbalances.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Lats", "Rhomboids", "Biceps", "Brachialis"]
+  },
+  {
+    "Name": "Dumbbell Overhead Press",
+    "Description": "A strict vertical shoulder press executed from a standing posture. Builds immense overhead mechanical stability, targets the anterior and lateral deltoids, and demands complete abdominal and glute bracing to protect the spine.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Push",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Shoulders", "Triceps", "Upper Chest", "Core"]
+  },
+  {
+    "Name": "Forearm Plank",
+    "Description": "An isometric static hold that builds foundational deep core stability and anti-extension trunk endurance. Keeps the spine completely neutral, making it perfect for rehabilitation or preventing lower back flareups.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isometric",
+    "MusclesTargeted": ["Rectus Abdominis", "Transverse Abdominis", "Obliques"]
+  },
+  {
+    "Name": "Dumbbell Bulgarian Split Squat",
+    "Description": "A brutal single-leg squat alternative with the rear leg resting on a bench or elevated platform. Subjects the front quad and glute complex to intense mechanical tension, forcing dramatic inner-thigh stability and tracking improvements.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Advanced",
+    "MovementPattern": "Lunge",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Quadriceps", "Glutes", "Adductors"]
+  },
+  {
+    "Name": "Farmer's Walk",
+    "Description": "A heavy loaded carry exercise that challenges absolute structural stability, postural positioning, trap thickness, and grip crushing capacity. Translates instantly to overall physical durability under intense athletic conditions.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Core",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Forearms", "Trapezius", "Upper Back", "Core Stabilizers"]
+  },
+  {
+    "Name": "Ankle Pogo Jumps",
+    "Description": "A low-amplitude, high-frequency vertical jump emphasizing minimal knee flexion and maximum ankle stiffness. Conditions the Achilles tendon for explosive elasticity and decreases ground contact time. Highly effective for basketball players looking to improve their secondary bounce, tip-ins, and rapid deceleration reactivity.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Squat",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Calves", "Achilles Tendon", "Plantar Flexors"]
+  },
+  {
+    "Name": "Copenhagen Plank",
+    "Description": "A brutal unilateral adductor bridge performed with one knee or foot resting on a bench. Strengthens the groin and internal hip stabilizers. Crucial for basketball players and runners to bulletproof the pelvic ring and prevent groin strains during high-speed cutting, crossover steps, and lateral slides.",
+    "Equipment": "Bench",
+    "DifficultyLevel": "Advanced",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isometric",
+    "MusclesTargeted": ["Adductors", "Internal Obliques", "Groin", "Core"]
+  },
+  {
+    "Name": "Banded Monster Walks",
+    "Description": "A lateral and forward walking drill utilizing a resistance band around the knees or ankles. Isolatates the gluteus medius and deep hip abductors. Essential for long-distance runners to maintain pelvic stability, prevent internal knee collapsing (valgus), and eliminate IT band syndrome flare-ups.",
+    "Equipment": "Resistance Band",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Lunge",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Gluteus Medius", "Tensor Fasciae Latae", "Hip Abductors"]
+  },
+  {
+    "Name": "Single-Leg Glute Bridge",
+    "Description": "A unilateral floor bridge isolating hip extension tracking. Targets the glutes and hamstrings without loading the lumbar spine. Helps runners build symmetrical horizontal propulsion power during the terminal stance phase of the running gait.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Hinge",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Glutes", "Hamstrings", "Core"]
+  },
+  {
+    "Name": "Peterson Step-Down",
+    "Description": "A terminal knee extension drop variant focusing on unilateral quad isolation and patellar tendon conditioning. Strengthens the vastus medialis oblique (VMO). Highly recommended for runners to eliminate runner's knee symptoms and maintain flawless knee tracking during repetitive downhill running segments.",
+    "Equipment": "Box",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Squat",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Vastus Medialis", "Patellar Tendon", "Calves"]
+  },
+  {
+    "Name": "Medicine Ball Slam",
+    "Description": "An explosive overhead throwing movement focusing on rapid triple flexion of the hips, knees, and core. Generates extreme upper body and anterior core power output. Translates directly to a basketball player's vertical pulling power, aggressive rebounding, and high-velocity defensive adjustments.",
+    "Equipment": "Medicine Ball",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Push",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Rectus Abdominis", "Lats", "Shoulders", "Triceps"]
+  },
+  {
+    "Name": "Barbell Bench Press",
+    "Description": "The classic bilateral horizontal pressing exercise. Places massive mechanical tension on the pectoral girdle, anterior deltoids, and triceps brachii. Ideal for overall upper body pressing strength, chest muscle mass hypertrophy, and building functional structural pushing capacity.",
+    "Equipment": "Barbell",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Push",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Chest", "Triceps", "Front Delts"]
+  },
+  {
+    "Name": "Incline Dumbbell Bench Press",
+    "Description": "An upper body pressing variant performed on a 30 to 45-degree angle incline bench. Shifting the angle places higher emphasis on the clavicular head of the pectoralis major and the front shoulders while reducing excessive rotation strain on the glenohumeral joint.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Push",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Upper Chest", "Front Delts", "Triceps"]
+  },
+  {
+    "Name": "Lat Pulldown",
+    "Description": "A vertical upper body pulling machine exercise that isolates the mid-and-upper back structures. Perfect for individuals unable to complete standard pull-ups, allowing precise volume overload for widening the back and building strong scapular depressors.",
+    "Equipment": "Cable Machine",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Lats", "Teres Major", "Biceps", "Brachialis"]
+  },
+  {
+    "Name": "Cable Face Pulls",
+    "Description": "A high-to-low horizontal pull targeting upper back retraction and external shoulder rotation. Reverses structural damage from chronic office slouching, strengthens the rotator cuff, and balances heavy chest pressing routines.",
+    "Equipment": "Cable Machine",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Rear Delts", "Trapezius", "Rhomboids", "Rotator Cuff"]
+  },
+  {
+    "Name": "Barbell Overhead Press",
+    "Description": "A strict vertical military press performed standing. Requires severe full-body tension from the heels to the hands, targeting absolute shoulder strength while pushing anterior core bracing capabilities to the limit.",
+    "Equipment": "Barbell",
+    "DifficultyLevel": "Advanced",
+    "MovementPattern": "Push",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Shoulders", "Triceps", "Upper Back", "Core"]
+  },
+  {
+    "Name": "Lying Leg Curl",
+    "Description": "An isolated knee-flexion machine movement targeting the hamstrings. By keeping the hips flat, it takes out lower back assistance entirely, allowing clean mechanical damage to build hamstring thickness and protect against ACL injuries.",
+    "Equipment": "Machine",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Hamstrings", "Calves"]
+  },
+  {
+    "Name": "Dumbbell Hammer Curl",
+    "Description": "A neutral-grip arm curling movement that takes stress off the wrists and redirects load onto the brachioradialis and brachialis muscles. Adds immense thickness to the forearms and lower arm segments, upgrading grip power and sports durability.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Brachioradialis", "Biceps", "Forearms"]
+  },
+  {
+    "Name": "Tricep Overhead Extension",
+    "Description": "An isolation tricep movement putting the long head of the tricep into a deep, loaded stretch position. Essential for fully rounding out arm symmetry, maximizing pushing locking capacity, and improving elbow tendon thickness.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Push",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Triceps"]
+  },
+  {
+    "Name": "Dead Bug",
+    "Description": "A controlled anti-extension supine core exercise that forces pelvic stabilization and rhythmic arm/leg coordination while maintaining a flat lower back posture against the floor. Excellent for structural balance, posture correction, and abdominal control.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isometric",
+    "MusclesTargeted": ["Transverse Abdominis", "Rectus Abdominis", "Obliques"]
+  },
+  {
+    "Name": "Single-Leg Broad Jump",
+    "Description": "A high-level unilateral horizontal jump requiring immense triple extension power followed by controlled, safe deceleration mechanics upon landing. Translates directly to a basketball player's driving distance and a runner's explosive stride length.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Advanced",
+    "MovementPattern": "Hinge",
+    "ExerciseType": "Plyometric",
+    "MusclesTargeted": ["Glutes", "Hamstrings", "Quads", "Calves"]
+  },
+  {
+    "Name": "Calf Raise",
+    "Description": "A classic standing straight-knee extension targeting the gastrocnemius. Rebuilds ankle push-off force capacity, structural tendon spring metrics, and lowers the threat index for plantar fasciitis in high-impact court and endurance environments.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Gastrocnemius", "Soleus"]
+  },
+  {
+    "Name": "Dumbbell Step-Up",
+    "Description": "A loaded unilateral step movement requiring high vertical force projection out of a deep hip and knee flexion profile. Rebalances single-leg deficits and conditions the quadriceps to withstand immense jumping loads without knee tracking breakdown.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Squat",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Quadriceps", "Glutes", "Hamstrings"]
+  },
+  {
+    "Name": "Pallof Press",
+    "Description": "An anti-rotational static core isometric exercise using lateral cable tension. Forces the core to resist sideways twisting forces, conditioning the obliques to securely anchor the spine during high-torque sports maneuvers.",
+    "Equipment": "Cable Machine",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isometric",
+    "MusclesTargeted": ["Obliques", "Transverse Abdominis", "Glutes"]
+  },
+  {
+    "Name": "Dumbbell Shrug",
+    "Description": "An isolation vertical elevation movement targeting the upper trapezius network. Enhances neck stabilization parameters, upper back structural armor padding, and prevents postural rounding from heavy weight distributions.",
+    "Equipment": "Dumbbells",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Pull",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Trapezius", "Levator Scapulae"]
+  },
+  {
+    "Name": "Leg Press",
+    "Description": "A closed-kinetic chain machine pressing layout that unloads the vertebral column completely while delivering isolated mechanical tension to the lower extremities. Allows high-volume hypertrophy execution for quad and glute structures.",
+    "Equipment": "Machine",
+    "DifficultyLevel": "Beginner",
+    "MovementPattern": "Squat",
+    "ExerciseType": "Compound",
+    "MusclesTargeted": ["Quadriceps", "Glutes", "Hamstrings"]
+  },
+  {
+    "Name": "Single-Leg Calf Drop",
+    "Description": "An eccentric-focused stretching and loading drill executed off the edge of a step. Lengthens the calf complex under mechanical tension, boosting elastic deceleration capacities and fortifying runners against sudden Achilles strains.",
+    "Equipment": "Bodyweight",
+    "DifficultyLevel": "Intermediate",
+    "MovementPattern": "Core",
+    "ExerciseType": "Isolation",
+    "MusclesTargeted": ["Calves", "Achilles Tendon", "Soleus"]
+  }
+
+]

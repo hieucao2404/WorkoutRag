@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Pgvector;
@@ -16,49 +17,71 @@ public static class DatabaseSeeder
 
         await context.Database.MigrateAsync();
 
-        //If we already have exercises, skip seeding
+        // If data exists, bail out early to keep boot fast
         if (await context.Exercises.AnyAsync())
             return;
 
+        // Resolve path to our dedicated SeedData JSON file
+        var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        var jsonFilePath = Path.Combine(baseDirectory, "Data", "exercises.json");
+
+        // Fallback fallback path adjustment for development runtimes (dotnet watch)
+        if (!File.Exists(jsonFilePath))
+        {
+            jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "exercises.json");
+        }
+
+        if (!File.Exists(jsonFilePath))
+        {
+            Console.WriteLine($"[ERROR] Seed data blueprint missing at: {jsonFilePath}");
+            return;
+        }
+
+        Console.WriteLine("Reading bulk exercise data from JSON library...");
+        var rawJson = await File.ReadAllTextAsync(jsonFilePath);
+
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var exercisesToSeed = JsonSerializer.Deserialize<List<Exercise>>(rawJson, options);
+
+        if (exercisesToSeed == null || !exercisesToSeed.Any())
+        {
+            Console.WriteLine("Seed JSON library parsed empty. Skipping execution.");
+            return;
+        }
+
         Console.WriteLine(
-            "Database is empty. Generating AI vectors for Seed Data ... This will take a moment"
+            $"Synchronizing {exercisesToSeed.Count} athletic movements with local AI Engine..."
         );
 
-        var exercisesToSeed = new List<Exercise>
-        {
-            new Exercise
-            {
-                Name = "Push-Up",
-                Description =
-                    "A classic bodyweight movement targeting the chest, shoulders, and triceps. Excellent for beginners building upper body strength.",
-                Equipment = "Bodyweight",
-                DifficultyLevel = "Beginner",
-                MovementPattern = "Push",
-                ExerciseType = "Compound",
-                MusclesTargeted = new List<string> { "Chest", "Triceps", "Front Delts" },
-            },
-            new Exercise
-            {
-                Name = "Box Jump",
-                Description =
-                    "A plyometric exercise focused on lower-body explosiveness and fast-twitch muscle fibers. Highly recommended for sports requiring vertical leaps, such as basketball.",
-                Equipment = "Box",
-                DifficultyLevel = "Intermediate",
-                MovementPattern = "Squat",
-                ExerciseType = "Plyometric",
-                MusclesTargeted = new List<string> { "Quads", "Glutes", "Calves" },
-            },
-        };
-
-        // Loop through each exercise, ask Ollama for the math, and save it
+        int processedIndex = 1;
         foreach (var exercise in exercisesToSeed)
         {
-            var vectorArray = await ollamaService.GetEmbeddingAsync(exercise.Description);
-            exercise.Embedding = new Vector(vectorArray);
-            context.Exercises.Add(exercise);
+            Console.WriteLine(
+                $"[{processedIndex}/{exercisesToSeed.Count}] Embedding multi-sport semantic vectors: {exercise.Name}"
+            );
+
+            try
+            {
+                // Concat Name and Description for enhanced vector accuracy
+                var semanticInput = $"{exercise.Name}: {exercise.Description}";
+                var vectorArray = await ollamaService.GetEmbeddingAsync(semanticInput);
+
+                exercise.Embedding = new Vector(vectorArray);
+                context.Exercises.Add(exercise);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(
+                    $"[CRITICAL] Embedding generation failed for '{exercise.Name}': {ex.Message}"
+                );
+                // Continue to next exercise so one failure doesn't ruin the entire batch
+                continue;
+            }
+
+            processedIndex++;
         }
 
         await context.SaveChangesAsync();
-        Console.WriteLine("Seed data and vectors successfully saved to PostgreSQL!");
+        Console.WriteLine("Successfully initialized sport-specific vector database layout!");
     }
 }

@@ -22,7 +22,7 @@ public class WorkoutRetrievalService
     public async Task<List<Exercise>> SearchExercisesAsync(
         string userPrompt,
         string equipmentFilter,
-        int limit = 3
+        int limit = 6
     )
     {
         var userVectorArray = await _ollamaService.GetEmbeddingAsync(userPrompt);

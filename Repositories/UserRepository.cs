@@ -37,4 +37,12 @@ public class UserRepository : Repository<User>, IUserRepository
             u.Username == username || u.Email == email
         );
     }
+
+    // public async Task<List<WorkoutHistory>> GetWorkoutHistoryAsync(Guid userId)
+    // {
+    //     return await _context
+    //         .WorkoutHistories.Where(h => h.UserId == userId)
+    //         .OrderByDescending(h => h.) // Puts the newest workouts at the top of the dashboard
+    //         .ToListAsync();
+    // }
 }

@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutRag.DTO;
@@ -15,16 +16,19 @@ public class WorkoutController : ControllerBase
     private readonly WorkoutRetrievalService _retrievalService;
     private readonly OllamaService _ollamaService;
     private readonly IUserRepository _userRepository;
+    private readonly WorkoutService _workoutService;
 
     public WorkoutController(
         WorkoutRetrievalService retrievalService,
         OllamaService ollamaService,
-        IUserRepository userRepository
+        IUserRepository userRepository,
+        WorkoutService workoutService
     )
     {
         _retrievalService = retrievalService;
         _ollamaService = ollamaService;
         _userRepository = userRepository;
+        _workoutService = workoutService;
     }
 
     [HttpPost("generate")]
@@ -40,7 +44,7 @@ public class WorkoutController : ControllerBase
 
         try
         {
-            // 1. Extract the UserId directly from their secure JWT Token
+            // Extract UserId from JWT token (not from request body)
             var userIdClaim = User.FindFirst(
                 System.Security.Claims.ClaimTypes.NameIdentifier
             )?.Value;
@@ -48,33 +52,33 @@ public class WorkoutController : ControllerBase
                 return Unauthorized("Invalid token.");
 
             var userId = Guid.Parse(userIdClaim);
-            //1. Fetch the user to get their Biomechanical needs
-            var user = await _userRepository.GetByIdAsync(userId);
-            if (user == null)
-                return NotFound("User not found.");
-            // 1. RETRIEVAL: Vector search for matching exercises
-            var exercises = await _retrievalService.SearchExercisesAsync(
-                request.Prompt,
-                request.Equipment
-            );
 
-            if (!exercises.Any())
-                return NotFound("No exercises found matching your equipment.");
+            // Pass to service
+            var workoutJson = await _workoutService.GenerateAndSaveWorkoutAsync(userId, request);
 
-            // 2. GENERATION: Send results to LLM for workout plan
-            var workoutJson = await _ollamaService.GenerateWorkoutPlanAsync(
-                request.Prompt, // 1. The userGoal
-                request.Equipment, // 2. The new equipment string we just added
-                exercises, // 3. The vector search results
-                user // 4. The user object (which the error says is missing!)
-            );
-
-            // 3. Return formatted JSON
             return Content(workoutJson, "application/json");
         }
         catch (Exception ex)
         {
             return StatusCode(500, $"An error occurred: {ex.Message}");
+        }
+    }
+
+    // NEW ENDPOINT: Fetch logs directly for the Frontend Dashboard
+    [HttpGet("history")]
+    public async Task<IActionResult> GetHistory()
+    {
+        try
+        {
+            var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            var history = await _workoutService.GetUserWorkoutHistoryAsync(userId);
+
+            return Ok(history);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
         }
     }
 }

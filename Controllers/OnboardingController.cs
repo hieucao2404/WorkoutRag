@@ -82,11 +82,21 @@ public class OnboardingController : ControllerBase
     {
         try
         {
-            //We need to fetch the user and include their existing LifestyleProfie
-            var user = await _userRepository.GetByIdAsync(request.UserId);
+            // Extract UserId from JWT token instead of request
+            var userIdClaim = User.FindFirst(
+                System.Security.Claims.ClaimTypes.NameIdentifier
+            )?.Value;
+            if (userIdClaim == null)
+                return Unauthorized("Invalid token.");
+
+            var userId = Guid.Parse(userIdClaim);
+
+            // Fetch the user and include their existing LifestyleProfile
+            var user = await _userRepository.GetByIdAsync(userId);
             if (user == null)
                 return NotFound("User not found.");
-            // Map the DTO to the Owned Entitues
+
+            // Map the DTO to the Owned Entities
             user.LifestyleProfile = new UserLifestyleProfile
             {
                 UserId = user.Id,
@@ -98,29 +108,14 @@ public class OnboardingController : ControllerBase
                 Pain = request.Pain,
             };
 
-            //Runt the Biomechanical analyzer
-            var lifestyleNeeds = BiomechanicalAnalyzer.CalculateNeeds(user.LifestyleProfile);
-
-            //Append these new needs to the existing ones
-            user.ComputedBiomechanicalNeeds.AddRange(lifestyleNeeds);
-
-            //Remove duplicates just incase
-            user.ComputedBiomechanicalNeeds = user.ComputedBiomechanicalNeeds.Distinct().ToList();
-
             await _userRepository.UpdateAsync(user);
             await _userRepository.SaveChangesAsync();
 
-            return Ok(
-                new
-                {
-                    message = "Lifestyle profile saved.",
-                    computedNeeds = user.ComputedBiomechanicalNeeds,
-                }
-            );
+            return Ok(new { message = "Lifestyle profile updated" });
         }
         catch (Exception ex)
         {
-            return StatusCode(500, $"An error occured: {ex.Message}");
+            return BadRequest(ex.Message);
         }
     }
 }
