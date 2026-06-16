@@ -1,17 +1,20 @@
 <mxfile host="Electron" pages="4">
   <diagram name="Usecase diagram" id="JcBN2eNcoWUq_Yx_f7VF">
-    <mxGraphModel dx="978" dy="628" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1490" dy="1044" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="tavBsJY6sWqvG9WaXDno-23" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
-          <mxGeometry height="510" width="510" x="150" y="90" as="geometry" />
+          <mxGeometry height="690" width="690" x="105" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fn9Wc1v1Q0SYn-CwPZdd-3" edge="1" parent="1" source="tavBsJY6sWqvG9WaXDno-3" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" target="fn9Wc1v1Q0SYn-CwPZdd-1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="User&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="30" x="60" y="290" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Define Workout Constraints" vertex="1">
-          <mxGeometry height="80" width="120" x="230" y="210" as="geometry" />
+          <mxGeometry height="80" width="120" x="220" y="120" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-9" edge="1" parent="1" source="tavBsJY6sWqvG9WaXDno-3" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="tavBsJY6sWqvG9WaXDno-8" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -20,25 +23,25 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-10" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Admin" vertex="1">
-          <mxGeometry height="60" width="30" x="720" y="190" as="geometry" />
+          <mxGeometry height="60" width="30" x="1020" y="200" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-11" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Ollama" vertex="1">
-          <mxGeometry height="60" width="30" x="710" y="400" as="geometry" />
+          <mxGeometry height="60" width="30" x="940" y="405" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Seed system" vertex="1">
-          <mxGeometry height="80" width="120" x="380" y="140" as="geometry" />
+          <mxGeometry height="80" width="120" x="580" y="150" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-13" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Retrieve Contextual Data" vertex="1">
-          <mxGeometry height="80" width="120" x="390" y="510" as="geometry" />
+          <mxGeometry height="80" width="120" x="580" y="550" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Generate Structured Routine" vertex="1">
-          <mxGeometry height="80" width="120" x="440" y="260" as="geometry" />
+          <mxGeometry height="80" width="120" x="580" y="280" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="View Workout Plan" vertex="1">
-          <mxGeometry height="80" width="120" x="220" y="350" as="geometry" />
+          <mxGeometry height="80" width="120" x="220" y="230" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Vectorize User Query" vertex="1">
-          <mxGeometry height="80" width="120" x="350" y="390" as="geometry" />
+          <mxGeometry height="80" width="120" x="550" y="395" as="geometry" />
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-17" edge="1" parent="1" source="tavBsJY6sWqvG9WaXDno-11" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" target="tavBsJY6sWqvG9WaXDno-14" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -68,7 +71,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="tavBsJY6sWqvG9WaXDno-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="WorkoutRag" vertex="1">
-          <mxGeometry height="30" width="60" x="380" y="60" as="geometry" />
+          <mxGeometry height="30" width="60" x="425" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fn9Wc1v1Q0SYn-CwPZdd-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="View Workout Plan" vertex="1">
+          <mxGeometry height="80" width="120" x="210" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="fn9Wc1v1Q0SYn-CwPZdd-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Login" vertex="1">
+          <mxGeometry height="80" width="120" x="210" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="fn9Wc1v1Q0SYn-CwPZdd-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Login" vertex="1">
+          <mxGeometry height="80" width="120" x="150" y="550" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

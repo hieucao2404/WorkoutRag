@@ -31,3 +31,4 @@ public class WorkoutRetrievalService
         return await _exerciseRepository.SearchByVectorAsync(userVector, equipmentFilter, limit);
     }
 }
+    

@@ -9,13 +9,16 @@ namespace WorkoutRag.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class OnboardingController : ControllerBase
 {
     private readonly IRepository<User> _userRepository;
+    private readonly UserService _userService;
 
-    public OnboardingController(IRepository<User> userRepository)
+    public OnboardingController(IRepository<User> userRepository, UserService userService)
     {
         _userRepository = userRepository;
+        _userService = userService;
     }
 
     [HttpPost("benchmark")]
@@ -91,27 +94,16 @@ public class OnboardingController : ControllerBase
 
             var userId = Guid.Parse(userIdClaim);
 
-            // Fetch the user and include their existing LifestyleProfile
-            var user = await _userRepository.GetByIdAsync(userId);
-            if (user == null)
-                return NotFound("User not found.");
+            // Let the UserService handle the EF Core mapping and the Biomechanical Math!
+            var computedNeeds = await _userService.UpdateLifestyleProfileAsync(userId, request);
 
-            // Map the DTO to the Owned Entities
-            user.LifestyleProfile = new UserLifestyleProfile
-            {
-                UserId = user.Id,
-                Occupation = request.Occupation,
-                Movement = request.Movement,
-                Stressors = request.Stressors,
-                Recovery = request.Recovery,
-                Habits = request.Habits,
-                Pain = request.Pain,
-            };
-
-            await _userRepository.UpdateAsync(user);
-            await _userRepository.SaveChangesAsync();
-
-            return Ok(new { message = "Lifestyle profile updated" });
+            return Ok(
+                new
+                {
+                    message = "Lifestyle profile updated",
+                    biomechanicalDirectives = computedNeeds,
+                }
+            );
         }
         catch (Exception ex)
         {

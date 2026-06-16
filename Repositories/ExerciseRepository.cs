@@ -52,7 +52,6 @@ public class ExerciseRepository : Repository<Exercise>, IExerciseRepository
 
     public async Task<List<Exercise>> GetByMuscleAsync(string muscle)
     {
-        // 5. Fixed typo: MusclesTargeted
         return await _context
             .Exercises.Where(e => e.MusclesTargeted.Contains(muscle))
             .ToListAsync();
