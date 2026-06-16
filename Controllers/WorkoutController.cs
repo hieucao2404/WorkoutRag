@@ -54,13 +54,59 @@ public class WorkoutController : ControllerBase
             var userId = Guid.Parse(userIdClaim);
 
             // Pass to service
-            var workoutJson = await _workoutService.GenerateAndSaveWorkoutAsync(userId, request);
+            var workoutJson = await _workoutService.GenerateWorkoutAsync(userId, request);
 
             return Content(workoutJson, "application/json");
         }
         catch (Exception ex)
         {
             return StatusCode(500, $"An error occurred: {ex.Message}");
+        }
+    }
+
+    [HttpPost("save")]
+    public async Task<IActionResult> SaveWorkout([FromBody] SaveWorkoutRequest request)
+    {
+        try
+        {
+            var userId = Guid.Parse(
+                User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)!.Value
+            );
+            //Save to database
+            await _workoutService.SaveWorkoutAsync(
+                userId,
+                request.Prompt,
+                request.Equipment,
+                request.WorkoutJson
+            );
+            //Google sheet
+            using var httpClient = new HttpClient();
+            var parsedJson = System.Text.Json.JsonDocument.Parse(request.WorkoutJson);
+            var sheetPayload = new
+            {
+                workoutName = parsedJson.RootElement.GetProperty("workoutName").GetString(),
+                equipment = request.Equipment,
+                exercises = parsedJson.RootElement.GetProperty("exercises"),
+            };
+
+            // Replace with your Web App URL
+            var googleScriptUrl =
+                "https://script.google.com/macros/s/AKfycbyy-_H0J0ZQoi1G2Ky2XbIC-nJE5E8Q0K1DHp2oijCK1hSm2XSv9ewMVGmyUqWd31yO/exec";
+            // Capture the response instead of just awaiting it blindly
+            var response = await httpClient.PostAsJsonAsync(googleScriptUrl, sheetPayload);
+            var responseText = await response.Content.ReadAsStringAsync();
+
+            // Print it to your backend console so you can read it!
+            Console.WriteLine("==== GOOGLE SHEETS RESPONSE ====");
+            Console.WriteLine($"Status Code: {response.StatusCode}");
+            Console.WriteLine($"Body: {responseText}");
+            Console.WriteLine("================================");
+
+            return Ok(new { message = "Workout saved successfully" });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
         }
     }
 

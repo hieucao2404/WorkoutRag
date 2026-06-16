@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkoutRag")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37c71133cc475a2402069687b8dfcf9653ba0977")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea7dfbcf37ee0bc42e2904579d85163201e9eff4")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkoutRag")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkoutRag")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -29,7 +29,7 @@ public class WorkoutService
         _ollamaService = ollamaService;
     }
 
-    public async Task<string> GenerateAndSaveWorkoutAsync(Guid userId, WorkoutRequest request)
+    public async Task<string> GenerateWorkoutAsync(Guid userId, WorkoutRequest request)
     {
         // 1. Fetch user
         var user = await _userRepository.GetByIdWithProfileAsync(userId);
@@ -50,9 +50,7 @@ public class WorkoutService
             user
         );
 
-        // 4. Save to database
-        await SaveWorkoutAsync(userId, request.Prompt, request.Equipment, workoutJson);
-
+       
         return workoutJson;
     }
 
