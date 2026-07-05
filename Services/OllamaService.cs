@@ -12,7 +12,7 @@ public class OllamaService
 {
     private readonly HttpClient _httpClient;
     private readonly IConfiguration _configuration;
-  
+
 
     public OllamaService(HttpClient httpClient, IConfiguration configuration)
     {
@@ -130,4 +130,86 @@ public class OllamaService
         [JsonPropertyName("response")]
         public string Response { get; set; } = string.Empty;
     }
+
+    //Generate nutrion plan
+    public async Task<string> GenerateNutritionPlanAsync(string goal, User user, UserDiet userDiet)
+    {
+        var prompt = $@"You are an elite clinical sports nutritionist.
+            Design a highly optimized nutrition protocol.
+            
+            GOAL: '{goal}'
+            DIET TYPE: {userDiet.DietType}
+            ALLERGIES: {userDiet.Allergies}
+            MACRO PREFERENCE: {userDiet.MacroPreference}
+            
+            ATHLETE PROFILE: Age {user.Age}, Weight {user.WeightKg}kg
+        
+        STRICT RULE: you must output pure JSON perfectly matching this exact schema:
+        {{
+         ""dailyCalories"": Number,
+                ""proteinGrams"": Number,
+                ""carbsGrams"": Number,
+                ""fatGrams"": Number,
+                ""meals"": [
+                    {{ 
+                        ""mealName"": ""String (e.g., Breakfast)"", 
+                        ""foods"": [""String (e.g., 3 Whole Eggs)"", ""String (e.g., 50g Oats)""] 
+                    }}
+                ]
+        }}";
+
+        var requestPayload = new
+        {
+            model = "phi3:mini",
+            prompt = prompt,
+            stream = false,
+            format = "json",
+            // We give it 1500 words so it doesn't get cut off
+            options = new
+            {
+                temperature = 0.1,
+                num_predict = 1500
+            },
+        };
+
+        var content = new StringContent(
+            System.Text.Json.JsonSerializer.Serialize(requestPayload),
+            System.Text.Encoding.UTF8,
+            "application/json"
+        );
+
+        var response = await _httpClient.PostAsync("/api/generate", content);
+        response.EnsureSuccessStatusCode();
+
+        var jsonResponse = await response.Content.ReadAsStringAsync();
+        using var document = System.Text.Json.JsonDocument.Parse(jsonResponse);
+        return document.RootElement.GetProperty("response").GetString() ?? "{}";
+    }
+
+    public async Task<string> SendPromptAsync(string prompt)
+    {
+        var requestPayload = new
+        {
+            model = "phi3:mini",
+            prompt = prompt,
+            stream = false,
+            format = "json",
+            options = new { temperature = 0.1 }
+        };
+
+        var content = new StringContent(
+            System.Text.Json.JsonSerializer.Serialize(requestPayload),
+            System.Text.Encoding.UTF8,
+            "application/json"
+        );
+
+        var response = await _httpClient.PostAsync("/api/generate", content);
+        response.EnsureSuccessStatusCode();
+
+        var jsonResponse = await response.Content.ReadAsStringAsync();
+        using var document = System.Text.Json.JsonDocument.Parse(jsonResponse);
+
+        return document.RootElement.GetProperty("response").GetString() ?? "{}";
+    }
+
 }

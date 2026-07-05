@@ -35,11 +35,11 @@ public class WorkoutController : ControllerBase
     public async Task<IActionResult> GenerateWorkout([FromBody] WorkoutRequest request)
     {
         if (
-            string.IsNullOrWhiteSpace(request.Prompt)
-            || string.IsNullOrWhiteSpace(request.Equipment)
+            string.IsNullOrWhiteSpace(request.Goal)
+            || string.IsNullOrWhiteSpace(request.AvailableEquipment)
         )
         {
-            return BadRequest("Prompt and Equipment are required.");
+            return BadRequest("Goal and AvailableEquipment are required.");
         }
 
         try
@@ -79,28 +79,7 @@ public class WorkoutController : ControllerBase
                 request.Equipment,
                 request.WorkoutJson
             );
-            //Google sheet
-            using var httpClient = new HttpClient();
-            var parsedJson = System.Text.Json.JsonDocument.Parse(request.WorkoutJson);
-            var sheetPayload = new
-            {
-                workoutName = parsedJson.RootElement.GetProperty("workoutName").GetString(),
-                equipment = request.Equipment,
-                exercises = parsedJson.RootElement.GetProperty("exercises"),
-            };
-
-            // Replace with your Web App URL
-            var googleScriptUrl =
-                "https://script.google.com/macros/s/AKfycbyy-_H0J0ZQoi1G2Ky2XbIC-nJE5E8Q0K1DHp2oijCK1hSm2XSv9ewMVGmyUqWd31yO/exec";
-            // Capture the response instead of just awaiting it blindly
-            var response = await httpClient.PostAsJsonAsync(googleScriptUrl, sheetPayload);
-            var responseText = await response.Content.ReadAsStringAsync();
-
-            // Print it to your backend console so you can read it!
-            Console.WriteLine("==== GOOGLE SHEETS RESPONSE ====");
-            Console.WriteLine($"Status Code: {response.StatusCode}");
-            Console.WriteLine($"Body: {responseText}");
-            Console.WriteLine("================================");
+            
 
             return Ok(new { message = "Workout saved successfully" });
         }

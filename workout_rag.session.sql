@@ -1,0 +1,3 @@
+SELECT * FROM public."Exercises"
+
+TRUNCATE TABLE "Exercises" RESTART IDENTITY CASCADE;
