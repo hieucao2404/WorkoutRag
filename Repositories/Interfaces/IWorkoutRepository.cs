@@ -1,6 +1,6 @@
 using WorkoutRag.Models;
 
-namespace WorkoutRag.Repositories;
+namespace WorkoutRag.Repositories.Interfaces;
 
 public interface IWorkoutRepository : IRepository<WorkoutHistory>
 {

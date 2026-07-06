@@ -3,10 +3,11 @@ namespace WorkoutRag.Services;
 using System;
 using System.Collections.Generic;
 using WorkoutRag.DTO;
+using WorkoutRag.Interfaces;
 using WorkoutRag.Models;
-using WorkoutRag.Repositories;
+using WorkoutRag.Repositories.Interfaces;
 
-public class UserService
+public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
 
@@ -98,24 +99,41 @@ public class UserService
         UserLifestyleRequest request
     )
     {
-        var user = await _userRepository.GetByIdAsync(userId);
+        // Use GetByIdWithProfileAsync so LifestyleProfile is loaded into the tracker
+        var user = await _userRepository.GetByIdWithProfileAsync(userId);
         if (user == null)
             throw new Exception("User not found.");
 
-        user.LifestyleProfile = new UserLifestyleProfile
+        if (user.LifestyleProfile == null)
         {
-            UserId = user.Id,
-            Occupation = request.Occupation,
-            Movement = request.Movement,
-            Stressors = request.Stressors,
-            Recovery = request.Recovery,
-            Habits = request.Habits,
-            Pain = request.Pain,
-        };
+            // First time — INSERT a new profile
+            user.LifestyleProfile = new UserLifestyleProfile
+            {
+                UserId = user.Id,
+                Occupation = request.Occupation,
+                Movement = request.Movement,
+                Stressors = request.Stressors,
+                Recovery = request.Recovery,
+                Habits = request.Habits,
+                Pain = request.Pain,
+            };
+        }
+        else
+        {
+            // Profile already exists — UPDATE in-place to avoid unique constraint violation
+            user.LifestyleProfile.Occupation = request.Occupation;
+            user.LifestyleProfile.Movement = request.Movement;
+            user.LifestyleProfile.Stressors = request.Stressors;
+            user.LifestyleProfile.Recovery = request.Recovery;
+            user.LifestyleProfile.Habits = request.Habits;
+            user.LifestyleProfile.Pain = request.Pain;
+        }
 
-        var lifestyleNeeds = BiomechanicalAnalyzer.CalculateNeeds(user.LifestyleProfile);
-        user.ComputedBiomechanicalNeeds.AddRange(lifestyleNeeds);
-        user.ComputedBiomechanicalNeeds = user.ComputedBiomechanicalNeeds.Distinct().ToList();
+        // Reset and recalculate biomechanical needs from scratch
+        user.ComputedBiomechanicalNeeds = BiomechanicalAnalyzer
+            .CalculateNeeds(user.LifestyleProfile)
+            .Distinct()
+            .ToList();
 
         await _userRepository.UpdateAsync(user);
         await _userRepository.SaveChangesAsync();
@@ -154,6 +172,7 @@ public class UserService
             Age = user.Age,
             WeightKg = user.WeightKg,
             HeightCm = user.HeightCm,
+            Gender = user.Gender,
             AthleticLevel = user.AthleticLevel,
             LifestyleProfile = lifestyleProfileResponse,
             ComputedBiomechanicalNeeds = user.ComputedBiomechanicalNeeds,
@@ -170,7 +189,6 @@ public class UserService
         if (user == null)
             throw new Exception("User not found.");
 
-        // Update only provided fields
         if (request.Age.HasValue)
             user.Age = request.Age;
 
@@ -180,12 +198,12 @@ public class UserService
         if (request.HeightCm.HasValue)
             user.HeightCm = request.HeightCm;
 
+        if (!string.IsNullOrEmpty(request.Gender))
+            user.Gender = request.Gender;
+
         await _userRepository.UpdateAsync(user);
         await _userRepository.SaveChangesAsync();
 
-        // Return updated profile
         return await GetUserProfileAsync(userId);
     }
-
-    
 }

@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using WorkoutRag.Data;
-using WorkoutRag.Repositories;
+using WorkoutRag.Interfaces;
+using WorkoutRag.Repositories.Implementations;
+using WorkoutRag.Repositories.Interfaces;
 using WorkoutRag.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,12 +41,10 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IWorkoutRepository, WorkoutRepository>();
 
 // 2. Add Services
-builder.Services.AddHttpClient<WorkoutRetrievalService>();
-builder.Services.AddScoped<WorkoutRetrievalService>();
-builder.Services.AddScoped<OllamaService>();
-builder.Services.AddHttpClient<OllamaService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<WorkoutService>();
+builder.Services.AddHttpClient<IOllamaService, OllamaService>();
+builder.Services.AddScoped<IWorkoutRetrievalService, WorkoutRetrievalService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 
 builder
     .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -71,7 +71,7 @@ builder
     {
         options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
         options.JsonSerializerOptions.Converters.Add(
-            new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
+            new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, allowIntegerValues: true)
         );
     });
 

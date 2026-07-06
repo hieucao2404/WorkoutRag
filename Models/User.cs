@@ -12,6 +12,7 @@ public class User
     public int? Age { get; set; }
     public decimal? WeightKg { get; set; }
     public decimal? HeightCm { get; set; }
+    public string? Gender {get;set;}
     //public string? DailyPosture { get; set; }
     //public List<string> KnownImbalances { get; set; } = new();
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

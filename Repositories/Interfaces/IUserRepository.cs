@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Pgvector;
 using WorkoutRag.Models;
 
-namespace WorkoutRag.Repositories;
+namespace WorkoutRag.Repositories.Interfaces;
 
 public interface IUserRepository : IRepository<User>
 {

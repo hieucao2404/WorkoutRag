@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace WorkoutRag.Repositories;
+namespace WorkoutRag.Repositories.Interfaces;
 
 public interface IRepository<T>
     where T : class

@@ -5,10 +5,11 @@ using System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
 using WorkoutRag.Models;
 using WorkoutRag.DTO;
+using WorkoutRag.Interfaces;
 
 namespace WorkoutRag.Services;
 
-public class OllamaService
+public class OllamaService : IOllamaService
 {
     private readonly HttpClient _httpClient;
     private readonly IConfiguration _configuration;

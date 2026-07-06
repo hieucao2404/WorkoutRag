@@ -5,9 +5,9 @@ namespace WorkoutRag.Services;
 
 public class LlmOnlyGenerator : IWorkoutGenerator
 {
-    private readonly OllamaService _ollamaService;
+    private readonly IOllamaService _ollamaService;
 
-    public LlmOnlyGenerator(OllamaService ollamaService)
+    public LlmOnlyGenerator(IOllamaService ollamaService)
     {
         _ollamaService = ollamaService;
     }

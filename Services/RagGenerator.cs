@@ -5,10 +5,10 @@ namespace WorkoutRag.Services;
 
 public class RagGenerator : IWorkoutGenerator
 {
-    private readonly OllamaService _ollamaService;
-    private readonly WorkoutRetrievalService _retrievalService;
+    private readonly IOllamaService _ollamaService;
+    private readonly IWorkoutRetrievalService _retrievalService;
 
-    public RagGenerator(OllamaService ollamaService, WorkoutRetrievalService retrievalService)
+    public RagGenerator(IOllamaService ollamaService, IWorkoutRetrievalService retrievalService)
     {
         _ollamaService = ollamaService;
         _retrievalService = retrievalService;

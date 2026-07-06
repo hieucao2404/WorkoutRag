@@ -2,8 +2,8 @@ using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Pgvector;
+using WorkoutRag.Interfaces;
 using WorkoutRag.Models;
-using WorkoutRag.Services;
 
 namespace WorkoutRag.Data;
 
@@ -13,7 +13,7 @@ public static class DatabaseSeeder
     {
         using var scope = serviceProvider.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        var ollamaService = scope.ServiceProvider.GetRequiredService<OllamaService>();
+        var ollamaService = scope.ServiceProvider.GetRequiredService<IOllamaService>();
 
         await context.Database.MigrateAsync();
 

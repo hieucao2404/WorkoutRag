@@ -4,8 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using WorkoutRag.Data;
+using WorkoutRag.Repositories.Interfaces;
 
-namespace WorkoutRag.Repositories;
+namespace WorkoutRag.Repositories.Implementations;
 
 public class Repository<T> : IRepository<T>
     where T : class

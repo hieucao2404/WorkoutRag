@@ -2,9 +2,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutRag.DTO;
-using WorkoutRag.Models;
-using WorkoutRag.Repositories;
-using WorkoutRag.Services;
+using WorkoutRag.Interfaces;
 
 namespace WorkoutRag.Controllers;
 
@@ -13,21 +11,10 @@ namespace WorkoutRag.Controllers;
 [Authorize]
 public class WorkoutController : ControllerBase
 {
-    private readonly WorkoutRetrievalService _retrievalService;
-    private readonly OllamaService _ollamaService;
-    private readonly IUserRepository _userRepository;
-    private readonly WorkoutService _workoutService;
+    private readonly IWorkoutService _workoutService;
 
-    public WorkoutController(
-        WorkoutRetrievalService retrievalService,
-        OllamaService ollamaService,
-        IUserRepository userRepository,
-        WorkoutService workoutService
-    )
+    public WorkoutController(IWorkoutService workoutService)
     {
-        _retrievalService = retrievalService;
-        _ollamaService = ollamaService;
-        _userRepository = userRepository;
         _workoutService = workoutService;
     }
 
@@ -44,7 +31,6 @@ public class WorkoutController : ControllerBase
 
         try
         {
-            // Extract UserId from JWT token (not from request body)
             var userIdClaim = User.FindFirst(
                 System.Security.Claims.ClaimTypes.NameIdentifier
             )?.Value;
@@ -53,7 +39,6 @@ public class WorkoutController : ControllerBase
 
             var userId = Guid.Parse(userIdClaim);
 
-            // Pass to service
             var workoutJson = await _workoutService.GenerateWorkoutAsync(userId, request);
 
             return Content(workoutJson, "application/json");
@@ -72,14 +57,12 @@ public class WorkoutController : ControllerBase
             var userId = Guid.Parse(
                 User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)!.Value
             );
-            //Save to database
             await _workoutService.SaveWorkoutAsync(
                 userId,
                 request.Prompt,
                 request.Equipment,
                 request.WorkoutJson
             );
-            
 
             return Ok(new { message = "Workout saved successfully" });
         }
@@ -89,7 +72,6 @@ public class WorkoutController : ControllerBase
         }
     }
 
-    // NEW ENDPOINT: Fetch logs directly for the Frontend Dashboard
     [HttpGet("history")]
     public async Task<IActionResult> GetHistory()
     {

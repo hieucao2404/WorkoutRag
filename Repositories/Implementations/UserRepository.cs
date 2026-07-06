@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WorkoutRag.Data;
 using WorkoutRag.Models;
+using WorkoutRag.Repositories.Interfaces;
 
-namespace WorkoutRag.Repositories;
+namespace WorkoutRag.Repositories.Implementations;
 
 public class UserRepository : Repository<User>, IUserRepository
 {

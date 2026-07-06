@@ -2,7 +2,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutRag.DTO;
-using WorkoutRag.Services;
+using WorkoutRag.Interfaces;
 
 namespace WorkoutRag.Controllers;
 
@@ -11,9 +11,9 @@ namespace WorkoutRag.Controllers;
 [Authorize]
 public class UserController : ControllerBase
 {
-    private readonly UserService _userService;
+    private readonly IUserService _userService;
 
-    public UserController(UserService userService)
+    public UserController(IUserService userService)
     {
         _userService = userService;
     }

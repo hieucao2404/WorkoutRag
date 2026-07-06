@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using WorkoutRag.DTO;
 using WorkoutRag.Models;
-using WorkoutRag.Repositories;
-using WorkoutRag.Services;
+using WorkoutRag.Interfaces;
 
 namespace WorkoutRag.Controllers;
 
@@ -15,10 +14,10 @@ namespace WorkoutRag.Controllers;
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
-    private readonly UserService _userService;
+    private readonly IUserService _userService;
     private readonly IConfiguration _config;
 
-    public AuthController(UserService userService, IConfiguration config)
+    public AuthController(IUserService userService, IConfiguration config)
     {
         _userService = userService;
         _config = config;

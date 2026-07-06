@@ -1,18 +1,19 @@
 using Pgvector;
 using WorkoutRag.Data;
+using WorkoutRag.Interfaces;
 using WorkoutRag.Models;
-using WorkoutRag.Repositories;
+using WorkoutRag.Repositories.Interfaces;
 
 namespace WorkoutRag.Services;
 
-public class WorkoutRetrievalService
+public class WorkoutRetrievalService : IWorkoutRetrievalService
 {
     private readonly IExerciseRepository _exerciseRepository;
-    private readonly OllamaService _ollamaService;
+    private readonly IOllamaService _ollamaService;
 
     public WorkoutRetrievalService(
         IExerciseRepository exerciseRepository,
-        OllamaService ollamaService
+        IOllamaService ollamaService
     )
     {
         _exerciseRepository = exerciseRepository;
@@ -31,4 +32,3 @@ public class WorkoutRetrievalService
         return await _exerciseRepository.SearchByVectorAsync(userVector, equipmentFilter, limit);
     }
 }
-    

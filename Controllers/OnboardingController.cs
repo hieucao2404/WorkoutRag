@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutRag.DTO;
-using WorkoutRag.Models;
-using WorkoutRag.Repositories;
-using WorkoutRag.Services;
+using WorkoutRag.Interfaces;
 
 namespace WorkoutRag.Controllers;
 
@@ -12,12 +10,10 @@ namespace WorkoutRag.Controllers;
 [Authorize]
 public class OnboardingController : ControllerBase
 {
-    private readonly IRepository<User> _userRepository;
-    private readonly UserService _userService;
+    private readonly IUserService _userService;
 
-    public OnboardingController(IRepository<User> userRepository, UserService userService)
+    public OnboardingController(IUserService userService)
     {
-        _userRepository = userRepository;
         _userService = userService;
     }
 
@@ -29,54 +25,27 @@ public class OnboardingController : ControllerBase
     {
         try
         {
-            //1. Extract the UserId directly from their secure JWT Token
-            var userIdClaim = User.FindFirst(
-                System.Security.Claims.ClaimTypes.NameIdentifier
-            )?.Value;
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
             if (userIdClaim == null)
                 return Unauthorized("Invalid token.");
 
             var userId = Guid.Parse(userIdClaim);
 
-            // 2. Fetch the user that the AuthController just created
-            var existingUser = await _userRepository.GetByIdAsync(userId);
-            if (existingUser == null)
-                return NotFound("User account not found.");
+            // Delegate logic entirely to the service layer
+            var assessment = await _userService.UpdateAthleticBaselineAsync(userId, request);
 
-            // 3. Run the calculation
-            var assessment = AthleticLevelCalculator.CalculateAssessment(request);
-            existingUser.Age = request.Age;
-            existingUser.WeightKg = request.WeightKg;
-            existingUser.HeightCm = request.HeightCm;
-            existingUser.AthleticLevel = assessment.Level;
-            existingUser.ComputedBiomechanicalNeeds ??= new List<string>();
-
-            //Conver weak areas into immediate AI directives
-            if (assessment.WeakAreas.Any())
-            {
-                existingUser.ComputedBiomechanicalNeeds.Add(
-                    $"[Programming] Athlete has identified weaknesses in: {string.Join(", ", assessment.WeakAreas)}. Prioritize these areas."
-                );
-            }
-
-            // 3. Save to PostgresSQL via entity framework
-            await _userRepository.UpdateAsync(existingUser);
-            await _userRepository.SaveChangesAsync();
-
-            //4.  Return the generated ID and the rich assessment object
             return Ok(
                 new
                 {
                     message = "User profile and athletic baseline established successfully.",
-                    userId = existingUser.Id,
+                    userId = userId,
                     assessment = assessment,
                 }
             );
         }
         catch (Exception ex)
         {
-            //Log the exception in a read production environment
-            return StatusCode(500, $"An error occured during onboarding: {ex.Message}");
+            return StatusCode(500, $"An error occurred during onboarding: {ex.Message}");
         }
     }
 
@@ -85,16 +54,12 @@ public class OnboardingController : ControllerBase
     {
         try
         {
-            // Extract UserId from JWT token instead of request
-            var userIdClaim = User.FindFirst(
-                System.Security.Claims.ClaimTypes.NameIdentifier
-            )?.Value;
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
             if (userIdClaim == null)
                 return Unauthorized("Invalid token.");
 
             var userId = Guid.Parse(userIdClaim);
 
-            // Let the UserService handle the EF Core mapping and the Biomechanical Math!
             var computedNeeds = await _userService.UpdateLifestyleProfileAsync(userId, request);
 
             return Ok(

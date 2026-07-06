@@ -4,52 +4,54 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
 using WorkoutRag.DTO;
-using WorkoutRag.Models;
-using WorkoutRag.Repositories;
 using WorkoutRag.Interfaces;
+using WorkoutRag.Models;
+using WorkoutRag.Repositories.Interfaces;
 
 namespace WorkoutRag.Services;
 
-public class WorkoutService
+public class WorkoutService : IWorkoutService
 {
     private readonly IWorkoutRepository _workoutRepository;
     private readonly IUserRepository _userRepository;
-    private readonly WorkoutRetrievalService _retrievalService;
-    private readonly OllamaService _ollamaService;
+    private readonly IWorkoutRetrievalService _retrievalService;
+    private readonly IOllamaService _ollamaService;
     private readonly IWorkoutGenerator _iworkoutGenerator;
 
     public WorkoutService(
         IWorkoutRepository workoutRepository,
         IUserRepository userRepository,
-        WorkoutRetrievalService retrievalService,
-        OllamaService ollamaService
+        IWorkoutRetrievalService retrievalService,
+        IOllamaService ollamaService
     )
     {
         _workoutRepository = workoutRepository;
         _userRepository = userRepository;
         _retrievalService = retrievalService;
         _ollamaService = ollamaService;
- 
     }
 
-    private async Task<WorkoutGenerationContext> BuildGenerationContextAsync(Guid userId, WorkoutRequest request)
+    private async Task<WorkoutGenerationContext> BuildGenerationContextAsync(
+        Guid userId,
+        WorkoutRequest request
+    )
     {
         var user = await _userRepository.GetByIdWithProfileAsync(userId);
-        if (user == null) throw new Exception("User not found.");
+        if (user == null)
+            throw new Exception("User not found.");
 
         return new WorkoutGenerationContext
         {
-            Age = user.Age ?? 25, 
+            Age = user.Age ?? 25,
             Height = (float)(user.HeightCm ?? 170m), // Notice the (float) cast and the 'm' for decimal
-            Weight = (float)(user.WeightKg ?? 70m),  // Notice the (float) cast and the 'm' for decimal
+            Weight = (float)(user.WeightKg ?? 70m), // Notice the (float) cast and the 'm' for decimal
             FitnessLevel = user.AthleticLevel,
             Goal = request.Goal,
             AvailableEquipment = request.AvailableEquipment,
-            WorkoutDuration = 45 // Default duration
+            WorkoutDuration = 45, // Default duration
             // You can map the rest of the fields from your User/Profile model here!
         };
     }
-
 
     public async Task<string> GenerateWorkoutAsync(Guid userId, WorkoutRequest request)
     {

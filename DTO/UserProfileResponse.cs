@@ -13,6 +13,7 @@ public class UserProfileResponse
     public decimal? WeightKg { get; set; }
     public decimal? HeightCm { get; set; }
     public string AthleticLevel { get; set; } = string.Empty;
+    public string? Gender {get;set;}
 
     // Lifestyle Profile (if exists)
     public UserLifestyleProfileResponse? LifestyleProfile { get; set; }
@@ -28,4 +29,5 @@ public class UpdateUserProfileRequest
     public int? Age { get; set; }
     public decimal? WeightKg { get; set; }
     public decimal? HeightCm { get; set; }
+    public string? Gender{get;set;}
 }
