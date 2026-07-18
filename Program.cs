@@ -45,6 +45,7 @@ builder.Services.AddHttpClient<IOllamaService, OllamaService>();
 builder.Services.AddScoped<IWorkoutRetrievalService, WorkoutRetrievalService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IWorkoutService, WorkoutService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
 
 builder
     .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

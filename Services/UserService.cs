@@ -34,6 +34,7 @@ public class UserService : IUserService
             Username = request.Username,
             Email = request.Email,
             PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+            Role = UserRole.Customer,
             ComputedBiomechanicalNeeds = new List<string>(),
         };
 
@@ -169,6 +170,7 @@ public class UserService : IUserService
             Id = user.Id,
             Username = user.Username,
             Email = user.Email,
+            Role = user.Role,
             Age = user.Age,
             WeightKg = user.WeightKg,
             HeightCm = user.HeightCm,

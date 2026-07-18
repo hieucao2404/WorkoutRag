@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using BCrypt.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using WorkoutRag.DTO;
@@ -23,6 +24,13 @@ public class AuthController : ControllerBase
         _config = config;
     }
 
+    [HttpGet("admin/status")]
+    [Authorize(Roles = "Admin")]
+    public IActionResult GetAdminStatus()
+    {
+        return Ok(new { message = "Admin access granted" });
+    }
+
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
@@ -31,7 +39,7 @@ public class AuthController : ControllerBase
             // The service handles checking duplicates, hashing the password, and saving to the DB.
             var user = await _userService.RegisterUserAsync(request);
 
-            return Ok(new { message = "User registered successfully", userId = user.Id });
+            return Ok(new { message = "User registered successfully", userId = user.Id, role = user.Role });
         }
         catch (Exception ex)
         {
@@ -60,6 +68,7 @@ public class AuthController : ControllerBase
                 message = "Login successful",
                 token = token,
                 userId = user.Id,
+                role = user.Role,
             }
         );
     }
@@ -74,6 +83,7 @@ public class AuthController : ControllerBase
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.UniqueName, user.Username),
+            new Claim(ClaimTypes.Role, user.Role.ToString()),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         };
 

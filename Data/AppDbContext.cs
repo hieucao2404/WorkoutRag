@@ -25,6 +25,7 @@ public class AppDbContext : DbContext
 
         // User -  Username should be unque
         modelBuilder.Entity<User>().HasIndex(u => u.Username).IsUnique();
+        modelBuilder.Entity<User>().Property(u => u.Role).HasConversion<string>();
 
         //Exercise - HNSW Index for vector similarity
         modelBuilder.Entity<Exercise>().Property(e => e.Embedding).HasColumnType("vector(768)");
