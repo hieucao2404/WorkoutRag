@@ -1,11 +1,5 @@
-﻿CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
-    "MigrationId" character varying(150) NOT NULL,
-    "ProductVersion" character varying(32) NOT NULL,
-    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
-);
+﻿CREATE EXTENSION IF NOT EXISTS vector;
 
-START TRANSACTION;
-CREATE EXTENSION IF NOT EXISTS vector;
 
 CREATE TABLE "Exercises" (
     "Id" uuid NOT NULL,
@@ -21,17 +15,39 @@ CREATE TABLE "Exercises" (
     CONSTRAINT "PK_Exercises" PRIMARY KEY ("Id")
 );
 
+
 CREATE TABLE "Users" (
     "Id" uuid NOT NULL,
     "Username" text NOT NULL,
+    "Email" text NOT NULL,
+    "PasswordHash" text NOT NULL,
+    "Role" text NOT NULL,
     "Age" integer,
     "WeightKg" numeric,
-    "HeighCm" numeric,
-    "DailyPosture" text,
-    "KnownImbalances" text[] NOT NULL,
+    "HeightCm" numeric,
+    "Gender" text,
     "CreatedAt" timestamp with time zone NOT NULL,
+    "ComputedBiomechanicalNeeds" text[] NOT NULL,
+    "AthleticLevel" text NOT NULL,
     CONSTRAINT "PK_Users" PRIMARY KEY ("Id")
 );
+
+
+CREATE TABLE "NutritionPlan" (
+    "Id" uuid NOT NULL,
+    "UserId" uuid NOT NULL,
+    "UserGoal" text NOT NULL,
+    "DietaryRestrictions" text NOT NULL,
+    "DailyCalories" integer NOT NULL,
+    "ProteinsGrams" integer NOT NULL,
+    "CarbsGrams" integer NOT NULL,
+    "FatGrams" integer NOT NULL,
+    "MealPlanJson" text NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    CONSTRAINT "PK_NutritionPlan" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_NutritionPlan_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
+);
+
 
 CREATE TABLE "UserDiets" (
     "Id" uuid NOT NULL,
@@ -43,63 +59,6 @@ CREATE TABLE "UserDiets" (
     CONSTRAINT "FK_UserDiets_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
 );
 
-CREATE TABLE "UserSports" (
-    "Id" uuid NOT NULL,
-    "UserId" uuid NOT NULL,
-    "SportName" text NOT NULL,
-    "PriorityLevel" integer NOT NULL,
-    "SeasonStatus" text NOT NULL,
-    CONSTRAINT "PK_UserSports" PRIMARY KEY ("Id"),
-    CONSTRAINT "FK_UserSports_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
-);
-
-CREATE TABLE "WorkoutHistories" (
-    "Id" uuid NOT NULL,
-    "UserId" uuid NOT NULL,
-    "UserPrompt" text NOT NULL,
-    "EquipmentFilter" text NOT NULL,
-    "RawAiJson" text,
-    "CreatedAt" timestamp with time zone NOT NULL,
-    CONSTRAINT "PK_WorkoutHistories" PRIMARY KEY ("Id"),
-    CONSTRAINT "FK_WorkoutHistories_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
-);
-
-CREATE TABLE "WorkoutExercises" (
-    "Id" uuid NOT NULL,
-    "WorkoutId" uuid NOT NULL,
-    "ExerciseId" uuid NOT NULL,
-    "RecommendedSets" integer NOT NULL,
-    "RecommendedReps" text NOT NULL,
-    CONSTRAINT "PK_WorkoutExercises" PRIMARY KEY ("Id"),
-    CONSTRAINT "FK_WorkoutExercises_Exercises_ExerciseId" FOREIGN KEY ("ExerciseId") REFERENCES "Exercises" ("Id") ON DELETE RESTRICT,
-    CONSTRAINT "FK_WorkoutExercises_WorkoutHistories_WorkoutId" FOREIGN KEY ("WorkoutId") REFERENCES "WorkoutHistories" ("Id") ON DELETE CASCADE
-);
-
-CREATE INDEX idx_exercise_embedding_hnsw ON "Exercises" USING hnsw ("Embedding" vector_cosine_ops);
-
-CREATE INDEX idx_exercise_equipment_difficulty ON "Exercises" ("Equipment", "DifficultyLevel");
-
-CREATE INDEX "IX_UserDiets_UserId" ON "UserDiets" ("UserId");
-
-CREATE UNIQUE INDEX "IX_Users_Username" ON "Users" ("Username");
-
-CREATE INDEX "IX_UserSports_UserId" ON "UserSports" ("UserId");
-
-CREATE INDEX "IX_WorkoutExercises_ExerciseId" ON "WorkoutExercises" ("ExerciseId");
-
-CREATE INDEX "IX_WorkoutExercises_WorkoutId" ON "WorkoutExercises" ("WorkoutId");
-
-CREATE INDEX "IX_WorkoutHistories_UserId" ON "WorkoutHistories" ("UserId");
-
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20260531130338_InitialCreate', '10.0.8');
-
-COMMIT;
-
-START TRANSACTION;
-ALTER TABLE "Users" RENAME COLUMN "HeighCm" TO "HeightCm";
-
-ALTER TABLE "Users" ADD "ComputedBiomechanicalNeeds" text[] NOT NULL;
 
 CREATE TABLE "UserLifestyleProfile" (
     "Id" uuid NOT NULL,
@@ -135,71 +94,69 @@ CREATE TABLE "UserLifestyleProfile" (
     CONSTRAINT "FK_UserLifestyleProfile_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
 );
 
-CREATE UNIQUE INDEX "IX_UserLifestyleProfile_UserId" ON "UserLifestyleProfile" ("UserId");
 
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20260604020733_ImplementDomainDrivenProfiles', '10.0.8');
-
-COMMIT;
-
-START TRANSACTION;
-ALTER TABLE "Users" ADD "AthleticLevel" text NOT NULL DEFAULT '';
-
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20260604073814_CleanUserSchema', '10.0.8');
-
-COMMIT;
-
-START TRANSACTION;
-ALTER TABLE "Users" DROP COLUMN "DailyPosture";
-
-ALTER TABLE "Users" DROP COLUMN "KnownImbalances";
-
-ALTER TABLE "Users" ADD "Email" text NOT NULL DEFAULT '';
-
-ALTER TABLE "Users" ADD "PasswordHash" text NOT NULL DEFAULT '';
-
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20260604085612_AddAuthenticationFields', '10.0.8');
-
-COMMIT;
-
-START TRANSACTION;
-CREATE TABLE "NutritionPlan" (
+CREATE TABLE "UserSports" (
     "Id" uuid NOT NULL,
     "UserId" uuid NOT NULL,
-    "UserGoal" text NOT NULL,
-    "DietaryRestrictions" text NOT NULL,
-    "DailyCalories" integer NOT NULL,
-    "ProteinsGrams" integer NOT NULL,
-    "CarbsGrams" integer NOT NULL,
-    "FatGrams" integer NOT NULL,
-    "MealPlanJson" text NOT NULL,
-    "CreatedAt" timestamp with time zone NOT NULL,
-    CONSTRAINT "PK_NutritionPlan" PRIMARY KEY ("Id"),
-    CONSTRAINT "FK_NutritionPlan_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
+    "SportName" text NOT NULL,
+    "PriorityLevel" integer NOT NULL,
+    "SeasonStatus" text NOT NULL,
+    CONSTRAINT "PK_UserSports" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_UserSports_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
 );
+
+
+CREATE TABLE "WorkoutHistories" (
+    "Id" uuid NOT NULL,
+    "UserId" uuid NOT NULL,
+    "UserPrompt" text NOT NULL,
+    "EquipmentFilter" text NOT NULL,
+    "RawAiJson" text,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    CONSTRAINT "PK_WorkoutHistories" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_WorkoutHistories_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
+);
+
+
+CREATE TABLE "WorkoutExercises" (
+    "Id" uuid NOT NULL,
+    "WorkoutId" uuid NOT NULL,
+    "ExerciseId" uuid NOT NULL,
+    "RecommendedSets" integer NOT NULL,
+    "RecommendedReps" text NOT NULL,
+    CONSTRAINT "PK_WorkoutExercises" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_WorkoutExercises_Exercises_ExerciseId" FOREIGN KEY ("ExerciseId") REFERENCES "Exercises" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_WorkoutExercises_WorkoutHistories_WorkoutId" FOREIGN KEY ("WorkoutId") REFERENCES "WorkoutHistories" ("Id") ON DELETE CASCADE
+);
+
+
+CREATE INDEX idx_exercise_embedding_hnsw ON "Exercises" USING hnsw ("Embedding" vector_cosine_ops);
+
+
+CREATE INDEX idx_exercise_equipment_difficulty ON "Exercises" ("Equipment", "DifficultyLevel");
+
 
 CREATE INDEX "IX_NutritionPlan_UserId" ON "NutritionPlan" ("UserId");
 
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20260625020946_AddNutritionPlan', '10.0.8');
 
-COMMIT;
+CREATE INDEX "IX_UserDiets_UserId" ON "UserDiets" ("UserId");
 
-START TRANSACTION;
-ALTER TABLE "Users" ADD "Gender" text;
 
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20260706033616_AddGenderToUser', '10.0.8');
+CREATE UNIQUE INDEX "IX_UserLifestyleProfile_UserId" ON "UserLifestyleProfile" ("UserId");
 
-COMMIT;
 
-START TRANSACTION;
-ALTER TABLE "Users" ADD "Role" text NOT NULL DEFAULT '';
+CREATE UNIQUE INDEX "IX_Users_Username" ON "Users" ("Username");
 
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20260717154005_AddRoleToUser', '10.0.8');
 
-COMMIT;
+CREATE INDEX "IX_UserSports_UserId" ON "UserSports" ("UserId");
+
+
+CREATE INDEX "IX_WorkoutExercises_ExerciseId" ON "WorkoutExercises" ("ExerciseId");
+
+
+CREATE INDEX "IX_WorkoutExercises_WorkoutId" ON "WorkoutExercises" ("WorkoutId");
+
+
+CREATE INDEX "IX_WorkoutHistories_UserId" ON "WorkoutHistories" ("UserId");
+
 
