@@ -20,4 +20,9 @@ public class WorkoutGenerationContext
     public string AvailableEquipment {get;set;} = string.Empty;
     public int WorkoutDuration {get;set;}
     public string AdditionalRequirements {get;set;} = string.Empty;
+
+    public string? PreviousWorkoutJson{get;set;}
+    public string? UserFeedback{get;set;}
+
+    public bool IsAdjustmentRequest => !string.IsNullOrWhiteSpace(PreviousWorkoutJson) && !string.IsNullOrWhiteSpace(UserFeedback);
 }

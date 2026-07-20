@@ -50,6 +50,9 @@ public class WorkoutService : IWorkoutService
             AvailableEquipment = request.AvailableEquipment,
             WorkoutDuration = 45, // Default duration
             // You can map the rest of the fields from your User/Profile model here!
+
+            PreviousWorkoutJson = request.PreviousWorkoutJson,
+            UserFeedback = request.UserFeedback,
         };
     }
 

@@ -19,4 +19,7 @@ public class WorkoutRequest
     public int WorkoutDuration { get; set; } = 45;
     public string PreviousInjury { get; set; } = string.Empty;
     public string AdditionalRequirements { get; set; } = string.Empty;
+
+    public string? PreviousWorkoutJson { get; set; }
+    public string? UserFeedback { get; set; }
 }
