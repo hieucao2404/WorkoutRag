@@ -22,4 +22,13 @@ public class WorkoutRepository : Repository<WorkoutHistory>, IWorkoutRepository
             .OrderByDescending(h => h.CreatedAt)
             .ToListAsync();
     }
+
+    public async Task<List<WorkoutHistory>> GetAllWithUsersAsync()
+    {
+        return await _context
+            .WorkoutHistories.AsNoTracking()
+            .Include(h => h.User)
+            .OrderByDescending(h => h.CreatedAt)
+            .ToListAsync();
+    }
 }

@@ -1,70 +1,72 @@
-using Microsoft.EntityFrameworkCore;
-using WorkoutRag.Data;
 using WorkoutRag.DTO;
 using WorkoutRag.Interfaces;
 using WorkoutRag.Models;
+using WorkoutRag.Repositories.Interfaces;
 
 namespace WorkoutRag.Services;
 
 public class AdminService : IAdminService
 {
-    private readonly AppDbContext _context;
+    private readonly IUserRepository _userRepository;
+    private readonly IExerciseRepository _exerciseRepository;
+    private readonly IWorkoutRepository _workoutRepository;
 
-    public AdminService(AppDbContext context)
+    public AdminService(
+        IUserRepository userRepository,
+        IExerciseRepository exerciseRepository,
+        IWorkoutRepository workoutRepository
+    )
     {
-        _context = context;
+        _userRepository = userRepository;
+        _exerciseRepository = exerciseRepository;
+        _workoutRepository = workoutRepository;
     }
 
     public async Task<List<AdminUserResponse>> GetUsersAsync()
     {
-        return await _context
-            .Users.AsNoTracking()
+        var users = await _userRepository.GetAllAsync();
+
+        return users
             .OrderBy(u => u.Username)
-            .Select(u => new AdminUserResponse
-            {
-                Id = u.Id,
-                Username = u.Username,
-                Email = u.Email,
-                Role = u.Role,
-                AthleticLevel = u.AthleticLevel,
-                CreatedAt = u.CreatedAt,
-            })
-            .ToListAsync();
+            .Select(ToUserResponse)
+            .ToList();
     }
 
     public async Task<AdminUserResponse> UpdateUserRoleAsync(Guid id, UpdateUserRoleRequest request)
     {
-        var user = await _context.Users.FindAsync(id);
+        var user = await _userRepository.GetByIdAsync(id);
         if (user == null)
         {
             throw new KeyNotFoundException("User not found.");
         }
 
         user.Role = request.Role;
-        await _context.SaveChangesAsync();
+        await _userRepository.UpdateAsync(user);
+        await _userRepository.SaveChangesAsync();
 
         return ToUserResponse(user);
     }
 
     public async Task DeleteUserAsync(Guid id)
     {
-        var user = await _context.Users.FindAsync(id);
+        var user = await _userRepository.GetByIdAsync(id);
         if (user == null)
         {
             throw new KeyNotFoundException("User not found.");
         }
 
-        _context.Users.Remove(user);
-        await _context.SaveChangesAsync();
+        await _userRepository.DeleteAsync(user);
+        await _userRepository.SaveChangesAsync();
     }
 
     public async Task<List<AdminExerciseResponse>> GetExercisesAsync()
     {
-        return await _context
-            .Exercises.AsNoTracking()
+        var exercises = await _exerciseRepository.GetAllAsync();
+
+        return exercises
             .OrderBy(e => e.Name)
-            .Select(e => ToExerciseResponse(e))
-            .ToListAsync();
+            .Select(ToExerciseResponse)
+            .ToList();
     }
 
     public async Task<AdminExerciseResponse> CreateExerciseAsync(AdminExerciseRequest request)
@@ -82,8 +84,8 @@ public class AdminService : IAdminService
             CreatedAt = DateTime.UtcNow,
         };
 
-        await _context.Exercises.AddAsync(exercise);
-        await _context.SaveChangesAsync();
+        await _exerciseRepository.AddAsync(exercise);
+        await _exerciseRepository.SaveChangesAsync();
 
         return ToExerciseResponse(exercise);
     }
@@ -93,7 +95,7 @@ public class AdminService : IAdminService
         AdminExerciseRequest request
     )
     {
-        var exercise = await _context.Exercises.FindAsync(id);
+        var exercise = await _exerciseRepository.GetByIdAsync(id);
         if (exercise == null)
         {
             throw new KeyNotFoundException("Exercise not found.");
@@ -107,29 +109,29 @@ public class AdminService : IAdminService
         exercise.ExerciseType = request.ExerciseType;
         exercise.MusclesTargeted = request.MusclesTargeted;
 
-        await _context.SaveChangesAsync();
+        await _exerciseRepository.UpdateAsync(exercise);
+        await _exerciseRepository.SaveChangesAsync();
 
         return ToExerciseResponse(exercise);
     }
 
     public async Task DeleteExerciseAsync(Guid id)
     {
-        var exercise = await _context.Exercises.FindAsync(id);
+        var exercise = await _exerciseRepository.GetByIdAsync(id);
         if (exercise == null)
         {
             throw new KeyNotFoundException("Exercise not found.");
         }
 
-        _context.Exercises.Remove(exercise);
-        await _context.SaveChangesAsync();
+        await _exerciseRepository.DeleteAsync(exercise);
+        await _exerciseRepository.SaveChangesAsync();
     }
 
     public async Task<List<AdminWorkoutResponse>> GetWorkoutsAsync()
     {
-        return await _context
-            .WorkoutHistories.AsNoTracking()
-            .Include(w => w.User)
-            .OrderByDescending(w => w.CreatedAt)
+        var workouts = await _workoutRepository.GetAllWithUsersAsync();
+
+        return workouts
             .Select(w => new AdminWorkoutResponse
             {
                 Id = w.Id,
@@ -141,7 +143,7 @@ public class AdminService : IAdminService
                 RawAiJson = w.RawAiJson,
                 CreatedAt = w.CreatedAt,
             })
-            .ToListAsync();
+            .ToList();
     }
 
     private static AdminUserResponse ToUserResponse(User user)
