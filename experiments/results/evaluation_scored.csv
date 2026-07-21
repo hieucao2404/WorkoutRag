@@ -1,0 +1,41 @@
+profile_id,label,condition,goal,available_equipment,previous_injury,response_time_seconds,notes,goal_relevance,personalization,equipment_compatibility,safety,workout_completeness
+P01,Output B,LLM-only,Build general fitness with a simple full-body beginner workout,Bodyweight,None,66.222,single-evaluator rubric score,4,3,3,4,4
+P01,Output A,WorkoutRAG,Build general fitness with a simple full-body beginner workout,Bodyweight,None,107.021,single-evaluator rubric score,4,3,5,4,2
+P02,Output A,LLM-only,Improve strength with a dumbbell full-body workout,Dumbbells,None,75.718,single-evaluator rubric score,4,3,4,4,4
+P02,Output B,WorkoutRAG,Improve strength with a dumbbell full-body workout,Dumbbells,None,100.474,single-evaluator rubric score,4,3,5,4,3
+P03,Output B,LLM-only,Build muscle in the upper body without aggravating shoulder discomfort,Dumbbells,Mild shoulder limitation,101.402,single-evaluator rubric score,3,3,4,2,2
+P03,Output A,WorkoutRAG,Build muscle in the upper body without aggravating shoulder discomfort,Dumbbells,Mild shoulder limitation,90.792,single-evaluator rubric score,3,2,5,2,4
+P04,Output B,LLM-only,Lose weight with a low-impact full-body circuit,Bodyweight,Knee limitation,73.012,single-evaluator rubric score,3,2,4,2,4
+P04,Output A,WorkoutRAG,Lose weight with a low-impact full-body circuit,Bodyweight,Knee limitation,98.811,single-evaluator rubric score,3,2,5,1,4
+P05,Output A,LLM-only,Improve endurance and core stability for recreational running,Bodyweight,None,89.049,single-evaluator rubric score,4,3,3,4,4
+P05,Output B,WorkoutRAG,Improve endurance and core stability for recreational running,Bodyweight,None,120.459,single-evaluator rubric score,4,3,5,4,4
+P06,Output A,LLM-only,Develop hypertrophy with gym cable and machine exercises,Cable Machine,None,60.829,single-evaluator rubric score,4,3,3,4,4
+P06,Output B,WorkoutRAG,Develop hypertrophy with gym cable and machine exercises,Cable Machine,None,69.535,single-evaluator rubric score,3,3,5,4,4
+P07,Output B,LLM-only,Build lower-body strength while protecting the lower back,Dumbbells,Lower-back limitation,47.162,single-evaluator rubric score,3,2,5,1,4
+P07,Output A,WorkoutRAG,Build lower-body strength while protecting the lower back,Dumbbells,Lower-back limitation,71.248,single-evaluator rubric score,3,3,5,4,2
+P08,Output A,LLM-only,Improve mobility and posture after long study sessions,Resistance Band,Wrist limitation,105.033,single-evaluator rubric score,4,3,5,4,4
+P08,Output B,WorkoutRAG,Improve mobility and posture after long study sessions,Resistance Band,Wrist limitation,45.562,single-evaluator rubric score,3,3,5,4,3
+P09,Output A,LLM-only,Increase maximal strength with barbell training,Barbell,None,47.938,single-evaluator rubric score,5,4,4,4,4
+P09,Output B,WorkoutRAG,Increase maximal strength with barbell training,Barbell,None,71.014,single-evaluator rubric score,5,4,5,4,4
+P10,Output A,LLM-only,Create a short core-focused workout for a beginner,Bodyweight,None,68.917,single-evaluator rubric score,4,3,3,4,4
+P10,Output B,WorkoutRAG,Create a short core-focused workout for a beginner,Bodyweight,None,64.322,single-evaluator rubric score,1,1,1,3,1
+P11,Output A,LLM-only,Improve total-body power for recreational basketball,Medicine Ball,None,63.691,single-evaluator rubric score,4,3,5,4,4
+P11,Output B,WorkoutRAG,Improve total-body power for recreational basketball,Medicine Ball,None,52.427,single-evaluator rubric score,4,3,5,4,3
+P12,Output A,LLM-only,Build beginner leg strength with knee-friendly choices,Machine,Knee limitation,50.543,single-evaluator rubric score,3,3,2,3,4
+P12,Output B,WorkoutRAG,Build beginner leg strength with knee-friendly choices,Machine,Knee limitation,48.142,single-evaluator rubric score,4,4,5,4,4
+P13,Output B,LLM-only,Develop pull strength using a pull-up bar,Pull-up Bar,None,48.770,single-evaluator rubric score,4,3,5,4,4
+P13,Output A,WorkoutRAG,Develop pull strength using a pull-up bar,Pull-up Bar,None,61.670,single-evaluator rubric score,4,4,4,4,4
+P14,Output A,LLM-only,Create a balanced dumbbell workout for fat loss and conditioning,Dumbbells,None,66.120,single-evaluator rubric score,4,3,5,4,4
+P14,Output B,WorkoutRAG,Create a balanced dumbbell workout for fat loss and conditioning,Dumbbells,None,97.540,single-evaluator rubric score,4,4,5,4,4
+P15,Output B,LLM-only,Improve mobility and posterior-chain strength after long driving shifts,Bodyweight,Lower-back limitation,79.436,single-evaluator rubric score,4,3,5,3,4
+P15,Output A,WorkoutRAG,Improve mobility and posterior-chain strength after long driving shifts,Bodyweight,Lower-back limitation,112.720,single-evaluator rubric score,3,2,5,1,4
+P16,Output A,LLM-only,Build upper-body endurance with safe push and pull exercises,Cable Machine,Shoulder limitation,42.754,single-evaluator rubric score,4,3,5,4,4
+P16,Output B,WorkoutRAG,Build upper-body endurance with safe push and pull exercises,Cable Machine,Shoulder limitation,61.825,single-evaluator rubric score,3,3,5,4,3
+P17,Output B,LLM-only,Create an advanced bodyweight athletic workout,Bodyweight,None,60.069,single-evaluator rubric score,4,3,1,3,4
+P17,Output A,WorkoutRAG,Create an advanced bodyweight athletic workout,Bodyweight,None,86.645,single-evaluator rubric score,3,3,5,4,4
+P18,Output B,LLM-only,Design a long hypertrophy workout using dumbbells,Dumbbells,None,75.414,single-evaluator rubric score,4,3,5,4,4
+P18,Output A,WorkoutRAG,Design a long hypertrophy workout using dumbbells,Dumbbells,None,91.749,single-evaluator rubric score,4,3,5,4,4
+P19,Output A,LLM-only,Build careful beginner strength with wrist-friendly exercise choices,Dumbbells,Wrist limitation,50.454,single-evaluator rubric score,3,2,5,2,4
+P19,Output B,WorkoutRAG,Build careful beginner strength with wrist-friendly exercise choices,Dumbbells,Wrist limitation,76.306,single-evaluator rubric score,3,3,5,3,4
+P20,Output B,LLM-only,Create a balanced mobility and strength workout for general health,Bodyweight,None,74.134,single-evaluator rubric score,4,3,5,4,4
+P20,Output A,WorkoutRAG,Create a balanced mobility and strength workout for general health,Bodyweight,None,98.494,single-evaluator rubric score,4,3,5,4,3

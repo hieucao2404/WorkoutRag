@@ -1,0 +1,6 @@
+metric,LLM-only,WorkoutRAG,difference
+goal_relevance,3.8,3.45,-0.35
+personalization,2.9,2.95,0.05
+equipment_compatibility,4.05,4.75,0.7
+safety,3.4,3.5,0.1
+workout_completeness,3.9,3.4,-0.5

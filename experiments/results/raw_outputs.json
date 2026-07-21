@@ -1,0 +1,3590 @@
+[
+  {
+    "profileId": "P01",
+    "profile": {
+      "id": "P01",
+      "goal": "Build general fitness with a simple full-body beginner workout",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 25,
+      "previousInjury": "None",
+      "activityLevel": "Low",
+      "exerciseFrequency": "2 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Keep the workout beginner-friendly and easy to follow.",
+      "benchmark": {
+        "username": "eval_p01",
+        "gender": "Female",
+        "pushUpsMax": 5,
+        "pullUpsMax": 0,
+        "plankHoldSeconds": 35,
+        "squatReps": 18,
+        "broadJumpCm": 110,
+        "oneKmRunTimeSeconds": 620,
+        "canDeepSquat": false,
+        "canTouchToes": false,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 4,
+        "age": 19,
+        "weightKg": 58,
+        "heightCm": 164
+      },
+      "lifestyle": {
+        "occupation": "Student",
+        "movement": {
+          "sittingHoursPerDay": 7,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 4,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 3500,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": false,
+          "waterIntakeLiters": 1.8,
+          "screenTimeHours": 8
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 66.22187208799733,
+        "output": {
+          "workoutName": "Full Body Beginner Workout",
+          "duration": 45,
+          "goal": "Build general fitness with a simple full-body beginner workout",
+          "exercises": [
+            {
+              "name": "Bodyweight Squats",
+              "sets": 3,
+              "reps": "12-15",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Push-Ups (knee modification)",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Plank",
+              "sets": 3,
+              "duration": "20-30 sec hold per set",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Lunges (alternating legs)",
+              "sets": 2,
+              "reps": "10 each leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Inverted Row (using a sturdy table or bar)",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Glute Bridges",
+              "sets": 3,
+              "reps": "15-20",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Russian Twists (with a medicine ball or weight)",
+              "sets": 2,
+              "reps": "15 each side",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 107.02087353100069,
+        "output": {
+          "workoutName": "Full Body Beginner Strength and Conditioning",
+          "duration": 45,
+          "goal": "Build general fitness with a simple full-body beginner workout",
+          "exer01es": [
+            {
+              "name": "Push-Up",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dead Bug",
+              "sets": 4,
+              "reps": "As many as possible with good form (e.g., for each leg and arm)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Single-Leg Glute Bridge",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "A-Skip",
+              "sets": 4,
+              "reps": "As many as possible with good form (e.g., for each side)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Forearm Plank",
+              "sets": 3,
+              "duration": "20-30 sec hold per set",
+              "notes": "Maintain a straight line from head to heels and avoid sagging or lifting hips"
+            },
+            {
+              "name": "Tibialis Raise",
+              "sets": 4,
+              "reps": "8-12 per leg",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P02",
+    "profile": {
+      "id": "P02",
+      "goal": "Improve strength with a dumbbell full-body workout",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 45,
+      "previousInjury": "None",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Prioritize compound movements.",
+      "benchmark": {
+        "username": "eval_p02",
+        "gender": "Male",
+        "pushUpsMax": 25,
+        "pullUpsMax": 4,
+        "plankHoldSeconds": 90,
+        "squatReps": 35,
+        "broadJumpCm": 185,
+        "oneKmRunTimeSeconds": 430,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 5,
+        "age": 24,
+        "weightKg": 76,
+        "heightCm": 178
+      },
+      "lifestyle": {
+        "occupation": "DeskWorker",
+        "movement": {
+          "sittingHoursPerDay": 8,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 5,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 6000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.4,
+          "screenTimeHours": 7
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 75.71784133999608,
+        "output": {
+          "workoutName": "Full Body Dumbbell Strength Workout",
+          "duration": 45,
+          "goal": "Improve strength with a dumbbell full-body workout",
+          "exercises": [
+            {
+              "name": "Dumbbell Squat to Press",
+              "sets": 3,
+              "reps": "10-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Single Arm Dumbbell Row",
+              "sets": 4,
+              "reps": "8-12 each arm",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Deadlift",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Standing Dumbbell Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Lunges with RDL (Romanian Deadlift)",
+              "sets": 3,
+              "reps": "8-12 per leg and each arm",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Renegade Row",
+              "sets": 4,
+              "reps": "6-8 each side",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 100.47371316399949,
+        "output": {
+          "workoutName": "Full Body Dumbbell Strength",
+          "duration": 45,
+          "goal": "Improve strength with a dumbbell full-body workout",
+          "exercises": [
+            {
+              "name": "Dumbbell Bulgarian Split Squat",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Incline Dumbbell Bench Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Overhead Press",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Step-Up",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name0: {": "exercise_plan.json"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P03",
+    "profile": {
+      "id": "P03",
+      "goal": "Build muscle in the upper body without aggravating shoulder discomfort",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 40,
+      "previousInjury": "Mild shoulder limitation",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "4 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Avoid heavy overhead pressing.",
+      "benchmark": {
+        "username": "eval_p03",
+        "gender": "Female",
+        "pushUpsMax": 18,
+        "pullUpsMax": 2,
+        "plankHoldSeconds": 80,
+        "squatReps": 32,
+        "broadJumpCm": 150,
+        "oneKmRunTimeSeconds": 500,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": false,
+        "canReachHandsBehindBack": false,
+        "averageSleepHours": 7,
+        "stressLevel": 4,
+        "age": 28,
+        "weightKg": 63,
+        "heightCm": 168
+      },
+      "lifestyle": {
+        "occupation": "HealthcareWorker",
+        "movement": {
+          "sittingHoursPerDay": 2,
+          "standingHoursPerDay": 7,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 1
+        },
+        "stressors": {
+          "repetitiveLifting": true,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": true,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 4,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 9000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.2,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": true,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 101.4024121629991,
+        "output": {
+          "workoutName": "Upper Body Muscle Building with Dumbbells",
+          "duration": 45,
+          "goal": "Build muscle in the upper body without aggravating shoulder discomfort.",
+          "exercises": [
+            {
+              "name": "Dumbbell Bench Press Alternative - Seated Dumbbell Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec",
+              "notes": "Perform with a controlled motion to avoid strain. Keep the back straight and press through your chest."
+            },
+            {
+              "name": "Dumbbell Flyes - Seated Dumbbell Press Variation",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec",
+              "notes": "Maintain a slight bend in your elbows and avoid locking them out at the top of each rep."
+            },
+            {
+              "name": "Dumbbell Shoulder Press - Seated Dumbbell Press Variation (with caution)",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec",
+              "notes": "If shoulder discomfort persists or worsens, stop immediately. Focus on a full range of motion without jerking movements."
+            },
+            {
+              "name": "Dumbbell Bicep Curls - Standing Dumbbell Hammer Curl Variation",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec",
+              "notes": "Keep your elbows close to your body and rotate the palms of your hands so that they face inward at the top of each curl."
+            },
+            {
+              "name": "Dumbbell Tricep Extensions - Standing Dumbbell Hammer Curl Variation",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec",
+              "notes": "Maintain a slight bend in your elbows and avoid locking them out at the top of each extension."
+            },
+            {
+              "name0: ,": "Dumbbell Lateral Raises - Standing Dumbbell Hammer Curl Variation",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec",
+              "notes": "Keep your back straight and raise the weights to shoulder height. Avoid swinging or using momentum."
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 180.10019847100193,
+        "output": "",
+        "parse_error": "",
+        "error": "timed out"
+      }
+    ]
+  },
+  {
+    "profileId": "P03",
+    "profile": {
+      "id": "P03",
+      "goal": "Build muscle in the upper body without aggravating shoulder discomfort",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 40,
+      "previousInjury": "Mild shoulder limitation",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "4 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Avoid heavy overhead pressing.",
+      "benchmark": {
+        "username": "eval_p03",
+        "gender": "Female",
+        "pushUpsMax": 18,
+        "pullUpsMax": 2,
+        "plankHoldSeconds": 80,
+        "squatReps": 32,
+        "broadJumpCm": 150,
+        "oneKmRunTimeSeconds": 500,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": false,
+        "canReachHandsBehindBack": false,
+        "averageSleepHours": 7,
+        "stressLevel": 4,
+        "age": 28,
+        "weightKg": 63,
+        "heightCm": 168
+      },
+      "lifestyle": {
+        "occupation": "HealthcareWorker",
+        "movement": {
+          "sittingHoursPerDay": 2,
+          "standingHoursPerDay": 7,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 1
+        },
+        "stressors": {
+          "repetitiveLifting": true,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": true,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 4,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 9000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.2,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": true,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 90.79203876599786,
+        "output": {
+          "workoutName": "Upper Body Muscle Building with a Focus on Shoulder Health",
+          "duration": 45,
+          "goal": "Build muscle in the upper body without aggravating shoulder discomfort",
+          "exercises": [
+            {
+              "name": "Dumbbell Incline Dumbbell Bench Press",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Single-Arm Row",
+              "sets": 4,
+              "reps": "8-12 per arm",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Overhead Press",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Shrug",
+              "sets": 4,
+              "reps": "15 per set",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Hammer Curl",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Tricep Overhead Extension",
+              "sets": 4,
+              "reps": "8-12 per set",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P04",
+    "profile": {
+      "id": "P04",
+      "goal": "Lose weight with a low-impact full-body circuit",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 30,
+      "previousInjury": "Knee limitation",
+      "activityLevel": "Low",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "High work stress",
+      "additionalRequirements": "Avoid jumping and high-impact movements.",
+      "benchmark": {
+        "username": "eval_p04",
+        "gender": "Male",
+        "pushUpsMax": 10,
+        "pullUpsMax": 0,
+        "plankHoldSeconds": 40,
+        "squatReps": 20,
+        "broadJumpCm": 130,
+        "oneKmRunTimeSeconds": 650,
+        "canDeepSquat": false,
+        "canTouchToes": false,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 6,
+        "stressLevel": 8,
+        "age": 36,
+        "weightKg": 92,
+        "heightCm": 174
+      },
+      "lifestyle": {
+        "occupation": "RetailWorker",
+        "movement": {
+          "sittingHoursPerDay": 1,
+          "standingHoursPerDay": 7,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": true,
+          "frequentStairClimbing": true
+        },
+        "recovery": {
+          "averageSleepHours": 6,
+          "stressLevel": 8,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 7500,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.0,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": true,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 73.01238633400499,
+        "output": {
+          "workoutName": "Beginner Full Body Circuit",
+          "duration": 45,
+          "goal": "Lose weight with a low-impact full-body circuit",
+          "exercises": [
+            {
+              "name": "Walking Lunges",
+              "sets": 3,
+              "reps": "10 (each leg)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Bodyweight Squats",
+              "sets": 2,
+              "reps": "12-15",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Push-Ups (knee modification)",
+              "sets": 3,
+              "reps": "8-10",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Plank",
+              "sets": 2,
+              "duration": "30 sec (hold)",
+              "notes": "Ensure your body is in a straight line from head to heels."
+            },
+            {
+              "name": "Glute Bridges",
+              "sets": 2,
+              "reps": "15-20"
+            },
+            {
+              "name": "Standing Oblique Crunches (Side Plank)",
+              "sets": 3,
+              "duration": "30 sec each side",
+              "rest": "60 sec",
+              "notes": "Keep your hips lifted and core engaged."
+            },
+            {
+              "name": "Seated Leg Raises (lying down)",
+              "sets": 2,
+              "reps": "15-20"
+            },
+            {
+              "name": "Chair Dips",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 98.81146045299829,
+        "output": {
+          "workoutName": "Full Body Circuit for Weight Loss",
+          "duration": 45,
+          "goal": "Lose weight with a low-impact full-body circuit",
+          "exer01es": [
+            {
+              "name": "Dead Bug",
+              "sets": 3,
+              "reps": "20 (each side)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Single-Leg Glute Bridge",
+              "sets": 4,
+              "reps": "15 (each leg)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Ankle Pogo Jumps",
+              "sets": 3,
+              "reps": "20-25 (per set)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Nordic Hamstring Curl",
+              "sets": 4,
+              "reps": "12-15 (each leg)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Single-Leg Broad Jump",
+              "sets": 3,
+              "reps": "8-10 (per set)",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P05",
+    "profile": {
+      "id": "P05",
+      "goal": "Improve endurance and core stability for recreational running",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 35,
+      "previousInjury": "None",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "4 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Include core and lower-leg preparation.",
+      "benchmark": {
+        "username": "eval_p05",
+        "gender": "Female",
+        "pushUpsMax": 20,
+        "pullUpsMax": 1,
+        "plankHoldSeconds": 120,
+        "squatReps": 45,
+        "broadJumpCm": 165,
+        "oneKmRunTimeSeconds": 390,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 8,
+        "stressLevel": 3,
+        "age": 31,
+        "weightKg": 59,
+        "heightCm": 166
+      },
+      "lifestyle": {
+        "occupation": "DeskWorker",
+        "movement": {
+          "sittingHoursPerDay": 6,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 8,
+          "stressLevel": 3,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 8500,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.5,
+          "screenTimeHours": 6
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 89.04912574699847,
+        "output": {
+          "workoutName": "Core and Endurance Blast",
+          "duration": 45,
+          "goal": "Improve endurance and core stability for recreational running",
+          "exercises": [
+            {
+              "name": "Plank with Leg Lifts",
+              "sets": 3,
+              "reps": "Hold each side for 20-30 seconds (alternate sides)",
+              "rest": "60 sec between sets"
+            },
+            {
+              "name": "Mountain Climbers",
+              "sets": 4,
+              "reps": "15 reps per leg",
+              "rest": "30-45 sec between sets"
+            },
+            {
+              "name": "Bird Dogs",
+              "sets": 4,
+              "reps": "Hold each side for 20 seconds (alternate sides)",
+              "rest": "60 sec between sets"
+            },
+            {
+              "name": "Side Planks with Hip Dips",
+              "sets": 3,
+              "reps": "Harder on the last set of each side for time (e.g., hold for as long as possible)",
+              "rest": "60 sec between sets"
+            },
+            {
+              "name": "Russian Twists",
+              "sets": 4,
+              "reps": "15 reps per side with a medicine ball or weighted object (if available), otherwise bodyweight is fine",
+              "rest": "30-60 sec between sets"
+            },
+            {
+              "name": "Bicycle Crunches",
+              "sets": 4,
+              "reps": "15 reps per side (alternate sides)",
+              "rest": "30-60 sec between sets"
+            },
+            {
+              "name": "Glute Bridges with Arm Lifts",
+              "sets": 3,
+              "reps": "Hold each lift for a few seconds (e.g., hold arms at chest height) and lower back down slowly into the bridge position before lifting again",
+              "rest": "60 sec between sets"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 120.45949139699951,
+        "output": {
+          "workoutName": "Core and Endurance for Runners",
+          "duration": 45,
+          "goal": "Improve endurance and core stability for recreational running",
+          "exer01es": [
+            {
+              "name": "A-Skip",
+              "sets": 3,
+              "reps": "60 sec per set",
+              "rest": "45 sec"
+            },
+            {
+              "name": "Dead Bug",
+              "sets": 4,
+              "reps": "12-15 reps per side",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Single-Leg Glute Bridge",
+              "sets": 3,
+              "reps": "8-12 reps per leg",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Single-Leg Calf Drop",
+              "sets": 4,
+              "reps": "8-12 reps per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Forearm Plank",
+              "duration": "3 sets of 60 seconds hold each side with alternating legs on the floor for balance, totaling to a continuous plank time not exceeding 45 minutes when combined."
+            },
+            {
+              "name": "Nordic Hamstring Curl",
+              "sets": 2,
+              "reps": "8-10 reps per leg (with assistance if necessary)",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P06",
+    "profile": {
+      "id": "P06",
+      "goal": "Develop hypertrophy with gym cable and machine exercises",
+      "availableEquipment": "Cable Machine",
+      "requestedDuration": 50,
+      "previousInjury": "None",
+      "activityLevel": "High",
+      "exerciseFrequency": "5 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Use controlled reps and moderate rest.",
+      "benchmark": {
+        "username": "eval_p06",
+        "gender": "Male",
+        "pushUpsMax": 45,
+        "pullUpsMax": 10,
+        "plankHoldSeconds": 150,
+        "squatReps": 55,
+        "broadJumpCm": 220,
+        "oneKmRunTimeSeconds": 330,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 4,
+        "age": 27,
+        "weightKg": 82,
+        "heightCm": 181
+      },
+      "lifestyle": {
+        "occupation": "Other",
+        "movement": {
+          "sittingHoursPerDay": 4,
+          "standingHoursPerDay": 3,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 4,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 10000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 3.0,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 60.82880191200093,
+        "output": {
+          "workoutName": "Hypertrophy Focus with Cable and Machine",
+          "duration": 45,
+          "goal": "Develop hypertrophy using gym cable and machine exercises.",
+          "exercises": [
+            {
+              "name": "Cable Bicep Curl",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Machine Chest Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Cable Row",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Leg Press Machine",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Cable Tricep Extension",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Seated Cable Row with Twist (for core engagement)",
+              "sets": 3,
+              "reps": "8-12 per side",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 69.53522742199857,
+        "output": {
+          "workoutName": "Hypertrophy Blast",
+          "duration": 45,
+          "goal": "Develop hypertrophy with gym cable and machine exer01: {   - Lat Pulldown: A vertical upper body pulling exercise that isolates the mid-and-upper back structures. Perfect for individuals unable to complete standard pull-ups, allowing precise volume overload for widening the back and building strong scapular depressors.",
+          "exercises": [
+            {
+              "name": "Lat Pulldown",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Cable Face Pulls",
+              "sets": 3,
+              "reps": "10-15",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Pallof Press (Side Plank Variation)",
+              "sets": 4,
+              "reps": "8-12 per side",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P07",
+    "profile": {
+      "id": "P07",
+      "goal": "Build lower-body strength while protecting the lower back",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 45,
+      "previousInjury": "Lower-back limitation",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Avoid heavy axial loading and conventional deadlifts.",
+      "benchmark": {
+        "username": "eval_p07",
+        "gender": "Male",
+        "pushUpsMax": 22,
+        "pullUpsMax": 3,
+        "plankHoldSeconds": 70,
+        "squatReps": 30,
+        "broadJumpCm": 170,
+        "oneKmRunTimeSeconds": 470,
+        "canDeepSquat": true,
+        "canTouchToes": false,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 5,
+        "age": 42,
+        "weightKg": 88,
+        "heightCm": 180
+      },
+      "lifestyle": {
+        "occupation": "DeliveryDriver",
+        "movement": {
+          "sittingHoursPerDay": 7,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 2
+        },
+        "stressors": {
+          "repetitiveLifting": true,
+          "repetitiveBending": true,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": true,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 5,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 6500,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": false,
+          "waterIntakeLiters": 2.1,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": true,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 47.16249818800134,
+        "output": {
+          "workoutName": "Lower Body Strength Blast",
+          "duration": 45,
+          "goal": "Build lower-body strength while protecting the lower back.",
+          "exercises": [
+            {
+              "name": "Deadlifts with Dumbbells",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Goblet Squats",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Lunges",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Calf Raises with Dumbbells",
+              "sets": 4,
+              "reps": "15-20",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 71.24846353799512,
+        "output": {
+          "workoutName": "Lower Body and Core Strengthening",
+          "duration": 45,
+          "goal": "Build lower-body strength while protecting the lower back",
+          "exer01_name": "Dumbbell Bulgarian Split Squat",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec",
+          "notes": "Focus on form to avoid lower back strain. Keep the knee of the rear leg behind the toe."
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P08",
+    "profile": {
+      "id": "P08",
+      "goal": "Improve mobility and posture after long study sessions",
+      "availableEquipment": "Resistance Band",
+      "requestedDuration": 20,
+      "previousInjury": "Wrist limitation",
+      "activityLevel": "Low",
+      "exerciseFrequency": "2 days per week",
+      "mentalHealth": "Moderate stress",
+      "additionalRequirements": "Avoid exercises that load the wrists heavily.",
+      "benchmark": {
+        "username": "eval_p08",
+        "gender": "Female",
+        "pushUpsMax": 4,
+        "pullUpsMax": 0,
+        "plankHoldSeconds": 25,
+        "squatReps": 15,
+        "broadJumpCm": 105,
+        "oneKmRunTimeSeconds": 690,
+        "canDeepSquat": false,
+        "canTouchToes": false,
+        "canPerformWallSlide": false,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 6,
+        "stressLevel": 7,
+        "age": 21,
+        "weightKg": 55,
+        "heightCm": 160
+      },
+      "lifestyle": {
+        "occupation": "Student",
+        "movement": {
+          "sittingHoursPerDay": 9,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 6,
+          "stressLevel": 7,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 3000,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": false,
+          "waterIntakeLiters": 1.6,
+          "screenTimeHours": 10
+        },
+        "pain": {
+          "neckPain": true,
+          "shoulderPain": false,
+          "upperBackPain": true,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 105.03275840899732,
+        "output": {
+          "workoutName": "Posture and Mobility Improvement",
+          "duration": 45,
+          "goal": "Improve mobility and posture after long study sessions.",
+          "exercises": [
+            {
+              "name": "Resistance Band Shoulder Stretch",
+              "sets": 3,
+              "reps": "Hold for 20-30 seconds each side",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Cat Cow Flow with Resistance Bands",
+              "sets": 4,
+              "reps": "15 reps per set (alternating between cat and cow)",
+              "rest": "30-45 sec"
+            },
+            {
+              "name": "Resistance Band Chest Opener Stretch",
+              "sets": 2,
+              "reps": "Hold for 15-20 seconds each side",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Seated Resistance Band Row with Arm Extension",
+              "sets": 3,
+              "reps": "8-12 reps per set (keeping elbows at a 90 degree angle)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Resistance Band Side Bend Stretch",
+              "sets": 3,
+              "reps": "8-12 reps per set (keeping shoulders down and back)",
+              "rest": "45 sec"
+            },
+            {
+              "name": "Seated Resistance Band Twist with Arm Extension",
+              "sets": 3,
+              "reps": "8-12 reps per set (keeping spine long and twisting from the waist)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Resistance Band Glute Bridge",
+              "sets": 3,
+              "reps": "8-12 reps per set (keeping core engaged and glutes squeezed)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Seated Resistance Band Chest Press",
+              "sets": 3,
+              "reps": "8-12 reps per set (keeping elbows at a 90 degree angle)",
+              "rest": "60 sec"
+            },
+            {
+              "name0: ": " String",
+              "sets": 4,
+              "reps": "Hold for 8-12 seconds each side",
+              "rest": "30 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 45.561560456000734,
+        "output": {
+          "workoutName": "Posture and Mobility Enhancing Workout",
+          "duration": 45,
+          "goal": "Improve mobility and posture after long study sessions",
+          "exercises": [
+            {
+              "name": "Banded Monster Walks (Lateral)",
+              "sets": 3,
+              "reps": "10-15 per leg",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Banded Monster Walks (Forward)"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P09",
+    "profile": {
+      "id": "P09",
+      "goal": "Increase maximal strength with barbell training",
+      "availableEquipment": "Barbell",
+      "requestedDuration": 60,
+      "previousInjury": "None",
+      "activityLevel": "High",
+      "exerciseFrequency": "5 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Use longer rest periods for heavy work.",
+      "benchmark": {
+        "username": "eval_p09",
+        "gender": "Male",
+        "pushUpsMax": 55,
+        "pullUpsMax": 14,
+        "plankHoldSeconds": 180,
+        "squatReps": 60,
+        "broadJumpCm": 245,
+        "oneKmRunTimeSeconds": 300,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 8,
+        "stressLevel": 3,
+        "age": 30,
+        "weightKg": 90,
+        "heightCm": 185
+      },
+      "lifestyle": {
+        "occupation": "Other",
+        "movement": {
+          "sittingHoursPerDay": 3,
+          "standingHoursPerDay": 3,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 8,
+          "stressLevel": 3,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 9500,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 3.2,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 47.93806309300271,
+        "output": {
+          "workoutName": "Maximal Strength Barbell Workout",
+          "duration": 45,
+          "goal": "Increase maximal strength with barbell training",
+          "exercises": [
+            {
+              "name": "Squat",
+              "sets": 3,
+              "reps": "8-10",
+              "rest": "2 minutes"
+            },
+            {
+              "name": "Deadlift",
+              "sets": 4,
+              "reps": "6-8",
+              "rest": "3 minutes"
+            },
+            {
+              "name": "Bench Press",
+              "sets": 4,
+              "reps": "8-10",
+              "rest": "2 minutes"
+            },
+            {
+              "name": "Pull Up or Bent Over Rows",
+              "sets": 3,
+              "reps": "6-8 (to be done with a weighted belt if possible)",
+              "rest": "2 minutes"
+            },
+            {
+              "name": "Overhead Press",
+              "sets": 4,
+              "reps": "6-8",
+              "rest": "3 minutes"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 71.01430044899462,
+        "output": {
+          "workoutName": "Maximal Strength Barbell Blitz",
+          "duration": 45,
+          "goal": "Increase maximal strength with barbell training",
+          "exercises": [
+            {
+              "name": "Barbell Back Squat",
+              "sets": 3,
+              "reps": "8-10",
+              "rest": "2 minutes"
+            },
+            {
+              "name": "Trap Bar Deadlift",
+              "sets": 4,
+              "reps": "6-8",
+              "rest": "3 minutes"
+            },
+            {
+              "name": "Barbell Overhead Press",
+              "sets": 3,
+              "reps": "6-8",
+              "rest": "2 minutes"
+            },
+            {
+              "name": "Barbell Bench Press",
+              "sets": 4,
+              "reps": "6-8",
+              "rest": "3 minutes"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P10",
+    "profile": {
+      "id": "P10",
+      "goal": "Create a short core-focused workout for a beginner",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 15,
+      "previousInjury": "None",
+      "activityLevel": "Low",
+      "exerciseFrequency": "2 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Keep it short and low complexity.",
+      "benchmark": {
+        "username": "eval_p10",
+        "gender": "Male",
+        "pushUpsMax": 8,
+        "pullUpsMax": 0,
+        "plankHoldSeconds": 30,
+        "squatReps": 20,
+        "broadJumpCm": 125,
+        "oneKmRunTimeSeconds": 640,
+        "canDeepSquat": false,
+        "canTouchToes": false,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": false,
+        "averageSleepHours": 7,
+        "stressLevel": 4,
+        "age": 45,
+        "weightKg": 84,
+        "heightCm": 172
+      },
+      "lifestyle": {
+        "occupation": "DeskWorker",
+        "movement": {
+          "sittingHoursPerDay": 8,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 4,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 4000,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": false,
+          "waterIntakeLiters": 2.0,
+          "screenTimeHours": 8
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 68.91659649499343,
+        "output": {
+          "workoutName": "Beginner Core Blast",
+          "duration": 45,
+          "goal": "To strengthen and tone the core muscles using bodyweight exercises.",
+          "exercises": [
+            {
+              "name": "Plank",
+              "sets": 3,
+              "reps": "Hold for time (e.g., 20-30 seconds)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Bridge with Leg Lift",
+              "sets": 4,
+              "reps": "Per leg (8-12 repetitions each set)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Russian Twist",
+              "sets": 3,
+              "reps": "With a medicine ball or weighted object if available and safe for the user (12-15 repetitions each set)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Side Plank",
+              "sets": 3,
+              "reps": "Hold on each side (8-12 seconds per rep)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Bicycle Crunches",
+              "sets": 4,
+              "reps": "Per leg alternating with the other as you go through a set (8-12 repetitions each set)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Superman Hold",
+              "sets": 3,
+              "reps": "Hold for time on each side (holding the back arched and reaching towards opposite hands or feet) (20-30 seconds)",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 64.32222823199845,
+        "output": "{\n  \"workoutName\": \"Core and Balance Blast\",\n  \"duration\": 45,\n  \"goal\": \"Create a short core-focused workout for a beginner with bodyweight exer01: {   |x| - [{\"\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+        "parse_error": "Expecting ',' delimiter: line 5 column 33 (char 195)",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P11",
+    "profile": {
+      "id": "P11",
+      "goal": "Improve total-body power for recreational basketball",
+      "availableEquipment": "Medicine Ball",
+      "requestedDuration": 35,
+      "previousInjury": "None",
+      "activityLevel": "High",
+      "exerciseFrequency": "4 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Use explosive but controlled movements.",
+      "benchmark": {
+        "username": "eval_p11",
+        "gender": "Male",
+        "pushUpsMax": 35,
+        "pullUpsMax": 8,
+        "plankHoldSeconds": 120,
+        "squatReps": 50,
+        "broadJumpCm": 230,
+        "oneKmRunTimeSeconds": 350,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 4,
+        "age": 22,
+        "weightKg": 79,
+        "heightCm": 182
+      },
+      "lifestyle": {
+        "occupation": "Student",
+        "movement": {
+          "sittingHoursPerDay": 5,
+          "standingHoursPerDay": 2,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": true
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 4,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 11000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.8,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 63.690824375000375,
+        "output": {
+          "workoutName": "Basketball Power Blast",
+          "duration": 45,
+          "goal": "Improve total-body power for recreational basketball",
+          "exercises": [
+            {
+              "name": "Medicine Ball Squat Throws",
+              "sets": 3,
+              "reps": "10-12 per set",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Standing Medicine Ball Rotation Chest Passes",
+              "sets": 4,
+              "reps": "8-12 per side for each rep",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Medicine Ball Deadlifts with Throws",
+              "sets": 3,
+              "reps": "6-8 per set",
+              "rest": "2 minutes"
+            },
+            {
+              "name": "Standing Medicine Ball Slams",
+              "sets": 4,
+              "reps": "10-15 reps for each rep",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Medicine Ball Clean and Press",
+              "sets": 3,
+              "reps": "6-8 per set",
+              "rest": "2 minutes"
+            },
+            {
+              "name": "Standing Medicine Ball Rotation Throws with a Partner",
+              "sets": 4,
+              "reps": "10 reps for each rep (partner throws the ball)",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 52.42693309999595,
+        "output": {
+          "workoutName": "Basketball Power Boost",
+          "duration": 45,
+          "goal": "Improve total-body power for recreational basketball",
+          "exercises": [
+            {
+              "name": "Medicine Ball Slam",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Medicine Ball Rotational Toss",
+              "sets": 4,
+              "reps": "6-10 per side",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P12",
+    "profile": {
+      "id": "P12",
+      "goal": "Build beginner leg strength with knee-friendly choices",
+      "availableEquipment": "Machine",
+      "requestedDuration": 40,
+      "previousInjury": "Knee limitation",
+      "activityLevel": "Low",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Avoid high-impact jumping.",
+      "benchmark": {
+        "username": "eval_p12",
+        "gender": "Female",
+        "pushUpsMax": 8,
+        "pullUpsMax": 0,
+        "plankHoldSeconds": 45,
+        "squatReps": 18,
+        "broadJumpCm": 115,
+        "oneKmRunTimeSeconds": 610,
+        "canDeepSquat": false,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 5,
+        "age": 52,
+        "weightKg": 72,
+        "heightCm": 162
+      },
+      "lifestyle": {
+        "occupation": "HealthcareWorker",
+        "movement": {
+          "sittingHoursPerDay": 2,
+          "standingHoursPerDay": 7,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": true,
+          "frequentStairClimbing": true
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 5,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 8000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.2,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": true,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 50.54279237599985,
+        "output": {
+          "workoutName": "Beginner Leg Strength with Knees in Mind",
+          "duration": 45,
+          "goal": "Build beginner leg strength while being knee-friendly.",
+          "exercises": [
+            {
+              "name": "Seated Leg Press Machine (Light Weight)",
+              "sets": 3,
+              "reps": "10-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Hip Thrusts on Bench with Bumper Plates",
+              "sets": 4,
+              "reps": "8-10",
+              "rest": "2 min"
+            },
+            {
+              "name": "Leg Extensions Machine (Light Weight)",
+              "sets": 3,
+              "reps": "10-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Clamshells with Theraband Resistance",
+              "sets": 4,
+              "reps": "15 (each side)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Step-Ups on Low Bench or Stability Ball",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 48.142408678999345,
+        "output": {
+          "workoutName": "Beginner Leg Strength Building",
+          "duration": 45,
+          "goal": "Build beginner leg strength with knee-friendly choices",
+          "exercises": [
+            {
+              "name": "Lying Leg Curl",
+              "sets": 3,
+              "reps": "10-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Leg Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P13",
+    "profile": {
+      "id": "P13",
+      "goal": "Develop pull strength using a pull-up bar",
+      "availableEquipment": "Pull-up Bar",
+      "requestedDuration": 30,
+      "previousInjury": "None",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Scale difficulty for an intermediate user.",
+      "benchmark": {
+        "username": "eval_p13",
+        "gender": "Male",
+        "pushUpsMax": 30,
+        "pullUpsMax": 6,
+        "plankHoldSeconds": 110,
+        "squatReps": 40,
+        "broadJumpCm": 200,
+        "oneKmRunTimeSeconds": 400,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 4,
+        "age": 26,
+        "weightKg": 74,
+        "heightCm": 177
+      },
+      "lifestyle": {
+        "occupation": "Other",
+        "movement": {
+          "sittingHoursPerDay": 5,
+          "standingHoursPerDay": 2,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 4,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 8000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.6,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 48.770397663996846,
+        "output": {
+          "workoutName": "Pull Strength Development",
+          "duration": 45,
+          "goal": "Develop pull strength using a pull-up bar",
+          "exercises": [
+            {
+              "name": "Assisted Pull-Ups",
+              "sets": 3,
+              "reps": "8-12 (use assistance as needed)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Negatives",
+              "sets": 4,
+              "reps": "6-8 (slow lowering phase only)",
+              "rest": "120 sec"
+            },
+            {
+              "name": "Dead Hangs",
+              "sets": 3,
+              "reps": "30-45 seconds per hang",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Pull-Up Band Assisted Pulls",
+              "sets": 2,
+              "reps": "8-12 (use resistance band for assistance)",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 61.67043079999712,
+        "output": {
+          "workoutName": "Pull Strength Development",
+          "duration": 45,
+          "goal": "Develop pull strength using a pull-up bar",
+          "exercises": [
+            {
+              "name": "Pull-Up",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Negative Pull-Up",
+              "sets": 4,
+              "reps": "5-7 (slowly lowering)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Inverted Row",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dead Hang",
+              "sets": 4,
+              "reps": "60 sec (holding position)",
+              "rest": "30 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P14",
+    "profile": {
+      "id": "P14",
+      "goal": "Create a balanced dumbbell workout for fat loss and conditioning",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 30,
+      "previousInjury": "None",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Moderate stress",
+      "additionalRequirements": "Use moderate intensity and avoid excessive complexity.",
+      "benchmark": {
+        "username": "eval_p14",
+        "gender": "Female",
+        "pushUpsMax": 15,
+        "pullUpsMax": 1,
+        "plankHoldSeconds": 75,
+        "squatReps": 35,
+        "broadJumpCm": 150,
+        "oneKmRunTimeSeconds": 510,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 6,
+        "stressLevel": 6,
+        "age": 34,
+        "weightKg": 70,
+        "heightCm": 165
+      },
+      "lifestyle": {
+        "occupation": "DeskWorker",
+        "movement": {
+          "sittingHoursPerDay": 7,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 6,
+          "stressLevel": 6,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 5500,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.1,
+          "screenTimeHours": 7
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 66.12003827500303,
+        "output": {
+          "workoutName": "Dumbbell Fat Loss and Conditioning Circuit",
+          "duration": 45,
+          "goal": "Create a balanced dumbbell workout for fat loss and conditioning",
+          "exercises": [
+            {
+              "name": "Dumbbell Squat to Press",
+              "sets": 3,
+              "reps": "12-15 per set",
+              "rest": "90 seconds"
+            },
+            {
+              "name": "Single Arm Dumbbell Row",
+              "sets": 4,
+              "reps": "8-12 per side",
+              "rest": "60 seconds"
+            },
+            {
+              "name": "Dumbbell Deadlift to Upright Rows",
+              "sets": 3,
+              "reps": "10-15 per set",
+              "rest": "90 seconds"
+            },
+            {
+              "name": "Standing Dumbbell Curl and Press",
+              "sets": 4,
+              "reps": "8-12 for each exercise (e.g., curls followed by press)",
+              "rest": "60 seconds"
+            },
+            {
+              "name": "Dumbbell Renegade Row",
+              "sets": 3,
+              "reps": "8-12 per side",
+              "rest": "90 seconds"
+            },
+            {
+              "name": "Single Arm Dumbbell Bench Press to Upright Rows",
+              "sets": 4,
+              "reps": "6-10 for each exercise (e.g., bench press followed by rows)",
+              "rest": "90 seconds"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 97.54022635099682,
+        "output": {
+          "workoutName": "Balanced Fat Loss and Conditioning Workout",
+          "duration": 45,
+          "goal": "Create a balanced dumbbell workout for fat loss and conditioning",
+          "exercises": [
+            {
+              "name": "Dumbbell Bulgarian Split Squat",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Single-Leg Romanian Deadlift",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Incline Dumbbell Bench Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Overhead Press",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Farmer's Walk",
+              "sets": 4,
+              "distance": "50 meters per side (or as far as possible)",
+              "notes": "Maintain a strong posture and breathe deeply throughout the exercise"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P15",
+    "profile": {
+      "id": "P15",
+      "goal": "Improve mobility and posterior-chain strength after long driving shifts",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 25,
+      "previousInjury": "Lower-back limitation",
+      "activityLevel": "Low",
+      "exerciseFrequency": "2 days per week",
+      "mentalHealth": "High work stress",
+      "additionalRequirements": "Avoid heavy spinal loading.",
+      "benchmark": {
+        "username": "eval_p15",
+        "gender": "Male",
+        "pushUpsMax": 12,
+        "pullUpsMax": 1,
+        "plankHoldSeconds": 45,
+        "squatReps": 22,
+        "broadJumpCm": 140,
+        "oneKmRunTimeSeconds": 610,
+        "canDeepSquat": false,
+        "canTouchToes": false,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 5,
+        "stressLevel": 8,
+        "age": 39,
+        "weightKg": 86,
+        "heightCm": 176
+      },
+      "lifestyle": {
+        "occupation": "DeliveryDriver",
+        "movement": {
+          "sittingHoursPerDay": 9,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 1
+        },
+        "stressors": {
+          "repetitiveLifting": true,
+          "repetitiveBending": true,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": true,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 5,
+          "stressLevel": 8,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 4500,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": false,
+          "waterIntakeLiters": 1.8,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": true,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 79.43644371700066,
+        "output": {
+          "workoutName": "Posterior Chain Strength and Mobility",
+          "duration": 45,
+          "goal": "Improve mobility and posterior-chain strength after long driving shifts.",
+          "exercises": [
+            {
+              "name": "Bodyweight Squats",
+              "sets": 3,
+              "reps": "12-15",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Bridge with Leg Lift",
+              "sets": 4,
+              "reps": "8-12 per leg",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Bodyweight Calf Raises",
+              "sets": 3,
+              "reps": "15-20",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Glute Bridges with Arm Lift",
+              "sets": 4,
+              "reps": "8-12 per side",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Bodyweight Hip Thrusts",
+              "sets": 3,
+              "reps": "12-15",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Bird Dogs with Arm and Leg Extension",
+              "sets": 4,
+              "reps": "8 per side",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Bodyweight Deadlifts (No Weight)",
+              "sets": 3,
+              "reps": "12-15",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Plank with Leg Lift and Arm Reach",
+              "sets": 4,
+              "reps": "8 per side (leg lift) & reach extension for each rep",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 112.71959889100253,
+        "output": {
+          "workoutName": "Posterior Chain and Mobility Enhancer",
+          "duration": 45,
+          "goal": "Improve mobility and posterior-chain strength after long driving shifts",
+          "exercises": [
+            {
+              "name": "Forearm Plank",
+              "sets": 3,
+              "reps": "Hold for time (e.g., 45 sec)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Tibialis Raise",
+              "sets": 4,
+              "reps": "12-15 per leg",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Single-Leg Broad Jump",
+              "sets": 3,
+              "reps": "Perform as many reps as possible (e.g., max of 10)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Single-Leg Glute Bridge",
+              "sets": 4,
+              "reps": "8-12 per leg",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Lateral Bound (Heiden Jump)",
+              "sets": 3,
+              "reps": "Perform as many reps as possible (e.g., max of 10 per leg)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Nordic Hamstring Curl",
+              "sets": 3,
+              "reps": "Perform for time under control (e.g., hold the position at end of set for max duration)",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P16",
+    "profile": {
+      "id": "P16",
+      "goal": "Build upper-body endurance with safe push and pull exercises",
+      "availableEquipment": "Cable Machine",
+      "requestedDuration": 45,
+      "previousInjury": "Shoulder limitation",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "4 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Avoid heavy overhead work.",
+      "benchmark": {
+        "username": "eval_p16",
+        "gender": "Female",
+        "pushUpsMax": 16,
+        "pullUpsMax": 2,
+        "plankHoldSeconds": 80,
+        "squatReps": 34,
+        "broadJumpCm": 150,
+        "oneKmRunTimeSeconds": 500,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": false,
+        "canReachHandsBehindBack": false,
+        "averageSleepHours": 7,
+        "stressLevel": 5,
+        "age": 29,
+        "weightKg": 62,
+        "heightCm": 167
+      },
+      "lifestyle": {
+        "occupation": "FactoryWorker",
+        "movement": {
+          "sittingHoursPerDay": 1,
+          "standingHoursPerDay": 6,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 3
+        },
+        "stressors": {
+          "repetitiveLifting": true,
+          "repetitiveBending": false,
+          "overheadWork": true,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": true,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 5,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 9000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.3,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": true,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 42.75446274400019,
+        "output": {
+          "workoutName": "Upper Body Endurance with Cable Machine",
+          "duration": 45,
+          "goal": "Build upper-body endurance using safe push and pull exercises.",
+          "exercises": [
+            {
+              "name": "Cable Pushdowns",
+              "sets": 3,
+              "reps": "12-15",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Seated Cable Rows",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Cable Face Pulls",
+              "sets": 3,
+              "reps": "12-15",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Lat Pulldown with Cable Machine",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      },
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 61.82502801199735,
+        "output": {
+          "workoutName": "Upper Body Endurance and Core Stability",
+          "duration": 45,
+          "goal": "Build upper-body endurance with safe push and pull exer0123456789_pulls using cable machine.",
+          "exercises": [
+            {
+              "name": "Cable Lat Pulldown",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Cable Face Pulls",
+              "sets": 3,
+              "reps": "15-20",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Pallof Press (Side Plank Variation)",
+              "sets": 4,
+              "reps": "8-12 per side",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P17",
+    "profile": {
+      "id": "P17",
+      "goal": "Create an advanced bodyweight athletic workout",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 50,
+      "previousInjury": "None",
+      "activityLevel": "High",
+      "exerciseFrequency": "5 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Include explosive and core work.",
+      "benchmark": {
+        "username": "eval_p17",
+        "gender": "Male",
+        "pushUpsMax": 50,
+        "pullUpsMax": 12,
+        "plankHoldSeconds": 170,
+        "squatReps": 60,
+        "broadJumpCm": 240,
+        "oneKmRunTimeSeconds": 320,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 8,
+        "stressLevel": 3,
+        "age": 23,
+        "weightKg": 72,
+        "heightCm": 180
+      },
+      "lifestyle": {
+        "occupation": "Student",
+        "movement": {
+          "sittingHoursPerDay": 5,
+          "standingHoursPerDay": 2,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 8,
+          "stressLevel": 3,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 12000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 3.0,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 60.0693665209983,
+        "output": {
+          "workoutName": "Advanced Bodyweight Circuit",
+          "duration": 45,
+          "goal": "Create an advanced bodyweight athletic workout for a highly fit individual with no injuries.",
+          "exercises": [
+            {
+              "name": "Pistol Squat Progression",
+              "sets": 3,
+              "reps": "8-12 (or as many reps can be performed comfortably)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Weighted Pull-Ups or Neutral Grip Inverted Rows",
+              "sets": 4,
+              "reps": "8-12 (or as many reps can be performed comfortably)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Gymnastic Muscle-Ups or Ring Dips",
+              "sets": 4,
+              "reps": "8-12 (or as many reps can be performed comfortably)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Flag Leaps and Handstand Pushouts",
+              "sets": 3,
+              "reps": "6-8 per side for leaps; as many reps can be performed comfortably with pushouts (e.g., holding at the top of each rep)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "L-Sit to Handstand Transitions",
+              "sets": 3,
+              "reps": "As many transitions as can be performed comfortably (e.g., holding each position for a few seconds)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Burpee with Plyo Box Jump",
+              "sets": 3,
+              "reps": "As many reps as can be performed comfortably (with a plyo box for added difficulty)",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P17",
+    "profile": {
+      "id": "P17",
+      "goal": "Create an advanced bodyweight athletic workout",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 50,
+      "previousInjury": "None",
+      "activityLevel": "High",
+      "exerciseFrequency": "5 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Include explosive and core work.",
+      "benchmark": {
+        "username": "eval_p17",
+        "gender": "Male",
+        "pushUpsMax": 50,
+        "pullUpsMax": 12,
+        "plankHoldSeconds": 170,
+        "squatReps": 60,
+        "broadJumpCm": 240,
+        "oneKmRunTimeSeconds": 320,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 8,
+        "stressLevel": 3,
+        "age": 23,
+        "weightKg": 72,
+        "heightCm": 180
+      },
+      "lifestyle": {
+        "occupation": "Student",
+        "movement": {
+          "sittingHoursPerDay": 5,
+          "standingHoursPerDay": 2,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 8,
+          "stressLevel": 3,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 12000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 3.0,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 86.64510665200214,
+        "output": {
+          "workoutName": "Advanced Bodyweight Athlete's Circuit",
+          "duration": 45,
+          "goal": "Create an advanced bodyweight athletic workout for structural balance and explosive power development.",
+          "exercises": [
+            {
+              "name": "Single-Leg Glute Bridge",
+              "sets": 3,
+              "reps": "12-15 per leg",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Nordic Hamstring Curl",
+              "sets": 4,
+              "reps": "8-12 (eccentric phase)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "A-Skip",
+              "sets": 3,
+              "reps": "60 seconds per set",
+              "rest": "45 sec"
+            },
+            {
+              "name": "Single-Leg Broad Jump",
+              "sets": 2,
+              "reps": "8 (focus on form and landing)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dead Bug",
+              "sets": 3,
+              "reps": "15 per side",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P18",
+    "profile": {
+      "id": "P18",
+      "goal": "Design a long hypertrophy workout using dumbbells",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 60,
+      "previousInjury": "None",
+      "activityLevel": "High",
+      "exerciseFrequency": "5 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Use enough volume for an advanced trainee.",
+      "benchmark": {
+        "username": "eval_p18",
+        "gender": "Female",
+        "pushUpsMax": 35,
+        "pullUpsMax": 6,
+        "plankHoldSeconds": 145,
+        "squatReps": 55,
+        "broadJumpCm": 190,
+        "oneKmRunTimeSeconds": 380,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 8,
+        "stressLevel": 3,
+        "age": 32,
+        "weightKg": 67,
+        "heightCm": 170
+      },
+      "lifestyle": {
+        "occupation": "Other",
+        "movement": {
+          "sittingHoursPerDay": 4,
+          "standingHoursPerDay": 3,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 8,
+          "stressLevel": 3,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 10000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.8,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 75.41403763100243,
+        "output": {
+          "workoutName": "Dumbbell Hypertrophy Circuit",
+          "duration": 45,
+          "goal": "Design a long hypertrophy workout using dumbbells for advanced fitness level individuals with no injuries.",
+          "exercises": [
+            {
+              "name": "Dumbbell Squats",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Deadlifts",
+              "sets": 3,
+              "reps": "10-15",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Bench Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Flyes",
+              "sets": 3,
+              "reps": "10-15",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Rows",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Shoulder Press",
+              "sets": 3,
+              "reps": "10-15",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Bicep Curls",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Tricep Extensions",
+              "sets": 3,
+              "reps": "10-15",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Calf Raises",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P18",
+    "profile": {
+      "id": "P18",
+      "goal": "Design a long hypertrophy workout using dumbbells",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 60,
+      "previousInjury": "None",
+      "activityLevel": "High",
+      "exerciseFrequency": "5 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Use enough volume for an advanced trainee.",
+      "benchmark": {
+        "username": "eval_p18",
+        "gender": "Female",
+        "pushUpsMax": 35,
+        "pullUpsMax": 6,
+        "plankHoldSeconds": 145,
+        "squatReps": 55,
+        "broadJumpCm": 190,
+        "oneKmRunTimeSeconds": 380,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 8,
+        "stressLevel": 3,
+        "age": 32,
+        "weightKg": 67,
+        "heightCm": 170
+      },
+      "lifestyle": {
+        "occupation": "Other",
+        "movement": {
+          "sittingHoursPerDay": 4,
+          "standingHoursPerDay": 3,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 8,
+          "stressLevel": 3,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 10000,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.8,
+          "screenTimeHours": 4
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 91.74862558599852,
+        "output": {
+          "workoutName": "Hypertrophy Power Session",
+          "duration": 45,
+          "goal": "Design a long hypertrophy workout using dumbbells",
+          "exer01es": [
+            {
+              "name": "Dumbbell Step-Up",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Incline Dumbbell Bench Press",
+              "sets": 4,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Hammer Curl",
+              "sets": 3,
+              "reps": "8-12 per arm",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Farmer's Walk",
+              "sets": 4,
+              "distance_or_time": "For time (e.g., 3 minutes)",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Single-Arm Row",
+              "sets": 3,
+              "reps": "8-12 per arm",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P19",
+    "profile": {
+      "id": "P19",
+      "goal": "Build careful beginner strength with wrist-friendly exercise choices",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 35,
+      "previousInjury": "Wrist limitation",
+      "activityLevel": "Low",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Avoid long plank holds and wrist-loaded push-up positions.",
+      "benchmark": {
+        "username": "eval_p19",
+        "gender": "Male",
+        "pushUpsMax": 6,
+        "pullUpsMax": 0,
+        "plankHoldSeconds": 25,
+        "squatReps": 18,
+        "broadJumpCm": 130,
+        "oneKmRunTimeSeconds": 630,
+        "canDeepSquat": false,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 5,
+        "age": 48,
+        "weightKg": 80,
+        "heightCm": 173
+      },
+      "lifestyle": {
+        "occupation": "DeskWorker",
+        "movement": {
+          "sittingHoursPerDay": 8,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 5,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 5000,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.0,
+          "screenTimeHours": 8
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 50.453710298999795,
+        "output": {
+          "workoutName": "Beginner Strength with Dumbbells",
+          "duration": 45,
+          "goal": "Build careful beginner strength while being wrist-friendly.",
+          "exercises": [
+            {
+              "name": "Dumbbell Squat to Press",
+              "sets": 3,
+              "reps": "10-12 per set",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Seated Dumbbell Shoulder Press",
+              "sets": 4,
+              "reps": "8-12 per set",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Deadlift to Upright Row",
+              "sets": 3,
+              "reps": "10-12 per set",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Standing Dumbbell Curl with a Twist (for wrist health)",
+              "sets": 4,
+              "reps": "8-12 per set",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Dumbbell Lateral Raises to Dumbbell Shrugs (for wrist health)",
+              "sets": 3,
+              "reps": "8-12 per set",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P19",
+    "profile": {
+      "id": "P19",
+      "goal": "Build careful beginner strength with wrist-friendly exercise choices",
+      "availableEquipment": "Dumbbells",
+      "requestedDuration": 35,
+      "previousInjury": "Wrist limitation",
+      "activityLevel": "Low",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Normal stress",
+      "additionalRequirements": "Avoid long plank holds and wrist-loaded push-up positions.",
+      "benchmark": {
+        "username": "eval_p19",
+        "gender": "Male",
+        "pushUpsMax": 6,
+        "pullUpsMax": 0,
+        "plankHoldSeconds": 25,
+        "squatReps": 18,
+        "broadJumpCm": 130,
+        "oneKmRunTimeSeconds": 630,
+        "canDeepSquat": false,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 7,
+        "stressLevel": 5,
+        "age": 48,
+        "weightKg": 80,
+        "heightCm": 173
+      },
+      "lifestyle": {
+        "occupation": "DeskWorker",
+        "movement": {
+          "sittingHoursPerDay": 8,
+          "standingHoursPerDay": 1,
+          "walkingHoursPerDay": 1,
+          "physicalLaborHoursPerDay": 0
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": true,
+          "prolongedStanding": false,
+          "frequentStairClimbing": false
+        },
+        "recovery": {
+          "averageSleepHours": 7,
+          "stressLevel": 5,
+          "feelsFatiguedAfterWork": false,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 5000,
+          "stretchesRegularly": false,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.0,
+          "screenTimeHours": 8
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 76.30599697600701,
+        "output": {
+          "workoutName": "Beginner Strength and Stability",
+          "duration": 45,
+          "goal": "Build careful beginner strength with wrist-friendly exercise choices",
+          "exer01es": [
+            {
+              "name": "Dumbbell Hammer Curl",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Tricep Overhead Extension",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dumbbell Step-Up",
+              "sets": 3,
+              "reps": "8-12 per leg",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Incline Dumbbell Bench Press",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P20",
+    "profile": {
+      "id": "P20",
+      "goal": "Create a balanced mobility and strength workout for general health",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 40,
+      "previousInjury": "None",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Moderate stress",
+      "additionalRequirements": "Include warm-up style notes and keep intensity moderate.",
+      "benchmark": {
+        "username": "eval_p20",
+        "gender": "Female",
+        "pushUpsMax": 14,
+        "pullUpsMax": 1,
+        "plankHoldSeconds": 70,
+        "squatReps": 32,
+        "broadJumpCm": 145,
+        "oneKmRunTimeSeconds": 520,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 6,
+        "stressLevel": 6,
+        "age": 40,
+        "weightKg": 68,
+        "heightCm": 163
+      },
+      "lifestyle": {
+        "occupation": "RetailWorker",
+        "movement": {
+          "sittingHoursPerDay": 2,
+          "standingHoursPerDay": 6,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 1
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": true,
+          "frequentStairClimbing": true
+        },
+        "recovery": {
+          "averageSleepHours": 6,
+          "stressLevel": 6,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 8500,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.3,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "LLM-only",
+        "response_time_seconds": 74.13419075999991,
+        "output": {
+          "workoutName": "Balanced Mobility and Strength Workout",
+          "duration": 45,
+          "goal": "Create a balanced mobility and strength workout for general health.",
+          "exercises": [
+            {
+              "name": "Warm-Up Jog",
+              "sets": 1,
+              "reps": "3 minutes continuous jogging in place or around the room to increase heart rate and warm up muscles",
+              "rest": "N/A"
+            },
+            {
+              "name": "Bodyweight Squats",
+              "sets": 4,
+              "reps": "12-15 reps per set",
+              "rest": "90 seconds rest between sets to allow for recovery and maintain proper form"
+            },
+            {
+              "name": "Push-Ups",
+              "sets": 3,
+              "reps": "8-12 reps per set (modify with knee push-ups if necessary)",
+              "rest": "90 seconds rest between sets"
+            },
+            {
+              "name": "Plank",
+              "sets": 4,
+              "duration": "30 seconds hold each set to improve core strength and stability",
+              "rest": "60 seconds rest after the first two planks before starting on subsequent ones for recovery"
+            },
+            {
+              "name": "Lunges with a Twist",
+              "sets": 2,
+              "reps": "8-10 reps per leg (per set)",
+              "rest": "90 seconds rest between sets to allow muscles time to recover"
+            },
+            {
+              "name": "Glute Bridges",
+              "sets": 3,
+              "reps": "12-15 reps per set",
+              "rest": "60 seconds rest after the first two sets before starting on subsequent ones for recovery"
+            },
+            {
+              "name": "Cool Down Stretching Routine",
+              "sets": 3,
+              "reps": "Hold each stretch for 20-30 seconds (e.g., hamstring stretch, quad stretch, chest and shoulder strets)",
+              "rest": "N/A"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "profileId": "P20",
+    "profile": {
+      "id": "P20",
+      "goal": "Create a balanced mobility and strength workout for general health",
+      "availableEquipment": "Bodyweight",
+      "requestedDuration": 40,
+      "previousInjury": "None",
+      "activityLevel": "Moderate",
+      "exerciseFrequency": "3 days per week",
+      "mentalHealth": "Moderate stress",
+      "additionalRequirements": "Include warm-up style notes and keep intensity moderate.",
+      "benchmark": {
+        "username": "eval_p20",
+        "gender": "Female",
+        "pushUpsMax": 14,
+        "pullUpsMax": 1,
+        "plankHoldSeconds": 70,
+        "squatReps": 32,
+        "broadJumpCm": 145,
+        "oneKmRunTimeSeconds": 520,
+        "canDeepSquat": true,
+        "canTouchToes": true,
+        "canPerformWallSlide": true,
+        "canReachHandsBehindBack": true,
+        "averageSleepHours": 6,
+        "stressLevel": 6,
+        "age": 40,
+        "weightKg": 68,
+        "heightCm": 163
+      },
+      "lifestyle": {
+        "occupation": "RetailWorker",
+        "movement": {
+          "sittingHoursPerDay": 2,
+          "standingHoursPerDay": 6,
+          "walkingHoursPerDay": 2,
+          "physicalLaborHoursPerDay": 1
+        },
+        "stressors": {
+          "repetitiveLifting": false,
+          "repetitiveBending": false,
+          "overheadWork": false,
+          "oneSidedLoadCarrying": false,
+          "prolongedSitting": false,
+          "prolongedStanding": true,
+          "frequentStairClimbing": true
+        },
+        "recovery": {
+          "averageSleepHours": 6,
+          "stressLevel": 6,
+          "feelsFatiguedAfterWork": true,
+          "hasChronicPain": false
+        },
+        "habits": {
+          "dailyStepCount": 8500,
+          "stretchesRegularly": true,
+          "takesMovementBreaks": true,
+          "waterIntakeLiters": 2.3,
+          "screenTimeHours": 5
+        },
+        "pain": {
+          "neckPain": false,
+          "shoulderPain": false,
+          "upperBackPain": false,
+          "lowerBackPain": false,
+          "kneePain": false,
+          "anklePain": false
+        }
+      }
+    },
+    "results": [
+      {
+        "condition": "WorkoutRAG",
+        "response_time_seconds": 98.49443671300105,
+        "output": {
+          "workoutName": "Balanced Mobility and Strength Foundations",
+          "duration": 45,
+          "goal": "Create a balanced mobility and strength workout for general health",
+          "exercises": [
+            {
+              "name": "Push-Up",
+              "sets": 3,
+              "reps": "8-12",
+              "rest": "90 sec"
+            },
+            {
+              "name": "Dead Bug",
+              "sets": 4,
+              "reps": "As many as possible with good form (e.g., 5)",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Tibialis Raise",
+              "sets": 3,
+              "reps": "12-15 per leg",
+              "rest": "45 sec"
+            },
+            {
+              "name": "Single-Leg Glute Bridge",
+              "sets": 3,
+              "reps": "8-12 per side",
+              "rest": "60 sec"
+            },
+            {
+              "name": "Forearm Plank",
+              "duration": "Hold for 45 sec to 1 min on each arm (alternate arms)",
+              "notes": "Focus on maintaining a neutral spine and avoid sagging hips."
+            },
+            {
+              "name": "A-Skip",
+              "sets": 2,
+              "reps": "As many as possible for time or distance (e.g., 30 mins)",
+              "rest": "60 sec"
+            }
+          ]
+        },
+        "parse_error": "",
+        "error": ""
+      }
+    ]
+  }
+]

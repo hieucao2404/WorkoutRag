@@ -1,0 +1,41 @@
+profile_id,label,goal,available_equipment,previous_injury,notes,goal_relevance,personalization,equipment_compatibility,safety,workout_completeness
+P01,Output B,Build general fitness with a simple full-body beginner workout,Bodyweight,None,single-evaluator rubric score,4,3,3,4,4
+P01,Output A,Build general fitness with a simple full-body beginner workout,Bodyweight,None,single-evaluator rubric score,4,3,5,4,2
+P02,Output A,Improve strength with a dumbbell full-body workout,Dumbbells,None,single-evaluator rubric score,4,3,4,4,4
+P02,Output B,Improve strength with a dumbbell full-body workout,Dumbbells,None,single-evaluator rubric score,4,3,5,4,3
+P03,Output B,Build muscle in the upper body without aggravating shoulder discomfort,Dumbbells,Mild shoulder limitation,single-evaluator rubric score,3,3,4,2,2
+P03,Output A,Build muscle in the upper body without aggravating shoulder discomfort,Dumbbells,Mild shoulder limitation,single-evaluator rubric score,3,2,5,2,4
+P04,Output B,Lose weight with a low-impact full-body circuit,Bodyweight,Knee limitation,single-evaluator rubric score,3,2,4,2,4
+P04,Output A,Lose weight with a low-impact full-body circuit,Bodyweight,Knee limitation,single-evaluator rubric score,3,2,5,1,4
+P05,Output A,Improve endurance and core stability for recreational running,Bodyweight,None,single-evaluator rubric score,4,3,3,4,4
+P05,Output B,Improve endurance and core stability for recreational running,Bodyweight,None,single-evaluator rubric score,4,3,5,4,4
+P06,Output A,Develop hypertrophy with gym cable and machine exercises,Cable Machine,None,single-evaluator rubric score,4,3,3,4,4
+P06,Output B,Develop hypertrophy with gym cable and machine exercises,Cable Machine,None,single-evaluator rubric score,3,3,5,4,4
+P07,Output B,Build lower-body strength while protecting the lower back,Dumbbells,Lower-back limitation,single-evaluator rubric score,3,2,5,1,4
+P07,Output A,Build lower-body strength while protecting the lower back,Dumbbells,Lower-back limitation,single-evaluator rubric score,3,3,5,4,2
+P08,Output A,Improve mobility and posture after long study sessions,Resistance Band,Wrist limitation,single-evaluator rubric score,4,3,5,4,4
+P08,Output B,Improve mobility and posture after long study sessions,Resistance Band,Wrist limitation,single-evaluator rubric score,3,3,5,4,3
+P09,Output A,Increase maximal strength with barbell training,Barbell,None,single-evaluator rubric score,5,4,4,4,4
+P09,Output B,Increase maximal strength with barbell training,Barbell,None,single-evaluator rubric score,5,4,5,4,4
+P10,Output A,Create a short core-focused workout for a beginner,Bodyweight,None,single-evaluator rubric score,4,3,3,4,4
+P10,Output B,Create a short core-focused workout for a beginner,Bodyweight,None,single-evaluator rubric score,1,1,1,3,1
+P11,Output A,Improve total-body power for recreational basketball,Medicine Ball,None,single-evaluator rubric score,4,3,5,4,4
+P11,Output B,Improve total-body power for recreational basketball,Medicine Ball,None,single-evaluator rubric score,4,3,5,4,3
+P12,Output A,Build beginner leg strength with knee-friendly choices,Machine,Knee limitation,single-evaluator rubric score,3,3,2,3,4
+P12,Output B,Build beginner leg strength with knee-friendly choices,Machine,Knee limitation,single-evaluator rubric score,4,4,5,4,4
+P13,Output B,Develop pull strength using a pull-up bar,Pull-up Bar,None,single-evaluator rubric score,4,3,5,4,4
+P13,Output A,Develop pull strength using a pull-up bar,Pull-up Bar,None,single-evaluator rubric score,4,4,4,4,4
+P14,Output A,Create a balanced dumbbell workout for fat loss and conditioning,Dumbbells,None,single-evaluator rubric score,4,3,5,4,4
+P14,Output B,Create a balanced dumbbell workout for fat loss and conditioning,Dumbbells,None,single-evaluator rubric score,4,4,5,4,4
+P15,Output B,Improve mobility and posterior-chain strength after long driving shifts,Bodyweight,Lower-back limitation,single-evaluator rubric score,4,3,5,3,4
+P15,Output A,Improve mobility and posterior-chain strength after long driving shifts,Bodyweight,Lower-back limitation,single-evaluator rubric score,3,2,5,1,4
+P16,Output A,Build upper-body endurance with safe push and pull exercises,Cable Machine,Shoulder limitation,single-evaluator rubric score,4,3,5,4,4
+P16,Output B,Build upper-body endurance with safe push and pull exercises,Cable Machine,Shoulder limitation,single-evaluator rubric score,3,3,5,4,3
+P17,Output B,Create an advanced bodyweight athletic workout,Bodyweight,None,single-evaluator rubric score,4,3,1,3,4
+P17,Output A,Create an advanced bodyweight athletic workout,Bodyweight,None,single-evaluator rubric score,3,3,5,4,4
+P18,Output B,Design a long hypertrophy workout using dumbbells,Dumbbells,None,single-evaluator rubric score,4,3,5,4,4
+P18,Output A,Design a long hypertrophy workout using dumbbells,Dumbbells,None,single-evaluator rubric score,4,3,5,4,4
+P19,Output A,Build careful beginner strength with wrist-friendly exercise choices,Dumbbells,Wrist limitation,single-evaluator rubric score,3,2,5,2,4
+P19,Output B,Build careful beginner strength with wrist-friendly exercise choices,Dumbbells,Wrist limitation,single-evaluator rubric score,3,3,5,3,4
+P20,Output B,Create a balanced mobility and strength workout for general health,Bodyweight,None,single-evaluator rubric score,4,3,5,4,4
+P20,Output A,Create a balanced mobility and strength workout for general health,Bodyweight,None,single-evaluator rubric score,4,3,5,4,3

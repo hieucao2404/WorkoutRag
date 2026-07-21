@@ -18,6 +18,13 @@ public class WorkoutController : ControllerBase
         _workoutService = workoutService;
     }
 
+    [HttpGet("admin/history")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult<List<AdminWorkoutResponse>>> GetWorkoutHistoryForAdmin()
+    {
+        return Ok(await _workoutService.GetWorkoutsForAdminAsync());
+    }
+
     [HttpPost("generate")]
     public async Task<IActionResult> GenerateWorkout([FromBody] WorkoutRequest request)
     {

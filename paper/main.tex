@@ -1,0 +1,249 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+
+\title{WorkoutRAG: A Retrieval-Augmented Workout Planning Framework}
+\author{\todo{Add author name, course, instructor, and institution}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper evaluates whether retrieval improves AI-generated workout plans when compared with a language-model-only baseline. WorkoutRAG generates structured workout plans from user profile information and a small exercise knowledge base. The comparison uses the same profiles and local language model in both conditions; the key difference is that WorkoutRAG retrieves exercise records before generation, while the baseline does not. The project is also compared conceptually with Chen and Wang's machine-learning fitness recommendation framework, which uses population health data and supervised models to predict physical-activity targets at national scale. In a 20-profile single-evaluator rubric study, WorkoutRAG improved Equipment Compatibility by 0.70 points and Safety by 0.10 points on a 1--5 scale, but scored lower on Goal Relevance by 0.35 points and Workout Completeness by 0.50 points. WorkoutRAG also increased mean response time from 67.33 seconds to 81.34 seconds. The results suggest that retrieval improved exercise-grounding but did not consistently improve overall plan quality in the current implementation.
+\end{abstract}
+
+\section{Introduction}
+Large language models can generate fluent workout plans, but they may invent exercises, ignore available equipment, or provide generic advice when user needs are specific. Retrieval-Augmented Generation (RAG) addresses this limitation by retrieving relevant external knowledge before generation \cite{lewis2020retrieval}. In WorkoutRAG, the external knowledge source is a local exercise database whose records include exercise names, descriptions, equipment, difficulty levels, movement patterns, exercise types, targeted muscles, and vector embeddings.
+
+The research question for this project is:
+\begin{quote}
+Can Retrieval-Augmented Generation combined with personalized user profiling generate higher-quality workout plans than an LLM-only approach?
+\end{quote}
+
+The hypothesis is that retrieval will improve equipment compatibility, workout completeness, and goal relevance because the model receives a constrained list of exercises before generation. The study does not claim medical validation. It evaluates one implementation, one local language model, one exercise database, and 20 manually reviewed profile scenarios. Because the professor did not require a specific technology stack, the main emphasis of this paper is the comparison between two generation approaches rather than the novelty of the software tools themselves.
+
+\section{Related Work}
+Recent research on personalized fitness recommendation often uses structured machine-learning prediction rather than generative language models. Chen and Wang \cite{chen2025personalized} propose a supervised machine-learning framework for personalized fitness recommendations aligned with national public-health strategy. Their study uses NHANES 2017--2020 data, supplements it with behavioral and environmental variables from BRFSS, and evaluates Decision Tree, XGBoost, and Artificial Neural Network models. The task is framed as predicting weekly physical-activity parameters and classifying individuals into risk tiers. Their reported results show XGBoost as the strongest model, with meanIoU of 0.789, Dice score of 0.841, F1 scores above 0.79 across risk categories, and classification accuracy of 84.1\%.
+
+WorkoutRAG differs from that study in goal, data scale, and output type. Chen and Wang evaluate predictive models over population-scale survey data and emphasize fairness across demographic subgroups. WorkoutRAG evaluates generated workout-session quality over 20 constructed profiles and compares two prompting architectures. The comparison is therefore not a direct competition between systems. Instead, Chen and Wang's work provides a useful reference point for what stronger empirical fitness-recommendation studies measure: clear baselines, defined metrics, subgroup analysis, and cautious claims about clinical relevance.
+
+\begin{table}[h]
+\centering
+\caption{Comparison with Chen and Wang's fitness recommendation study}
+\begin{tabular}{p{0.24\linewidth}p{0.32\linewidth}p{0.32\linewidth}}
+\toprule
+Dimension & Chen and Wang \cite{chen2025personalized} & WorkoutRAG study \\
+\midrule
+Main question & Can ML predict personalized physical-activity targets from population health data? & Does retrieval improve generated workout plans compared with LLM-only prompting? \\
+Data & NHANES/BRFSS population-scale survey data & 20 constructed evaluation profiles and a 40-exercise local database \\
+Models & Decision Tree, XGBoost, ANN & Same local LLM with and without retrieval \\
+Output & Activity minutes, risk tiers, recommendation parameters & Structured JSON workout session \\
+Evaluation & meanIoU, Dice, sensitivity, specificity, F1, fairness gaps & Human 1--5 quality ratings and response time \\
+Strength & Large dataset and quantitative model comparison & Direct comparison of generated plans under controlled profiles \\
+Limitation & Does not evaluate full natural-language workout sessions & Small dataset and manual evaluation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{System Overview}
+WorkoutRAG is implemented as a .NET web API with PostgreSQL and pgvector for exercise storage and vector search. The system uses Ollama endpoints directly through \texttt{HttpClient}. Embeddings are generated with \texttt{nomic-embed-text}, and text generation uses \texttt{phi3:mini}. The configured Ollama base URL is \texttt{http://localhost:11434}, with calls to \texttt{/api/embeddings} for embeddings and \texttt{/api/generate} for workout generation.
+
+The application stores users, exercises, workout histories, workout-exercise relationships, lifestyle profiles, sports, diets, and nutrition plans. The exercise table stores a \texttt{vector(768)} embedding column and defines an HNSW index using cosine vector operators. The seed process loads \texttt{Data/exercises.json}, embeds each exercise as ``name: description'', and saves the vector to PostgreSQL. The current seed file contains 40 exercises across equipment categories such as Bodyweight, Dumbbells, Barbell, Cable Machine, Machine, Box, Medicine Ball, Pull-up Bar, Bench, and Resistance Band.
+
+\section{Methodology}
+The proposed method separates workout generation into two conditions. In the LLM-only condition, the model receives the user profile and prompt instructions directly. In the WorkoutRAG condition, the system first embeds the user's goal text, searches the exercise database for semantically similar exercises matching the selected equipment, and then sends the retrieved exercise inventory to the same model.
+
+Both conditions are intended to use the same user profiles, language model, generation settings, output schema, and core safety-oriented instructions. The intended main difference is retrieval: WorkoutRAG supplies retrieved exercise context, while the baseline does not. In the current implementation, the two prompts are similar but not identical. The RAG prompt includes stricter rules about using only retrieved exercises and returning pure JSON, while the LLM-only prompt lacks those explicit rules. This is a threat to internal validity and should be corrected or discussed when interpreting the results.
+
+\subsection{User Profile Construction}
+The code supports two profile layers. First, a benchmark assessment updates age, weight, height, and athletic level. Athletic level is calculated from push-ups, pull-ups, plank duration, squat repetitions, broad jump distance, one-kilometer run time, mobility tests, sleep, stress, age, and gender. The calculator produces a total score, component scores, weak areas, strong areas, and a level label such as Beginner, Novice, Intermediate, Advanced, or Elite.
+
+Second, a lifestyle profile records occupation, daily movement, occupational stressors, recovery, habits, and pain flags. A biomechanical analyzer converts this profile into textual directives such as mobility recommendations, volume reductions, or red-flag constraints for lower-back, shoulder, knee, ankle, or neck pain.
+
+However, the active workout generation context currently maps only age, height, weight, athletic level, request goal, request equipment, a fixed 45-minute duration, previous workout JSON, and user feedback. It does not map BMI, activity level, exercise frequency, previous injury, mental health, additional requirements, or the request's requested duration into the context. \todo{If the application is updated before final submission, revise this paragraph to reflect the implemented mapping.}
+
+\subsection{Retrieval Method}
+The retrieval stage calls Ollama \texttt{/api/embeddings} with model \texttt{nomic-embed-text}. The user's goal text is embedded and converted to a pgvector value. The repository then filters exercises by exact case-insensitive equipment equality when an equipment value is supplied, orders the remaining rows by cosine distance between the exercise embedding and query embedding, and returns the top results.
+
+The active WorkoutRAG generator calls the retrieval service without an explicit limit, so the service default of six retrieved exercises is used. The repository method has its own default of three if called directly, but that default is not used by the active generation path.
+
+Equipment filtering is implemented as an exact equality comparison between the exercise's single \texttt{Equipment} value and the request's \texttt{AvailableEquipment} string. Therefore, an input such as ``Bodyweight'' can match records labeled exactly Bodyweight, but a combined input such as ``Bodyweight, Dumbbells'' may not match any exercise because the database stores one equipment label per exercise. Injury filtering is not implemented in the retrieval query. Pain and biomechanical constraints may be included as prompt directives only when stored in the user's \texttt{ComputedBiomechanicalNeeds}; they are not used to remove exercises before retrieval.
+
+\section{Implementation}
+The generation API is exposed through \texttt{POST /api/workout/generate}. The endpoint requires an authenticated user and a request containing at least \texttt{Goal} and \texttt{AvailableEquipment}. A \texttt{UseRag} boolean selects the pipeline. When \texttt{UseRag} is true, \texttt{RagGenerator} retrieves exercises and includes them in the prompt. When false, \texttt{LlmOnlyGenerator} sends only the profile information and schema instructions.
+
+The Ollama generation payload uses:
+\begin{itemize}
+    \item \texttt{model}: \texttt{phi3:mini}
+    \item \texttt{stream}: \texttt{false}
+    \item \texttt{format}: \texttt{json}
+    \item \texttt{temperature}: \texttt{0.1}
+\end{itemize}
+
+The active RAG and LLM-only prompts request this JSON structure:
+\begin{verbatim}
+{
+  "workoutName": "String",
+  "duration": 45,
+  "goal": "String",
+  "exercises": [
+    {
+      "name": "String",
+      "sets": 4,
+      "reps": "String (e.g., 8-12)",
+      "rest": "String (e.g., 90 sec)",
+      "notes": "String"
+    }
+  ]
+}
+\end{verbatim}
+
+The current generation endpoint returns the model's raw JSON string as \texttt{application/json}. The save endpoint stores the raw AI JSON, prompt, equipment filter, user ID, and timestamp in \texttt{WorkoutHistory}. The inspected service does not parse, validate, or normalize generated exercises before saving, and it does not populate \texttt{WorkoutExercise} rows from the generated JSON. A separate \texttt{WorkoutPlan} model exists with a different JSON shape (\texttt{plan\_title} and \texttt{workouts}), but it is not used by the active generation path.
+
+\section{Experiment Design}
+The experiment compares the LLM-only baseline and WorkoutRAG on 20 balanced user profiles stored in \texttt{experiments/eval\_profiles.json}. Each profile is submitted to both systems using the same goal, available equipment, model, generation endpoint, and temperature. The experiment runner records response time and saves both raw outputs. To reduce evaluator bias, outputs are assigned anonymous labels, Output A and Output B, with the mapping saved separately.
+
+\subsection{Evaluation Metrics}
+Five quality metrics are rated manually on a 1-to-5 scale. Response time is measured automatically in seconds.
+
+\begin{longtable}{p{0.22\linewidth}p{0.12\linewidth}p{0.58\linewidth}}
+\toprule
+Metric & Score & Meaning \\
+\midrule
+Goal Relevance & 1 & Mostly unrelated to the stated goal. \\
+Goal Relevance & 2 & Includes a few relevant elements but misses the main goal. \\
+Goal Relevance & 3 & Generally addresses the goal with some generic or mismatched choices. \\
+Goal Relevance & 4 & Clearly supports the goal with minor weaknesses. \\
+Goal Relevance & 5 & Strongly and consistently supports the goal. \\
+Personalization & 1 & Ignores most profile constraints and ability level. \\
+Personalization & 2 & Uses one profile detail but remains mostly generic. \\
+Personalization & 3 & Uses several profile details but misses important constraints. \\
+Personalization & 4 & Adapts well to level, duration, and limitations. \\
+Personalization & 5 & Highly tailored to the full profile and session context. \\
+Equipment Compatibility & 1 & Requires mostly unavailable equipment. \\
+Equipment Compatibility & 2 & Includes multiple incompatible exercises. \\
+Equipment Compatibility & 3 & Mostly compatible but contains one questionable item. \\
+Equipment Compatibility & 4 & Compatible with minor ambiguity. \\
+Equipment Compatibility & 5 & Fully compatible with the stated equipment. \\
+Safety & 1 & Contains clearly unsafe choices for stated limitations. \\
+Safety & 2 & Contains significant safety concerns. \\
+Safety & 3 & Generally safe but misses some limitation-specific caution. \\
+Safety & 4 & Safe with sensible modifications or notes. \\
+Safety & 5 & Very appropriate for limitations, level, and fatigue context. \\
+Workout Completeness & 1 & Missing essential structure such as sets, reps, or exercise list. \\
+Workout Completeness & 2 & Incomplete or hard to follow. \\
+Workout Completeness & 3 & Usable but missing useful details such as rest or notes. \\
+Workout Completeness & 4 & Complete and coherent with small omissions. \\
+Workout Completeness & 5 & Fully structured, coherent, and ready to perform. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Procedure}
+For each profile, the runner creates or logs in a test user, submits benchmark and lifestyle information, calls \texttt{/api/workout/generate} once with \texttt{UseRag=false} and once with \texttt{UseRag=true}, measures wall-clock response time, and writes blinded outputs to disk. Outputs are labeled as Output A and Output B. The final scores in this paper were produced by one evaluator using the rubric above, so the results should be interpreted as a small school-project evaluation rather than expert consensus. After scoring, the analyzer computes averages:
+\[
+\overline{s}_{m,c} = \frac{1}{N}\sum_{i=1}^{N}s_{i,m,c}
+\]
+where \(s_{i,m,c}\) is the score for profile \(i\), metric \(m\), and condition \(c\). Differences are computed as:
+\[
+\Delta_m = \overline{s}_{m,\text{WorkoutRAG}} - \overline{s}_{m,\text{LLM-only}}
+\]
+A positive difference means WorkoutRAG scored higher for that metric. A negative difference means the LLM-only baseline scored higher.
+
+\section{Results}
+The experiment was run on July 21, 2026 against the local WorkoutRAG API, local PostgreSQL/pgvector database, and local Ollama models. All 20 profiles produced successful outputs for both conditions after increasing the local Ollama HTTP timeout to support slow CPU-bound generation. One earlier failed timeout attempt for profile P03 was excluded from the final analysis and preserved separately in \texttt{experiments/results/failed\_attempts.csv}.
+
+\begin{table}[h]
+\centering
+\caption{Average quality scores by condition}
+\begin{tabular}{lccc}
+\toprule
+Metric & LLM-only & WorkoutRAG & Difference \\
+\midrule
+Goal Relevance & 3.80 & 3.45 & -0.35 \\
+Personalization & 2.90 & 2.95 & +0.05 \\
+Equipment Compatibility & 4.05 & 4.75 & +0.70 \\
+Safety & 3.40 & 3.50 & +0.10 \\
+Workout Completeness & 3.90 & 3.40 & -0.50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Positive differences mean WorkoutRAG scored higher than the LLM-only baseline. Negative differences mean the baseline scored higher. The strongest improvement was Equipment Compatibility, which is expected because the RAG prompt restricts generation to retrieved exercise records. However, the baseline scored higher on Goal Relevance and Workout Completeness because several RAG outputs were short, used malformed JSON keys, or included too few exercises.
+
+\begin{table}[h]
+\centering
+\caption{Response-time comparison}
+\begin{tabular}{lccc}
+\toprule
+Condition & Mean seconds & Minimum seconds & Maximum seconds \\
+\midrule
+LLM-only & 67.33 & 42.75 & 105.03 \\
+WorkoutRAG & 81.34 & 45.56 & 120.46 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{longtable}{lcc}
+\caption{Per-profile average quality scores} \\
+\toprule
+Profile & LLM-only & WorkoutRAG \\
+\midrule
+P01 & 3.60 & 3.60 \\
+P02 & 3.80 & 3.80 \\
+P03 & 2.80 & 3.20 \\
+P04 & 3.00 & 3.00 \\
+P05 & 3.60 & 4.00 \\
+P06 & 3.60 & 3.80 \\
+P07 & 3.00 & 3.40 \\
+P08 & 4.00 & 3.60 \\
+P09 & 4.20 & 4.40 \\
+P10 & 3.60 & 1.40 \\
+P11 & 4.00 & 3.80 \\
+P12 & 3.00 & 4.20 \\
+P13 & 4.00 & 4.00 \\
+P14 & 4.00 & 4.20 \\
+P15 & 3.80 & 3.00 \\
+P16 & 4.00 & 3.60 \\
+P17 & 3.00 & 3.80 \\
+P18 & 4.00 & 4.00 \\
+P19 & 3.20 & 3.60 \\
+P20 & 4.00 & 3.80 \\
+\bottomrule
+\end{longtable}
+
+The detailed generated outputs, blinded labels, scoring sheet, and calculated summaries are stored in \texttt{experiments/results/}. These files can be used to create bar charts for a presentation or final appendix.
+
+\section{Discussion}
+The results only partially support the research hypothesis. WorkoutRAG clearly improved Equipment Compatibility, with an average score of 4.75 compared with 4.05 for the LLM-only baseline. This improvement is consistent with the architecture: the RAG condition retrieves exercises after filtering by equipment and tells the language model to use only that inventory. In contrast, the baseline often generated plausible but non-database exercises, and in some cases introduced equipment that was not listed in the profile.
+
+However, retrieval did not improve every metric. Goal Relevance was lower for WorkoutRAG, and Workout Completeness was also lower. This happened because the retrieved context sometimes constrained the model too strongly or produced short plans. Some RAG outputs also contained malformed JSON, such as incorrect exercise-list keys or incomplete exercise objects. These schema issues reduced completeness even when the exercise names were grounded in the database.
+
+Safety improved only slightly. This should be interpreted cautiously. The current retrieval stage does not filter exercises by injury, pain, or contraindication. Safety-related behavior comes mainly from prompt instructions and from any biomechanical directives stored in the user profile. As a result, RAG can still retrieve exercises that are semantically relevant but questionable for a limitation profile. For example, some bodyweight RAG outputs included explosive lower-body movements for users with knee or lower-back limitations.
+
+The response-time results show a quality-versus-latency trade-off. WorkoutRAG averaged 81.34 seconds, compared with 67.33 seconds for the baseline. The additional retrieval step itself was usually fast; most of the delay came from local Phi-3 generation. Still, the longer prompt and extra embedding call made the RAG condition slower overall.
+
+Compared with Chen and Wang's supervised ML study \cite{chen2025personalized}, this project is much smaller and evaluates a different type of output. Chen and Wang use large population-health datasets, quantitative predictive metrics, and fairness analysis. WorkoutRAG uses a small controlled profile set and manual plan-quality scoring. The comparison suggests that future versions of WorkoutRAG would benefit from stronger quantitative validation, multiple evaluators, and a larger exercise/user dataset.
+
+The main limitations are the small 40-exercise knowledge base, exact-match equipment filtering, lack of retrieval-time injury filtering, use of one local language model, and single-evaluator scoring. The results should therefore be treated as implementation-specific evidence, not as proof that RAG is always better for workout planning.
+
+\section{Conclusion}
+Using this implementation, this model, this exercise database, these 20 profiles, and this evaluation procedure, the results suggest that WorkoutRAG improves exercise grounding and equipment compatibility compared with an LLM-only baseline. The evidence for broader quality improvement is mixed. Retrieval was associated with slightly higher personalization and safety scores, but lower goal relevance and workout completeness scores.
+
+Therefore, the research question cannot be answered with a simple claim that RAG is superior. In this project, RAG helped most when the evaluation rewarded use of available equipment and database-backed exercise names. It helped less when the retrieved inventory was too narrow, when injury constraints were not enforced during retrieval, or when the local model produced malformed JSON. A stronger future version should improve schema validation, support multi-equipment filtering, add injury-aware retrieval, and evaluate outputs with multiple human raters.
+
+The current implementation should not be described as medically validated or universally safer. Its contribution is a controlled school-project comparison showing both the benefits and the current weaknesses of retrieval-augmented workout generation.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

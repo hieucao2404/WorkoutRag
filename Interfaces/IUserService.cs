@@ -9,4 +9,7 @@ public interface IUserService
     Task<List<string>> UpdateLifestyleProfileAsync(Guid userId, UserLifestyleRequest request);
     Task<UserProfileResponse> GetUserProfileAsync(Guid userId);
     Task<UserProfileResponse> UpdateUserProfileAsync(Guid userId, UpdateUserProfileRequest request);
+    Task<List<AdminUserResponse>> GetUsersAsync();
+    Task<AdminUserResponse> UpdateUserRoleAsync(Guid id, UpdateUserRoleRequest request);
+    Task DeleteUserAsync(Guid id);
 }

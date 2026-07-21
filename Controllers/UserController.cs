@@ -18,6 +18,28 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
+    [HttpGet("admin")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult<List<AdminUserResponse>>> GetUsersForAdmin()
+    {
+        return Ok(await _userService.GetUsersAsync());
+    }
+
+    [HttpDelete("admin/{id:guid}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteUserForAdmin(Guid id)
+    {
+        try
+        {
+            await _userService.DeleteUserAsync(id);
+            return Ok(new { message = "User deleted", userId = id });
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+    }
+
     /// <summary>
     /// Get the authenticated user's complete profile
     /// </summary>

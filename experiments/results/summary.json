@@ -1,0 +1,41 @@
+{
+  "quality": {
+    "goal_relevance": {
+      "LLM-only": 3.8,
+      "WorkoutRAG": 3.45,
+      "difference": -0.35
+    },
+    "personalization": {
+      "LLM-only": 2.9,
+      "WorkoutRAG": 2.95,
+      "difference": 0.05
+    },
+    "equipment_compatibility": {
+      "LLM-only": 4.05,
+      "WorkoutRAG": 4.75,
+      "difference": 0.7
+    },
+    "safety": {
+      "LLM-only": 3.4,
+      "WorkoutRAG": 3.5,
+      "difference": 0.1
+    },
+    "workout_completeness": {
+      "LLM-only": 3.9,
+      "WorkoutRAG": 3.4,
+      "difference": -0.5
+    }
+  },
+  "response_time_seconds": {
+    "LLM-only": {
+      "mean": 67.333,
+      "min": 42.754,
+      "max": 105.033
+    },
+    "WorkoutRAG": {
+      "mean": 81.338,
+      "min": 45.562,
+      "max": 120.459
+    }
+  }
+}

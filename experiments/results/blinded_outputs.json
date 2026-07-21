@@ -1,0 +1,1863 @@
+[
+  {
+    "profileId": "P01",
+    "goal": "Build general fitness with a simple full-body beginner workout",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 25,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Full Body Beginner Workout",
+      "duration": 45,
+      "goal": "Build general fitness with a simple full-body beginner workout",
+      "exercises": [
+        {
+          "name": "Bodyweight Squats",
+          "sets": 3,
+          "reps": "12-15",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Push-Ups (knee modification)",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Plank",
+          "sets": 3,
+          "duration": "20-30 sec hold per set",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Lunges (alternating legs)",
+          "sets": 2,
+          "reps": "10 each leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Inverted Row (using a sturdy table or bar)",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Glute Bridges",
+          "sets": 3,
+          "reps": "15-20",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Russian Twists (with a medicine ball or weight)",
+          "sets": 2,
+          "reps": "15 each side",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P01",
+    "goal": "Build general fitness with a simple full-body beginner workout",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 25,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Full Body Beginner Strength and Conditioning",
+      "duration": 45,
+      "goal": "Build general fitness with a simple full-body beginner workout",
+      "exer01es": [
+        {
+          "name": "Push-Up",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dead Bug",
+          "sets": 4,
+          "reps": "As many as possible with good form (e.g., for each leg and arm)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Single-Leg Glute Bridge",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "A-Skip",
+          "sets": 4,
+          "reps": "As many as possible with good form (e.g., for each side)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Forearm Plank",
+          "sets": 3,
+          "duration": "20-30 sec hold per set",
+          "notes": "Maintain a straight line from head to heels and avoid sagging or lifting hips"
+        },
+        {
+          "name": "Tibialis Raise",
+          "sets": 4,
+          "reps": "8-12 per leg",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P02",
+    "goal": "Improve strength with a dumbbell full-body workout",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 45,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Full Body Dumbbell Strength Workout",
+      "duration": 45,
+      "goal": "Improve strength with a dumbbell full-body workout",
+      "exercises": [
+        {
+          "name": "Dumbbell Squat to Press",
+          "sets": 3,
+          "reps": "10-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Single Arm Dumbbell Row",
+          "sets": 4,
+          "reps": "8-12 each arm",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Deadlift",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Standing Dumbbell Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Lunges with RDL (Romanian Deadlift)",
+          "sets": 3,
+          "reps": "8-12 per leg and each arm",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Renegade Row",
+          "sets": 4,
+          "reps": "6-8 each side",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P02",
+    "goal": "Improve strength with a dumbbell full-body workout",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 45,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Full Body Dumbbell Strength",
+      "duration": 45,
+      "goal": "Improve strength with a dumbbell full-body workout",
+      "exercises": [
+        {
+          "name": "Dumbbell Bulgarian Split Squat",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Incline Dumbbell Bench Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Overhead Press",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Step-Up",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name0: {": "exercise_plan.json"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P03",
+    "goal": "Build muscle in the upper body without aggravating shoulder discomfort",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 40,
+    "previousInjury": "Mild shoulder limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Upper Body Muscle Building with Dumbbells",
+      "duration": 45,
+      "goal": "Build muscle in the upper body without aggravating shoulder discomfort.",
+      "exercises": [
+        {
+          "name": "Dumbbell Bench Press Alternative - Seated Dumbbell Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec",
+          "notes": "Perform with a controlled motion to avoid strain. Keep the back straight and press through your chest."
+        },
+        {
+          "name": "Dumbbell Flyes - Seated Dumbbell Press Variation",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec",
+          "notes": "Maintain a slight bend in your elbows and avoid locking them out at the top of each rep."
+        },
+        {
+          "name": "Dumbbell Shoulder Press - Seated Dumbbell Press Variation (with caution)",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec",
+          "notes": "If shoulder discomfort persists or worsens, stop immediately. Focus on a full range of motion without jerking movements."
+        },
+        {
+          "name": "Dumbbell Bicep Curls - Standing Dumbbell Hammer Curl Variation",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec",
+          "notes": "Keep your elbows close to your body and rotate the palms of your hands so that they face inward at the top of each curl."
+        },
+        {
+          "name": "Dumbbell Tricep Extensions - Standing Dumbbell Hammer Curl Variation",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec",
+          "notes": "Maintain a slight bend in your elbows and avoid locking them out at the top of each extension."
+        },
+        {
+          "name0: ,": "Dumbbell Lateral Raises - Standing Dumbbell Hammer Curl Variation",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec",
+          "notes": "Keep your back straight and raise the weights to shoulder height. Avoid swinging or using momentum."
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P03",
+    "goal": "Build muscle in the upper body without aggravating shoulder discomfort",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 40,
+    "previousInjury": "Mild shoulder limitation",
+    "label": "Output A",
+    "output": "",
+    "error": "timed out"
+  },
+  {
+    "profileId": "P03",
+    "goal": "Build muscle in the upper body without aggravating shoulder discomfort",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 40,
+    "previousInjury": "Mild shoulder limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Upper Body Muscle Building with a Focus on Shoulder Health",
+      "duration": 45,
+      "goal": "Build muscle in the upper body without aggravating shoulder discomfort",
+      "exercises": [
+        {
+          "name": "Dumbbell Incline Dumbbell Bench Press",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Single-Arm Row",
+          "sets": 4,
+          "reps": "8-12 per arm",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Overhead Press",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Shrug",
+          "sets": 4,
+          "reps": "15 per set",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Hammer Curl",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Tricep Overhead Extension",
+          "sets": 4,
+          "reps": "8-12 per set",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P04",
+    "goal": "Lose weight with a low-impact full-body circuit",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 30,
+    "previousInjury": "Knee limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Beginner Full Body Circuit",
+      "duration": 45,
+      "goal": "Lose weight with a low-impact full-body circuit",
+      "exercises": [
+        {
+          "name": "Walking Lunges",
+          "sets": 3,
+          "reps": "10 (each leg)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Bodyweight Squats",
+          "sets": 2,
+          "reps": "12-15",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Push-Ups (knee modification)",
+          "sets": 3,
+          "reps": "8-10",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Plank",
+          "sets": 2,
+          "duration": "30 sec (hold)",
+          "notes": "Ensure your body is in a straight line from head to heels."
+        },
+        {
+          "name": "Glute Bridges",
+          "sets": 2,
+          "reps": "15-20"
+        },
+        {
+          "name": "Standing Oblique Crunches (Side Plank)",
+          "sets": 3,
+          "duration": "30 sec each side",
+          "rest": "60 sec",
+          "notes": "Keep your hips lifted and core engaged."
+        },
+        {
+          "name": "Seated Leg Raises (lying down)",
+          "sets": 2,
+          "reps": "15-20"
+        },
+        {
+          "name": "Chair Dips",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P04",
+    "goal": "Lose weight with a low-impact full-body circuit",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 30,
+    "previousInjury": "Knee limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Full Body Circuit for Weight Loss",
+      "duration": 45,
+      "goal": "Lose weight with a low-impact full-body circuit",
+      "exer01es": [
+        {
+          "name": "Dead Bug",
+          "sets": 3,
+          "reps": "20 (each side)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Single-Leg Glute Bridge",
+          "sets": 4,
+          "reps": "15 (each leg)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Ankle Pogo Jumps",
+          "sets": 3,
+          "reps": "20-25 (per set)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Nordic Hamstring Curl",
+          "sets": 4,
+          "reps": "12-15 (each leg)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Single-Leg Broad Jump",
+          "sets": 3,
+          "reps": "8-10 (per set)",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P05",
+    "goal": "Improve endurance and core stability for recreational running",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 35,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Core and Endurance Blast",
+      "duration": 45,
+      "goal": "Improve endurance and core stability for recreational running",
+      "exercises": [
+        {
+          "name": "Plank with Leg Lifts",
+          "sets": 3,
+          "reps": "Hold each side for 20-30 seconds (alternate sides)",
+          "rest": "60 sec between sets"
+        },
+        {
+          "name": "Mountain Climbers",
+          "sets": 4,
+          "reps": "15 reps per leg",
+          "rest": "30-45 sec between sets"
+        },
+        {
+          "name": "Bird Dogs",
+          "sets": 4,
+          "reps": "Hold each side for 20 seconds (alternate sides)",
+          "rest": "60 sec between sets"
+        },
+        {
+          "name": "Side Planks with Hip Dips",
+          "sets": 3,
+          "reps": "Harder on the last set of each side for time (e.g., hold for as long as possible)",
+          "rest": "60 sec between sets"
+        },
+        {
+          "name": "Russian Twists",
+          "sets": 4,
+          "reps": "15 reps per side with a medicine ball or weighted object (if available), otherwise bodyweight is fine",
+          "rest": "30-60 sec between sets"
+        },
+        {
+          "name": "Bicycle Crunches",
+          "sets": 4,
+          "reps": "15 reps per side (alternate sides)",
+          "rest": "30-60 sec between sets"
+        },
+        {
+          "name": "Glute Bridges with Arm Lifts",
+          "sets": 3,
+          "reps": "Hold each lift for a few seconds (e.g., hold arms at chest height) and lower back down slowly into the bridge position before lifting again",
+          "rest": "60 sec between sets"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P05",
+    "goal": "Improve endurance and core stability for recreational running",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 35,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Core and Endurance for Runners",
+      "duration": 45,
+      "goal": "Improve endurance and core stability for recreational running",
+      "exer01es": [
+        {
+          "name": "A-Skip",
+          "sets": 3,
+          "reps": "60 sec per set",
+          "rest": "45 sec"
+        },
+        {
+          "name": "Dead Bug",
+          "sets": 4,
+          "reps": "12-15 reps per side",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Single-Leg Glute Bridge",
+          "sets": 3,
+          "reps": "8-12 reps per leg",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Single-Leg Calf Drop",
+          "sets": 4,
+          "reps": "8-12 reps per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Forearm Plank",
+          "duration": "3 sets of 60 seconds hold each side with alternating legs on the floor for balance, totaling to a continuous plank time not exceeding 45 minutes when combined."
+        },
+        {
+          "name": "Nordic Hamstring Curl",
+          "sets": 2,
+          "reps": "8-10 reps per leg (with assistance if necessary)",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P06",
+    "goal": "Develop hypertrophy with gym cable and machine exercises",
+    "availableEquipment": "Cable Machine",
+    "requestedDuration": 50,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Hypertrophy Focus with Cable and Machine",
+      "duration": 45,
+      "goal": "Develop hypertrophy using gym cable and machine exercises.",
+      "exercises": [
+        {
+          "name": "Cable Bicep Curl",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Machine Chest Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Cable Row",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Leg Press Machine",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Cable Tricep Extension",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Seated Cable Row with Twist (for core engagement)",
+          "sets": 3,
+          "reps": "8-12 per side",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P06",
+    "goal": "Develop hypertrophy with gym cable and machine exercises",
+    "availableEquipment": "Cable Machine",
+    "requestedDuration": 50,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Hypertrophy Blast",
+      "duration": 45,
+      "goal": "Develop hypertrophy with gym cable and machine exer01: {   - Lat Pulldown: A vertical upper body pulling exercise that isolates the mid-and-upper back structures. Perfect for individuals unable to complete standard pull-ups, allowing precise volume overload for widening the back and building strong scapular depressors.",
+      "exercises": [
+        {
+          "name": "Lat Pulldown",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Cable Face Pulls",
+          "sets": 3,
+          "reps": "10-15",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Pallof Press (Side Plank Variation)",
+          "sets": 4,
+          "reps": "8-12 per side",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P07",
+    "goal": "Build lower-body strength while protecting the lower back",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 45,
+    "previousInjury": "Lower-back limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Lower Body Strength Blast",
+      "duration": 45,
+      "goal": "Build lower-body strength while protecting the lower back.",
+      "exercises": [
+        {
+          "name": "Deadlifts with Dumbbells",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Goblet Squats",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Lunges",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Calf Raises with Dumbbells",
+          "sets": 4,
+          "reps": "15-20",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P07",
+    "goal": "Build lower-body strength while protecting the lower back",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 45,
+    "previousInjury": "Lower-back limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Lower Body and Core Strengthening",
+      "duration": 45,
+      "goal": "Build lower-body strength while protecting the lower back",
+      "exer01_name": "Dumbbell Bulgarian Split Squat",
+      "sets": 3,
+      "reps": "8-12 per leg",
+      "rest": "90 sec",
+      "notes": "Focus on form to avoid lower back strain. Keep the knee of the rear leg behind the toe."
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P08",
+    "goal": "Improve mobility and posture after long study sessions",
+    "availableEquipment": "Resistance Band",
+    "requestedDuration": 20,
+    "previousInjury": "Wrist limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Posture and Mobility Improvement",
+      "duration": 45,
+      "goal": "Improve mobility and posture after long study sessions.",
+      "exercises": [
+        {
+          "name": "Resistance Band Shoulder Stretch",
+          "sets": 3,
+          "reps": "Hold for 20-30 seconds each side",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Cat Cow Flow with Resistance Bands",
+          "sets": 4,
+          "reps": "15 reps per set (alternating between cat and cow)",
+          "rest": "30-45 sec"
+        },
+        {
+          "name": "Resistance Band Chest Opener Stretch",
+          "sets": 2,
+          "reps": "Hold for 15-20 seconds each side",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Seated Resistance Band Row with Arm Extension",
+          "sets": 3,
+          "reps": "8-12 reps per set (keeping elbows at a 90 degree angle)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Resistance Band Side Bend Stretch",
+          "sets": 3,
+          "reps": "8-12 reps per set (keeping shoulders down and back)",
+          "rest": "45 sec"
+        },
+        {
+          "name": "Seated Resistance Band Twist with Arm Extension",
+          "sets": 3,
+          "reps": "8-12 reps per set (keeping spine long and twisting from the waist)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Resistance Band Glute Bridge",
+          "sets": 3,
+          "reps": "8-12 reps per set (keeping core engaged and glutes squeezed)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Seated Resistance Band Chest Press",
+          "sets": 3,
+          "reps": "8-12 reps per set (keeping elbows at a 90 degree angle)",
+          "rest": "60 sec"
+        },
+        {
+          "name0: ": " String",
+          "sets": 4,
+          "reps": "Hold for 8-12 seconds each side",
+          "rest": "30 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P08",
+    "goal": "Improve mobility and posture after long study sessions",
+    "availableEquipment": "Resistance Band",
+    "requestedDuration": 20,
+    "previousInjury": "Wrist limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Posture and Mobility Enhancing Workout",
+      "duration": 45,
+      "goal": "Improve mobility and posture after long study sessions",
+      "exercises": [
+        {
+          "name": "Banded Monster Walks (Lateral)",
+          "sets": 3,
+          "reps": "10-15 per leg",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Banded Monster Walks (Forward)"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P09",
+    "goal": "Increase maximal strength with barbell training",
+    "availableEquipment": "Barbell",
+    "requestedDuration": 60,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Maximal Strength Barbell Workout",
+      "duration": 45,
+      "goal": "Increase maximal strength with barbell training",
+      "exercises": [
+        {
+          "name": "Squat",
+          "sets": 3,
+          "reps": "8-10",
+          "rest": "2 minutes"
+        },
+        {
+          "name": "Deadlift",
+          "sets": 4,
+          "reps": "6-8",
+          "rest": "3 minutes"
+        },
+        {
+          "name": "Bench Press",
+          "sets": 4,
+          "reps": "8-10",
+          "rest": "2 minutes"
+        },
+        {
+          "name": "Pull Up or Bent Over Rows",
+          "sets": 3,
+          "reps": "6-8 (to be done with a weighted belt if possible)",
+          "rest": "2 minutes"
+        },
+        {
+          "name": "Overhead Press",
+          "sets": 4,
+          "reps": "6-8",
+          "rest": "3 minutes"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P09",
+    "goal": "Increase maximal strength with barbell training",
+    "availableEquipment": "Barbell",
+    "requestedDuration": 60,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Maximal Strength Barbell Blitz",
+      "duration": 45,
+      "goal": "Increase maximal strength with barbell training",
+      "exercises": [
+        {
+          "name": "Barbell Back Squat",
+          "sets": 3,
+          "reps": "8-10",
+          "rest": "2 minutes"
+        },
+        {
+          "name": "Trap Bar Deadlift",
+          "sets": 4,
+          "reps": "6-8",
+          "rest": "3 minutes"
+        },
+        {
+          "name": "Barbell Overhead Press",
+          "sets": 3,
+          "reps": "6-8",
+          "rest": "2 minutes"
+        },
+        {
+          "name": "Barbell Bench Press",
+          "sets": 4,
+          "reps": "6-8",
+          "rest": "3 minutes"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P10",
+    "goal": "Create a short core-focused workout for a beginner",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 15,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Beginner Core Blast",
+      "duration": 45,
+      "goal": "To strengthen and tone the core muscles using bodyweight exercises.",
+      "exercises": [
+        {
+          "name": "Plank",
+          "sets": 3,
+          "reps": "Hold for time (e.g., 20-30 seconds)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Bridge with Leg Lift",
+          "sets": 4,
+          "reps": "Per leg (8-12 repetitions each set)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Russian Twist",
+          "sets": 3,
+          "reps": "With a medicine ball or weighted object if available and safe for the user (12-15 repetitions each set)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Side Plank",
+          "sets": 3,
+          "reps": "Hold on each side (8-12 seconds per rep)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Bicycle Crunches",
+          "sets": 4,
+          "reps": "Per leg alternating with the other as you go through a set (8-12 repetitions each set)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Superman Hold",
+          "sets": 3,
+          "reps": "Hold for time on each side (holding the back arched and reaching towards opposite hands or feet) (20-30 seconds)",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P10",
+    "goal": "Create a short core-focused workout for a beginner",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 15,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": "{\n  \"workoutName\": \"Core and Balance Blast\",\n  \"duration\": 45,\n  \"goal\": \"Create a short core-focused workout for a beginner with bodyweight exer01: {   |x| - [{\"\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+    "error": ""
+  },
+  {
+    "profileId": "P11",
+    "goal": "Improve total-body power for recreational basketball",
+    "availableEquipment": "Medicine Ball",
+    "requestedDuration": 35,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Basketball Power Blast",
+      "duration": 45,
+      "goal": "Improve total-body power for recreational basketball",
+      "exercises": [
+        {
+          "name": "Medicine Ball Squat Throws",
+          "sets": 3,
+          "reps": "10-12 per set",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Standing Medicine Ball Rotation Chest Passes",
+          "sets": 4,
+          "reps": "8-12 per side for each rep",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Medicine Ball Deadlifts with Throws",
+          "sets": 3,
+          "reps": "6-8 per set",
+          "rest": "2 minutes"
+        },
+        {
+          "name": "Standing Medicine Ball Slams",
+          "sets": 4,
+          "reps": "10-15 reps for each rep",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Medicine Ball Clean and Press",
+          "sets": 3,
+          "reps": "6-8 per set",
+          "rest": "2 minutes"
+        },
+        {
+          "name": "Standing Medicine Ball Rotation Throws with a Partner",
+          "sets": 4,
+          "reps": "10 reps for each rep (partner throws the ball)",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P11",
+    "goal": "Improve total-body power for recreational basketball",
+    "availableEquipment": "Medicine Ball",
+    "requestedDuration": 35,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Basketball Power Boost",
+      "duration": 45,
+      "goal": "Improve total-body power for recreational basketball",
+      "exercises": [
+        {
+          "name": "Medicine Ball Slam",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Medicine Ball Rotational Toss",
+          "sets": 4,
+          "reps": "6-10 per side",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P12",
+    "goal": "Build beginner leg strength with knee-friendly choices",
+    "availableEquipment": "Machine",
+    "requestedDuration": 40,
+    "previousInjury": "Knee limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Beginner Leg Strength with Knees in Mind",
+      "duration": 45,
+      "goal": "Build beginner leg strength while being knee-friendly.",
+      "exercises": [
+        {
+          "name": "Seated Leg Press Machine (Light Weight)",
+          "sets": 3,
+          "reps": "10-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Hip Thrusts on Bench with Bumper Plates",
+          "sets": 4,
+          "reps": "8-10",
+          "rest": "2 min"
+        },
+        {
+          "name": "Leg Extensions Machine (Light Weight)",
+          "sets": 3,
+          "reps": "10-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Clamshells with Theraband Resistance",
+          "sets": 4,
+          "reps": "15 (each side)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Step-Ups on Low Bench or Stability Ball",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P12",
+    "goal": "Build beginner leg strength with knee-friendly choices",
+    "availableEquipment": "Machine",
+    "requestedDuration": 40,
+    "previousInjury": "Knee limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Beginner Leg Strength Building",
+      "duration": 45,
+      "goal": "Build beginner leg strength with knee-friendly choices",
+      "exercises": [
+        {
+          "name": "Lying Leg Curl",
+          "sets": 3,
+          "reps": "10-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Leg Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P13",
+    "goal": "Develop pull strength using a pull-up bar",
+    "availableEquipment": "Pull-up Bar",
+    "requestedDuration": 30,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Pull Strength Development",
+      "duration": 45,
+      "goal": "Develop pull strength using a pull-up bar",
+      "exercises": [
+        {
+          "name": "Assisted Pull-Ups",
+          "sets": 3,
+          "reps": "8-12 (use assistance as needed)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Negatives",
+          "sets": 4,
+          "reps": "6-8 (slow lowering phase only)",
+          "rest": "120 sec"
+        },
+        {
+          "name": "Dead Hangs",
+          "sets": 3,
+          "reps": "30-45 seconds per hang",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Pull-Up Band Assisted Pulls",
+          "sets": 2,
+          "reps": "8-12 (use resistance band for assistance)",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P13",
+    "goal": "Develop pull strength using a pull-up bar",
+    "availableEquipment": "Pull-up Bar",
+    "requestedDuration": 30,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Pull Strength Development",
+      "duration": 45,
+      "goal": "Develop pull strength using a pull-up bar",
+      "exercises": [
+        {
+          "name": "Pull-Up",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Negative Pull-Up",
+          "sets": 4,
+          "reps": "5-7 (slowly lowering)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Inverted Row",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dead Hang",
+          "sets": 4,
+          "reps": "60 sec (holding position)",
+          "rest": "30 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P14",
+    "goal": "Create a balanced dumbbell workout for fat loss and conditioning",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 30,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Dumbbell Fat Loss and Conditioning Circuit",
+      "duration": 45,
+      "goal": "Create a balanced dumbbell workout for fat loss and conditioning",
+      "exercises": [
+        {
+          "name": "Dumbbell Squat to Press",
+          "sets": 3,
+          "reps": "12-15 per set",
+          "rest": "90 seconds"
+        },
+        {
+          "name": "Single Arm Dumbbell Row",
+          "sets": 4,
+          "reps": "8-12 per side",
+          "rest": "60 seconds"
+        },
+        {
+          "name": "Dumbbell Deadlift to Upright Rows",
+          "sets": 3,
+          "reps": "10-15 per set",
+          "rest": "90 seconds"
+        },
+        {
+          "name": "Standing Dumbbell Curl and Press",
+          "sets": 4,
+          "reps": "8-12 for each exercise (e.g., curls followed by press)",
+          "rest": "60 seconds"
+        },
+        {
+          "name": "Dumbbell Renegade Row",
+          "sets": 3,
+          "reps": "8-12 per side",
+          "rest": "90 seconds"
+        },
+        {
+          "name": "Single Arm Dumbbell Bench Press to Upright Rows",
+          "sets": 4,
+          "reps": "6-10 for each exercise (e.g., bench press followed by rows)",
+          "rest": "90 seconds"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P14",
+    "goal": "Create a balanced dumbbell workout for fat loss and conditioning",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 30,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Balanced Fat Loss and Conditioning Workout",
+      "duration": 45,
+      "goal": "Create a balanced dumbbell workout for fat loss and conditioning",
+      "exercises": [
+        {
+          "name": "Dumbbell Bulgarian Split Squat",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Single-Leg Romanian Deadlift",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Incline Dumbbell Bench Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Overhead Press",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Farmer's Walk",
+          "sets": 4,
+          "distance": "50 meters per side (or as far as possible)",
+          "notes": "Maintain a strong posture and breathe deeply throughout the exercise"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P15",
+    "goal": "Improve mobility and posterior-chain strength after long driving shifts",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 25,
+    "previousInjury": "Lower-back limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Posterior Chain Strength and Mobility",
+      "duration": 45,
+      "goal": "Improve mobility and posterior-chain strength after long driving shifts.",
+      "exercises": [
+        {
+          "name": "Bodyweight Squats",
+          "sets": 3,
+          "reps": "12-15",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Bridge with Leg Lift",
+          "sets": 4,
+          "reps": "8-12 per leg",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Bodyweight Calf Raises",
+          "sets": 3,
+          "reps": "15-20",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Glute Bridges with Arm Lift",
+          "sets": 4,
+          "reps": "8-12 per side",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Bodyweight Hip Thrusts",
+          "sets": 3,
+          "reps": "12-15",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Bird Dogs with Arm and Leg Extension",
+          "sets": 4,
+          "reps": "8 per side",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Bodyweight Deadlifts (No Weight)",
+          "sets": 3,
+          "reps": "12-15",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Plank with Leg Lift and Arm Reach",
+          "sets": 4,
+          "reps": "8 per side (leg lift) & reach extension for each rep",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P15",
+    "goal": "Improve mobility and posterior-chain strength after long driving shifts",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 25,
+    "previousInjury": "Lower-back limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Posterior Chain and Mobility Enhancer",
+      "duration": 45,
+      "goal": "Improve mobility and posterior-chain strength after long driving shifts",
+      "exercises": [
+        {
+          "name": "Forearm Plank",
+          "sets": 3,
+          "reps": "Hold for time (e.g., 45 sec)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Tibialis Raise",
+          "sets": 4,
+          "reps": "12-15 per leg",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Single-Leg Broad Jump",
+          "sets": 3,
+          "reps": "Perform as many reps as possible (e.g., max of 10)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Single-Leg Glute Bridge",
+          "sets": 4,
+          "reps": "8-12 per leg",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Lateral Bound (Heiden Jump)",
+          "sets": 3,
+          "reps": "Perform as many reps as possible (e.g., max of 10 per leg)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Nordic Hamstring Curl",
+          "sets": 3,
+          "reps": "Perform for time under control (e.g., hold the position at end of set for max duration)",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P16",
+    "goal": "Build upper-body endurance with safe push and pull exercises",
+    "availableEquipment": "Cable Machine",
+    "requestedDuration": 45,
+    "previousInjury": "Shoulder limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Upper Body Endurance with Cable Machine",
+      "duration": 45,
+      "goal": "Build upper-body endurance using safe push and pull exercises.",
+      "exercises": [
+        {
+          "name": "Cable Pushdowns",
+          "sets": 3,
+          "reps": "12-15",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Seated Cable Rows",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Cable Face Pulls",
+          "sets": 3,
+          "reps": "12-15",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Lat Pulldown with Cable Machine",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P16",
+    "goal": "Build upper-body endurance with safe push and pull exercises",
+    "availableEquipment": "Cable Machine",
+    "requestedDuration": 45,
+    "previousInjury": "Shoulder limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Upper Body Endurance and Core Stability",
+      "duration": 45,
+      "goal": "Build upper-body endurance with safe push and pull exer0123456789_pulls using cable machine.",
+      "exercises": [
+        {
+          "name": "Cable Lat Pulldown",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Cable Face Pulls",
+          "sets": 3,
+          "reps": "15-20",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Pallof Press (Side Plank Variation)",
+          "sets": 4,
+          "reps": "8-12 per side",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P17",
+    "goal": "Create an advanced bodyweight athletic workout",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 50,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Advanced Bodyweight Circuit",
+      "duration": 45,
+      "goal": "Create an advanced bodyweight athletic workout for a highly fit individual with no injuries.",
+      "exercises": [
+        {
+          "name": "Pistol Squat Progression",
+          "sets": 3,
+          "reps": "8-12 (or as many reps can be performed comfortably)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Weighted Pull-Ups or Neutral Grip Inverted Rows",
+          "sets": 4,
+          "reps": "8-12 (or as many reps can be performed comfortably)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Gymnastic Muscle-Ups or Ring Dips",
+          "sets": 4,
+          "reps": "8-12 (or as many reps can be performed comfortably)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Flag Leaps and Handstand Pushouts",
+          "sets": 3,
+          "reps": "6-8 per side for leaps; as many reps can be performed comfortably with pushouts (e.g., holding at the top of each rep)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "L-Sit to Handstand Transitions",
+          "sets": 3,
+          "reps": "As many transitions as can be performed comfortably (e.g., holding each position for a few seconds)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Burpee with Plyo Box Jump",
+          "sets": 3,
+          "reps": "As many reps as can be performed comfortably (with a plyo box for added difficulty)",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P17",
+    "goal": "Create an advanced bodyweight athletic workout",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 50,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Advanced Bodyweight Athlete's Circuit",
+      "duration": 45,
+      "goal": "Create an advanced bodyweight athletic workout for structural balance and explosive power development.",
+      "exercises": [
+        {
+          "name": "Single-Leg Glute Bridge",
+          "sets": 3,
+          "reps": "12-15 per leg",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Nordic Hamstring Curl",
+          "sets": 4,
+          "reps": "8-12 (eccentric phase)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "A-Skip",
+          "sets": 3,
+          "reps": "60 seconds per set",
+          "rest": "45 sec"
+        },
+        {
+          "name": "Single-Leg Broad Jump",
+          "sets": 2,
+          "reps": "8 (focus on form and landing)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dead Bug",
+          "sets": 3,
+          "reps": "15 per side",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P18",
+    "goal": "Design a long hypertrophy workout using dumbbells",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 60,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Dumbbell Hypertrophy Circuit",
+      "duration": 45,
+      "goal": "Design a long hypertrophy workout using dumbbells for advanced fitness level individuals with no injuries.",
+      "exercises": [
+        {
+          "name": "Dumbbell Squats",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Deadlifts",
+          "sets": 3,
+          "reps": "10-15",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Flyes",
+          "sets": 3,
+          "reps": "10-15",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Rows",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Shoulder Press",
+          "sets": 3,
+          "reps": "10-15",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Bicep Curls",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Tricep Extensions",
+          "sets": 3,
+          "reps": "10-15",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Calf Raises",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P18",
+    "goal": "Design a long hypertrophy workout using dumbbells",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 60,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Hypertrophy Power Session",
+      "duration": 45,
+      "goal": "Design a long hypertrophy workout using dumbbells",
+      "exer01es": [
+        {
+          "name": "Dumbbell Step-Up",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Incline Dumbbell Bench Press",
+          "sets": 4,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Hammer Curl",
+          "sets": 3,
+          "reps": "8-12 per arm",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Farmer's Walk",
+          "sets": 4,
+          "distance_or_time": "For time (e.g., 3 minutes)",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Single-Arm Row",
+          "sets": 3,
+          "reps": "8-12 per arm",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P19",
+    "goal": "Build careful beginner strength with wrist-friendly exercise choices",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 35,
+    "previousInjury": "Wrist limitation",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Beginner Strength with Dumbbells",
+      "duration": 45,
+      "goal": "Build careful beginner strength while being wrist-friendly.",
+      "exercises": [
+        {
+          "name": "Dumbbell Squat to Press",
+          "sets": 3,
+          "reps": "10-12 per set",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Seated Dumbbell Shoulder Press",
+          "sets": 4,
+          "reps": "8-12 per set",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Deadlift to Upright Row",
+          "sets": 3,
+          "reps": "10-12 per set",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Standing Dumbbell Curl with a Twist (for wrist health)",
+          "sets": 4,
+          "reps": "8-12 per set",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Dumbbell Lateral Raises to Dumbbell Shrugs (for wrist health)",
+          "sets": 3,
+          "reps": "8-12 per set",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P19",
+    "goal": "Build careful beginner strength with wrist-friendly exercise choices",
+    "availableEquipment": "Dumbbells",
+    "requestedDuration": 35,
+    "previousInjury": "Wrist limitation",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Beginner Strength and Stability",
+      "duration": 45,
+      "goal": "Build careful beginner strength with wrist-friendly exercise choices",
+      "exer01es": [
+        {
+          "name": "Dumbbell Hammer Curl",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Tricep Overhead Extension",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dumbbell Step-Up",
+          "sets": 3,
+          "reps": "8-12 per leg",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Incline Dumbbell Bench Press",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P20",
+    "goal": "Create a balanced mobility and strength workout for general health",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 40,
+    "previousInjury": "None",
+    "label": "Output B",
+    "output": {
+      "workoutName": "Balanced Mobility and Strength Workout",
+      "duration": 45,
+      "goal": "Create a balanced mobility and strength workout for general health.",
+      "exercises": [
+        {
+          "name": "Warm-Up Jog",
+          "sets": 1,
+          "reps": "3 minutes continuous jogging in place or around the room to increase heart rate and warm up muscles",
+          "rest": "N/A"
+        },
+        {
+          "name": "Bodyweight Squats",
+          "sets": 4,
+          "reps": "12-15 reps per set",
+          "rest": "90 seconds rest between sets to allow for recovery and maintain proper form"
+        },
+        {
+          "name": "Push-Ups",
+          "sets": 3,
+          "reps": "8-12 reps per set (modify with knee push-ups if necessary)",
+          "rest": "90 seconds rest between sets"
+        },
+        {
+          "name": "Plank",
+          "sets": 4,
+          "duration": "30 seconds hold each set to improve core strength and stability",
+          "rest": "60 seconds rest after the first two planks before starting on subsequent ones for recovery"
+        },
+        {
+          "name": "Lunges with a Twist",
+          "sets": 2,
+          "reps": "8-10 reps per leg (per set)",
+          "rest": "90 seconds rest between sets to allow muscles time to recover"
+        },
+        {
+          "name": "Glute Bridges",
+          "sets": 3,
+          "reps": "12-15 reps per set",
+          "rest": "60 seconds rest after the first two sets before starting on subsequent ones for recovery"
+        },
+        {
+          "name": "Cool Down Stretching Routine",
+          "sets": 3,
+          "reps": "Hold each stretch for 20-30 seconds (e.g., hamstring stretch, quad stretch, chest and shoulder strets)",
+          "rest": "N/A"
+        }
+      ]
+    },
+    "error": ""
+  },
+  {
+    "profileId": "P20",
+    "goal": "Create a balanced mobility and strength workout for general health",
+    "availableEquipment": "Bodyweight",
+    "requestedDuration": 40,
+    "previousInjury": "None",
+    "label": "Output A",
+    "output": {
+      "workoutName": "Balanced Mobility and Strength Foundations",
+      "duration": 45,
+      "goal": "Create a balanced mobility and strength workout for general health",
+      "exercises": [
+        {
+          "name": "Push-Up",
+          "sets": 3,
+          "reps": "8-12",
+          "rest": "90 sec"
+        },
+        {
+          "name": "Dead Bug",
+          "sets": 4,
+          "reps": "As many as possible with good form (e.g., 5)",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Tibialis Raise",
+          "sets": 3,
+          "reps": "12-15 per leg",
+          "rest": "45 sec"
+        },
+        {
+          "name": "Single-Leg Glute Bridge",
+          "sets": 3,
+          "reps": "8-12 per side",
+          "rest": "60 sec"
+        },
+        {
+          "name": "Forearm Plank",
+          "duration": "Hold for 45 sec to 1 min on each arm (alternate arms)",
+          "notes": "Focus on maintaining a neutral spine and avoid sagging hips."
+        },
+        {
+          "name": "A-Skip",
+          "sets": 2,
+          "reps": "As many as possible for time or distance (e.g., 30 mins)",
+          "rest": "60 sec"
+        }
+      ]
+    },
+    "error": ""
+  }
+]

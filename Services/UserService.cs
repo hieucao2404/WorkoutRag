@@ -208,4 +208,54 @@ public class UserService : IUserService
 
         return await GetUserProfileAsync(userId);
     }
+
+    public async Task<List<AdminUserResponse>> GetUsersAsync()
+    {
+        var users = await _userRepository.GetAllAsync();
+
+        return users.OrderBy(u => u.Username).Select(ToAdminUserResponse).ToList();
+    }
+
+    public async Task<AdminUserResponse> UpdateUserRoleAsync(
+        Guid id,
+        UpdateUserRoleRequest request
+    )
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        if (user == null)
+        {
+            throw new KeyNotFoundException("User not found.");
+        }
+
+        user.Role = request.Role;
+        await _userRepository.UpdateAsync(user);
+        await _userRepository.SaveChangesAsync();
+
+        return ToAdminUserResponse(user);
+    }
+
+    public async Task DeleteUserAsync(Guid id)
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        if (user == null)
+        {
+            throw new KeyNotFoundException("User not found.");
+        }
+
+        await _userRepository.DeleteAsync(user);
+        await _userRepository.SaveChangesAsync();
+    }
+
+    private static AdminUserResponse ToAdminUserResponse(User user)
+    {
+        return new AdminUserResponse
+        {
+            Id = user.Id,
+            Username = user.Username,
+            Email = user.Email,
+            Role = user.Role,
+            AthleticLevel = user.AthleticLevel,
+            CreatedAt = user.CreatedAt,
+        };
+    }
 }

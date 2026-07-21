@@ -31,6 +31,21 @@ public class AuthController : ControllerBase
         return Ok(new { message = "Admin access granted" });
     }
 
+    [HttpPatch("users/{id:guid}/role")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateUserRole(Guid id, [FromBody] UpdateUserRoleRequest request)
+    {
+        try
+        {
+            var user = await _userService.UpdateUserRoleAsync(id, request);
+            return Ok(user);
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+    }
+
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {

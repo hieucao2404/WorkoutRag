@@ -99,4 +99,23 @@ public class WorkoutService : IWorkoutService
     {
         return await _workoutRepository.GetByUserIdAsync(userId);
     }
+
+    public async Task<List<AdminWorkoutResponse>> GetWorkoutsForAdminAsync()
+    {
+        var workouts = await _workoutRepository.GetAllWithUsersAsync();
+
+        return workouts
+            .Select(w => new AdminWorkoutResponse
+            {
+                Id = w.Id,
+                UserId = w.UserId,
+                Username = w.User.Username,
+                Email = w.User.Email,
+                UserPrompt = w.UserPrompt,
+                EquipmentFilter = w.EquipmentFilter,
+                RawAiJson = w.RawAiJson,
+                CreatedAt = w.CreatedAt,
+            })
+            .ToList();
+    }
 }
